@@ -1,13 +1,3 @@
-//
-//  Bitboard+init.swift
-//  Bitboard
-//
-//  Created by noda on 2021/09/20.
-//
-
-import Foundation
-import BigInt
-
 public extension Bitboardable {
     
     

@@ -1,13 +1,3 @@
-//
-//  Bitboardable+internal.swift
-//  Bitboard
-//
-//  Created by usagi on 2021/09/20.
-//
-
-import Foundation
-import BigInt
-
 internal extension Bitboardable {
     
     //
@@ -44,6 +34,12 @@ internal extension Bitboardable {
         Self.init(fileWidth: self.fileWidth, rankWidth: self.rankWidth, rawValue: rawValue)
     }
     
+}
+
+internal extension Bitboardable {
+    var lookUpStage: LookUpStage {
+        get { return g.lookUpTable[self.fileWidth, self.rankWidth] }
+    }
 }
 
 

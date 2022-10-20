@@ -1,16 +1,3 @@
-//
-//  Bitboard+LosslessStringConvertible.swift
-//  Bitboard
-//
-//  Created by yo_shin_o on 2021/07/26.
-//
-
-import Foundation
-import BigInt
-
-//
-// MARK: fileprivate
-//
 fileprivate let ALPHABET: String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 fileprivate extension Bitboardable {
