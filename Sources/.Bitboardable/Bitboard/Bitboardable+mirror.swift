@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import BigInt
 
 /// 反転
 public enum Mirror {
