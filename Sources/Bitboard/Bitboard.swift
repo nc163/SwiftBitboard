@@ -1,11 +1,24 @@
 import Foundation
 
-public typealias BitboardRawValueType = FixedWidthInteger & UnsignedInteger
+public struct BitPoint: Hashable {
+    public let file: Int
+    public let rank: Int
+    
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        return lhs.file == rhs.file && lhs.rank == rhs.rank
+    }
+    
+    public static func < (lhs: Self, rhs: Self) -> Bool {
+        return lhs.rank < rhs.rank
+            || lhs.rank == rhs.rank && lhs.file < rhs.file
+    }
+}
 
 public protocol Bitboard: Equatable, Hashable, CustomStringConvertible {
     
     // e.g. UInt8, UInt16, UInt32, UInt64 etc
-    associatedtype RawValue: BitboardRawValueType
+    associatedtype RawValue: FixedWidthInteger & UnsignedInteger
+    typealias Point = BitPoint
     
     var fileWidth: Int { get set }
     var rankWidth: Int { get set }
@@ -81,11 +94,11 @@ extension Bitboard {
 
 extension Bitboard {
     
-    internal func bit_to_point (bit: Int) -> BitboardPoint {
+    internal func bit_to_point (bit: Int) -> Point {
         return .init(file: 0, rank: 0)
     }
     
-    internal func point_to_bit (point: BitboardPoint) -> (file: Int, rank: Int) {
+    internal func point_to_bit (point: Point) -> (file: Int, rank: Int) {
         return (0 , 0)
     }
 }

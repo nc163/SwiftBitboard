@@ -8,22 +8,4 @@ final class OpecodeTest: XCTestCase {
             XCTAssertTrue(bb == bb_8x8_R_64 )
         }
     }
-    
-//    
-//    func test_not() throws {
-//        do {
-//            let bb = bb_8x8_R_64.Clone();
-//            let bb_not = ~bb
-//            XCTAssertTrue( )
-//        }
-//    }
-    
-//    func test_and() throws {
-//        do {
-//            let bb = bb_8x8_R_64.Clone();
-////            let
-//            XCTAssertTrue()
-//        }
-//    }
 }
-
