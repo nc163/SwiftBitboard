@@ -6,7 +6,7 @@ public extension Bitboard {
         guard self.fileWidth == self.rankWidth else {
             return false
         }
-        // bit幅が2^n でないとダメ
+        // bitwidth が 2^n かどうか
         guard RawValue.bitWidth.nonzeroBitCount == 1 else {
             return false
         }
@@ -24,31 +24,41 @@ fileprivate extension Bitboard {
         
     mutating func rotate_180 () -> Bool {
         var value: RawValue = self.rawValue
+        
+        // words.count == 1 / != 1 で処理を分ける方が正確
+        // var words: Self.RawValue.Words = self.rawValue.words
+        
         switch self.rawValue.bitWidth {
-//        case 128:
-//            return false
-//            var upperBits: UInt64 = value.upperBits
-//            var lowerBits: UInt64 = value.lowerBits
-//
-//            // 分割統治
-//            upperBits = (upperBits & 0x00000000FFFFFFFF) << 32 | (upperBits & 0xFFFFFFFF00000000) >> 32
-//            upperBits = (upperBits & 0x0000FFFF0000FFFF) << 16 | (upperBits & 0xFFFF0000FFFF0000) >> 16
-//            upperBits = (upperBits & 0x00FF00FF00FF00FF) << 08 | (upperBits & 0xFF00FF00FF00FF00) >> 08
-//            upperBits = (upperBits & 0x0F0F0F0F0F0F0F0F) << 04 | (upperBits & 0xF0F0F0F0F0F0F0F0) >> 04
-//            upperBits = (upperBits & 0x3333333333333333) << 02 | (upperBits & 0xCCCCCCCCCCCCCCCC) >> 02
-//            upperBits = (upperBits & 0x5555555555555555) << 01 | (upperBits & 0xAAAAAAAAAAAAAAAA) >> 01
-//
-//            lowerBits = (lowerBits & 0x00000000FFFFFFFF) << 32 | (lowerBits & 0xFFFFFFFF00000000) >> 32
-//            lowerBits = (lowerBits & 0x0000FFFF0000FFFF) << 16 | (lowerBits & 0xFFFF0000FFFF0000) >> 16
-//            lowerBits = (lowerBits & 0x00FF00FF00FF00FF) << 08 | (lowerBits & 0xFF00FF00FF00FF00) >> 08
-//            lowerBits = (lowerBits & 0x0F0F0F0F0F0F0F0F) << 04 | (lowerBits & 0xF0F0F0F0F0F0F0F0) >> 04
-//            lowerBits = (lowerBits & 0x3333333333333333) << 02 | (lowerBits & 0xCCCCCCCCCCCCCCCC) >> 02
-//            lowerBits = (lowerBits & 0x5555555555555555) << 01 | (lowerBits & 0xAAAAAAAAAAAAAAAA) >> 01
-//
-//            let t = UInt128(upperBits: upperBits, lowerBits: lowerBits)
-//            self.rawValue
-//            return Self(t)
-//            
+        case 128:
+            var lowerBits: UInt64 = 0
+            var upperBits: UInt64 = 0
+            if self.rawValue.words.count == 2 {
+                lowerBits = UInt64(self.rawValue.words[0])
+                upperBits = UInt64(self.rawValue.words[1])
+            } else if self.rawValue.words.count == 4 {
+                lowerBits = UInt64(self.rawValue.words[0])
+                lowerBits |= UInt64(self.rawValue.words[1]) << UInt32.bitWidth
+                upperBits = UInt64(self.rawValue.words[2])
+                upperBits |= UInt64(self.rawValue.words[3]) << UInt32.bitWidth
+            }
+            
+            upperBits = (upperBits & 0x00000000FFFFFFFF) << 32 | (upperBits & 0xFFFFFFFF00000000) >> 32
+            upperBits = (upperBits & 0x0000FFFF0000FFFF) << 16 | (upperBits & 0xFFFF0000FFFF0000) >> 16
+            upperBits = (upperBits & 0x00FF00FF00FF00FF) << 08 | (upperBits & 0xFF00FF00FF00FF00) >> 08
+            upperBits = (upperBits & 0x0F0F0F0F0F0F0F0F) << 04 | (upperBits & 0xF0F0F0F0F0F0F0F0) >> 04
+            upperBits = (upperBits & 0x3333333333333333) << 02 | (upperBits & 0xCCCCCCCCCCCCCCCC) >> 02
+            upperBits = (upperBits & 0x5555555555555555) << 01 | (upperBits & 0xAAAAAAAAAAAAAAAA) >> 01
+            
+            lowerBits = (lowerBits & 0x00000000FFFFFFFF) << 32 | (lowerBits & 0xFFFFFFFF00000000) >> 32
+            lowerBits = (lowerBits & 0x0000FFFF0000FFFF) << 16 | (lowerBits & 0xFFFF0000FFFF0000) >> 16
+            lowerBits = (lowerBits & 0x00FF00FF00FF00FF) << 08 | (lowerBits & 0xFF00FF00FF00FF00) >> 08
+            lowerBits = (lowerBits & 0x0F0F0F0F0F0F0F0F) << 04 | (lowerBits & 0xF0F0F0F0F0F0F0F0) >> 04
+            lowerBits = (lowerBits & 0x3333333333333333) << 02 | (lowerBits & 0xCCCCCCCCCCCCCCCC) >> 02
+            lowerBits = (lowerBits & 0x5555555555555555) << 01 | (lowerBits & 0xAAAAAAAAAAAAAAAA) >> 01
+            
+            value =  Self.RawValue(lowerBits) << (self.rawValue.bitWidth / 2)
+            value += Self.RawValue(upperBits)
+            
         case 64:
             value = (value & 0x00000000FFFFFFFF) << 32 | (value & 0xFFFFFFFF00000000) >> 32
             value = (value & 0x0000FFFF0000FFFF) << 16 | (value & 0xFFFF0000FFFF0000) >> 16

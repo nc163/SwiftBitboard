@@ -94,11 +94,11 @@ extension Bitboard {
 
 extension Bitboard {
     
-    internal func bit_to_point (bit: Int) -> Point {
+    internal func bit_to_point (bit: Int) -> Self.Point {
         return .init(file: 0, rank: 0)
     }
     
-    internal func point_to_bit (point: Point) -> (file: Int, rank: Int) {
+    internal func point_to_bit (point: Self.Point) -> (file: Int, rank: Int) {
         return (0 , 0)
     }
 }
