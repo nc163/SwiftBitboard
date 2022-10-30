@@ -2,7 +2,7 @@
 public extension Bitboard {
     
     /// 立ち上がりビットの位置返す
-    mutating func popbits() -> [Int] {
+    func popbits() -> [Int] {
         var swapped: RawValue = self.rawValue.bitSwapped
         var popbits: Array<Int> = .init()
         

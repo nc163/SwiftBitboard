@@ -1,7 +1,7 @@
 
 public extension Bitboard {
     
-    /// 指定したfile列のbitを立ち上げる
+    /// 
     /// - Parameter file: <#file description#>
     mutating func bitset(file: Int) {
         do {
@@ -14,7 +14,7 @@ public extension Bitboard {
         }
     }
     
-    /// 指定したrank行のbitを立ち上げる
+    /// 
     /// - Parameter rank: <#rank description#>
     mutating func bitset(rank: Int) {
         do {
@@ -24,7 +24,7 @@ public extension Bitboard {
         }
     }
     
-    /// 指定した(file, rank)のbitを立ち上げる
+    /// 
     /// - Parameters:
     ///   - file: <#file description#>
     ///   - rank: <#rank description#>

@@ -23,8 +23,7 @@ extension FixedWidthInteger {
         for i in 0..<(Self.bitWidth / 8) {
             let byte = UInt8(truncatingIfNeeded: self >> (i * 8))
             let byteString = String(byte, radix: 2)
-            let padding = String(repeating: "0",
-                                 count: 8 - byteString.count)
+            let padding = String(repeating: "0", count: 8 - byteString.count)
             result.append(padding + byteString)
         }
         return "0b" + result.reversed().joined(separator: "_")

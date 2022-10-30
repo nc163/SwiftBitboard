@@ -1,7 +1,7 @@
 
 public extension Bitboard {
     
-    /// 指定したfile列のbitを落とす
+    /// 
     /// - Parameter file: <#file description#>
     mutating func bitunset(file: Int) {
         do {
@@ -14,7 +14,7 @@ public extension Bitboard {
         }
     }
     
-    /// 指定したrank行のbitを落とす
+    /// 
     /// - Parameter rank: <#rank description#>
     mutating func bitunset(rank: Int) {
         do {
@@ -24,7 +24,7 @@ public extension Bitboard {
         }
     }
     
-    /// 指定した(file, rank)のbitを落とす
+    /// 
     /// - Parameters:
     ///   - file: <#file description#>
     ///   - rank: <#rank description#>
