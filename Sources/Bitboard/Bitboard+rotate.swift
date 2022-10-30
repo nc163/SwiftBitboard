@@ -36,9 +36,9 @@ fileprivate extension Bitboard {
                 lowerBits = UInt64(self.rawValue.words[0])
                 upperBits = UInt64(self.rawValue.words[1])
             } else if self.rawValue.words.count == 4 {
-                lowerBits = UInt64(self.rawValue.words[0])
+                lowerBits =  UInt64(self.rawValue.words[0])
                 lowerBits |= UInt64(self.rawValue.words[1]) << UInt32.bitWidth
-                upperBits = UInt64(self.rawValue.words[2])
+                upperBits =  UInt64(self.rawValue.words[2])
                 upperBits |= UInt64(self.rawValue.words[3]) << UInt32.bitWidth
             }
             
