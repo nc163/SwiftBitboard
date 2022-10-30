@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
     spec.name         = 'Bitboard'
-    spec.version      = '3.1.0'
+    spec.version      = '0.0.3'
     spec.license      = { :type => 'MIT' }
     spec.homepage     = 'https://github.com/nc163/Bitboard/README.md'
     spec.authors      = { 'nc163' => 'kou1992@gmail.com' }
