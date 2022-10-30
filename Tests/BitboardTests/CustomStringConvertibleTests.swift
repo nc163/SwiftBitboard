@@ -20,11 +20,3 @@ final class CustomStringConvertibleTests: XCTestCase {
         XCTAssertEqual(bb_8x8_bit8o8_128.description, example_8x8_bit8o8, bb_8x8_bit8o8_128.description)
     }
 }
-
-    
-    
-    
-    
-    
-    
-    
