@@ -17,11 +17,9 @@ public protocol Bitboard: Equatable, Hashable, CustomStringConvertible {
 
 extension Bitboard {
     
-    public var valid: Bool { self.Valid() }
-    
     /// <#Description#>
     /// - Returns: <#description#>
-    func Valid() -> Bool {
+    public func Valid() -> Bool {
         let need_bit_width: Int = (fileWidth * rankWidth)
         return self.rawValue.bitWidth >= need_bit_width
     }

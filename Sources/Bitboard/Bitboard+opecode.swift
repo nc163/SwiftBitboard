@@ -1,17 +1,20 @@
 
 public extension Bitboard {
     
-    static func eq (lhs: Self, rhs: Self) -> Bool {
+    // ==
+    static func == (_ lhs: Self, _ rhs: Self) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.fileWidth == rhs.fileWidth && lhs.rankWidth == rhs.rankWidth
     }
     
-    func not () -> Self {
-        var bb: Self = self.Clone()
-        bb.rawValue = ~self.rawValue
+    // ~
+    static prefix func ~ (arg: Self) -> Self {
+        var bb: Self = arg.Clone()
+        bb.rawValue = ~bb.rawValue
         return bb
     }
     
-    static func and (lhs: Self, rhs: Self) -> Self {
+    // &
+    static func & (_ lhs: Self,  _ rhs: Self) -> Self {
         guard lhs.size == rhs.size else {
             // TODO: error
             fatalError("")
@@ -21,7 +24,9 @@ public extension Bitboard {
         return bb
     }
     
-    static func or (lhs: Self, rhs: Self) -> Self {
+    
+    // |
+    static func | (_ lhs: Self, _ rhs: Self) -> Self {
         guard lhs.size == rhs.size else {
             // TODO: error
             fatalError("")
@@ -31,7 +36,8 @@ public extension Bitboard {
         return bb
     }
     
-    static func xor (lhs: Self, rhs: Self) -> Self {
+    // ^
+    static func ^ (_ lhs: Self, _ rhs: Self) -> Self {
         guard lhs.size == rhs.size else {
             // TODO: error
             fatalError("")

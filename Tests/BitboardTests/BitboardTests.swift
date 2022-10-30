@@ -8,8 +8,8 @@ final class BitboardTests: XCTestCase {
         let bb_64  = Bitboard64.init(rawValue: 0, fileWidth: 8, rankWidth: 8)
         let bb_128 = Bitboard128.init(rawValue: 0, fileWidth: 11, rankWidth:11)
         
-        XCTAssertEqual(bb_32.valid, true)
-        XCTAssertEqual(bb_64.valid, true)
-        XCTAssertEqual(bb_128.valid, true)
+        XCTAssertEqual(bb_32.Valid(), true)
+        XCTAssertEqual(bb_64.Valid(), true)
+        XCTAssertEqual(bb_128.Valid(), true)
     }
 }
