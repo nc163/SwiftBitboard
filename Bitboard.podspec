@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
     spec.swift_version = "5.0"
 
     spec.test_spec 'Tests' do |test_spec|
-        test_spec.source_files = 'Tests/BitboardTests/*.swift', 'Tests/BitboardTests/ThirdParty/*.swift', 'Tests/BitboardTests/Helper/*.swift'
-        test_spec.dependency 'BitBoardTests' # This dependency will only be linked with your tests.
+        test_spec.source_files = 'Tests/BitboardUnitTests/*.swift', 'Tests/BitboardUnitTests/ThirdParty/*.swift', 'Tests/BitboardUnitTests/Helper/*.swift'
+        test_spec.dependency 'BitboardUnitTests' # This dependency will only be linked with your tests.
     end
 end
