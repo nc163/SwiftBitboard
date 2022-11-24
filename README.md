@@ -18,3 +18,11 @@
 - [x] ~
 - [ ] <<
 - [ ] >>
+
+# Package
+
+- [ ] Swift Package Manager
+- [ ] Cocoapod
+
+
+

@@ -17,5 +17,4 @@ internal extension Bitboard {
     var quadrate: Bool {
         return self.fileWidth == self.rankWidth
     }
-    
 }

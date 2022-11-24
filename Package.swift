@@ -17,7 +17,7 @@ let package = Package(
         .target(
             name: "Bitboard"),
         .testTarget(
-            name: "BitboardTests",
+            name: "BitboardUnitTests",
             dependencies: ["Bitboard"]),
     ]
 )
