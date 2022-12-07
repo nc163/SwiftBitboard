@@ -17,4 +17,12 @@ internal extension Bitboard {
     var quadrate: Bool {
         return self.fileWidth == self.rankWidth
     }
+
+    func bit_to_point (bit: Int) -> Self.Point {
+        return .init(file: 0, rank: 0)
+    }
+    
+    func point_to_bit (point: Self.Point) -> (file: Int, rank: Int) {
+        return (0 , 0)
+    }
 }

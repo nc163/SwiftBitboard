@@ -1,16 +1,16 @@
 # Bitboard
 
-### function
+## function
 - [x] bitset
 - [x] bitunset
 - [ ] diagonal
 - [ ] mirror
-- [x] popcount ( nonzeroBitCount )
+- [x] popcount(nonzeroBitCount)
 - [x] poppoint
 - [ ] rotate (180)
 - [ ] scan
 
-### operator
+## operator
 - [x] ==
 - [x] &
 - [x] |
@@ -19,7 +19,7 @@
 - [ ] <<
 - [ ] >>
 
-# Package
+# Package manager
 
 - [ ] Swift Package Manager
 - [ ] Cocoapod

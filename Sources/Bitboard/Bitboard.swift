@@ -1,24 +1,11 @@
 import Foundation
 
-public struct BitPoint: Hashable {
-    public let file: Int
-    public let rank: Int
-    
-    public static func ==(lhs: Self, rhs: Self) -> Bool {
-        return lhs.file == rhs.file && lhs.rank == rhs.rank
-    }
-    
-    public static func < (lhs: Self, rhs: Self) -> Bool {
-        return lhs.rank < rhs.rank
-            || lhs.rank == rhs.rank && lhs.file < rhs.file
-    }
-}
-
 public protocol Bitboard: Equatable, Hashable, CustomStringConvertible {
     
     // e.g. UInt8, UInt16, UInt32, UInt64 etc
     associatedtype RawValue: FixedWidthInteger & UnsignedInteger
-    typealias Point = BitPoint
+    typealias Line = BitBoardLine
+    typealias Point = BitBoardPoint
     
     var fileWidth: Int { get set }
     var rankWidth: Int { get set }
@@ -90,15 +77,4 @@ extension Bitboard {
     }
     
     public var debugDescription: String { return self.description }
-}
-
-extension Bitboard {
-    
-    internal func bit_to_point (bit: Int) -> Self.Point {
-        return .init(file: 0, rank: 0)
-    }
-    
-    internal func point_to_bit (point: Self.Point) -> (file: Int, rank: Int) {
-        return (0 , 0)
-    }
 }
