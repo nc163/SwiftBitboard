@@ -1,5 +1,4 @@
 import XCTest
-@testable import Bitboard
 
 final class BitboardTests: XCTestCase {
     
