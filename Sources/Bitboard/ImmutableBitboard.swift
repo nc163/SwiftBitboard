@@ -29,9 +29,9 @@ extension ImmutableBitboard {
     @inline(__always)
     private func zeroPadding_fileWidthformat (rank: Int) -> String {
         if self.rankWidth >= 10 {
-            return String(format: "%02d", rank)
+            return String(repeating: "%02d", count: rank)
         }
-        return String(format: "%01d", rank)
+        return String(repeating: "%01d", count: rank)
     }
     
     /// <#Description#>
