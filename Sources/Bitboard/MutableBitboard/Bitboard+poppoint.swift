@@ -1,8 +1,8 @@
 
-public extension Bitboard {
+public extension MutableBitboard {
     
     /// 
-    func popbits() -> [Self.Point] {
+    mutating func popbits() -> [Self.Point] {
         var swapped: RawValue = self.rawValue.bitSwapped
         var popbits: Array<Self.Point> = .init()
         

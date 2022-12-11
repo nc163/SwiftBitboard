@@ -7,7 +7,7 @@ public enum Mirror {
 }
 
 
-public extension Bitboard {
+public extension ImmutableBitboard {
     
     // https://www.chessprogramming.org/Flipping_Mirroring_and_Rotating
     

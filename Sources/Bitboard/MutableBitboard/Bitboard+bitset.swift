@@ -1,5 +1,5 @@
 
-public extension Bitboard {
+public extension MutableBitboard {
     
     /// 
     /// - Parameter file: <#file description#>
@@ -10,7 +10,6 @@ public extension Bitboard {
             for i in 0..<self.rankWidth {
                 mask |= (_mask_ << (self.rankWidth * i))
             }
-            self.rawValue |= mask
         }
     }
     
@@ -37,12 +36,12 @@ public extension Bitboard {
     }
     
     
-    /// 指定した(file, rank)のbitを立ち上げる
+    /// 指定した2点間の線分のbitを立ち上げる
     /// - Parameters:
     ///   - file: <#file description#>
     ///   - rank: <#rank description#>
-//    mutating func bitset(between: BitboardPoint, at: BitboardPoint) {
-//        guard between.straight(to: at) else { return }
+//    mutating func bitset(between: Point, at: Point) {
+//        guard between.straight(at) else { return }
 //        
 //        let A = between < at ? between : at
 //        let B = between < at ? at : between

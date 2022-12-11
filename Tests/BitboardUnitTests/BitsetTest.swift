@@ -4,7 +4,7 @@ final class BitsetTest: XCTestCase {
 
     func testExample() throws {
         do {
-            var bb = bb_8x8_empty_128.Clone();
+            var bb = bb_8x8_empty_128.clone();
             XCTAssertFalse(bb.bitscan(), bb.description)
             bb.bitset(file: 1)
             for f in 1..<8 {

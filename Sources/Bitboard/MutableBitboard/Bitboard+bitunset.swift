@@ -1,5 +1,5 @@
 
-public extension Bitboard {
+public extension MutableBitboard {
     
     /// 
     /// - Parameter file: <#file description#>

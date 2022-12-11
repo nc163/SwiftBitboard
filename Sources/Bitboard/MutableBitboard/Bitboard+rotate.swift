@@ -1,5 +1,5 @@
 
-public extension Bitboard {
+public extension MutableBitboard {
     
     mutating func rotat180() -> Bool {
         
@@ -20,7 +20,7 @@ public extension Bitboard {
     }
 }
 
-fileprivate extension Bitboard {
+fileprivate extension MutableBitboard {
         
     mutating func rotate_180 () -> Bool {
         var value: RawValue = self.rawValue

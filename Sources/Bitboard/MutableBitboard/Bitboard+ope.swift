@@ -1,5 +1,5 @@
 
-public extension Bitboard {
+public extension MutableBitboard {
     
     // ==
     static func == (_ lhs: Self, _ rhs: Self) -> Bool {
@@ -8,18 +8,18 @@ public extension Bitboard {
     
     // ~
     static prefix func ~ (arg: Self) -> Self {
-        var bb: Self = arg.Clone()
+        var bb: Self = arg.clone()
         bb.rawValue = ~bb.rawValue
         return bb
     }
     
     // &
     static func & (_ lhs: Self,  _ rhs: Self) -> Self {
-        guard lhs.size == rhs.size else {
+        guard lhs.fileWidth == rhs.fileWidth && lhs.rankWidth == rhs.rankWidth else {
             // TODO: error
             fatalError("")
         }
-        var bb: Self = lhs.Clone()
+        var bb: Self = lhs.clone()
         bb.rawValue = (lhs.rawValue & rhs.rawValue)
         return bb
     }
@@ -27,22 +27,22 @@ public extension Bitboard {
     
     // |
     static func | (_ lhs: Self, _ rhs: Self) -> Self {
-        guard lhs.size == rhs.size else {
+        guard lhs.fileWidth == rhs.fileWidth && lhs.rankWidth == rhs.rankWidth else {
             // TODO: error
             fatalError("")
         }
-        var bb: Self = lhs.Clone()
+        var bb: Self = lhs.clone()
         bb.rawValue = (lhs.rawValue | rhs.rawValue)
         return bb
     }
     
     // ^
     static func ^ (_ lhs: Self, _ rhs: Self) -> Self {
-        guard lhs.size == rhs.size else {
+        guard lhs.fileWidth == rhs.fileWidth && lhs.rankWidth == rhs.rankWidth else {
             // TODO: error
             fatalError("")
         }
-        var bb: Self = lhs.Clone()
+        var bb: Self = lhs.clone()
         bb.rawValue = (lhs.rawValue ^ rhs.rawValue)
         return bb
     }
