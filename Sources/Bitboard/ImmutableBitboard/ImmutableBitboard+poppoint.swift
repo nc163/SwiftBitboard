@@ -1,5 +1,5 @@
 
-public extension MutableBitboard {
+public extension ImmutableBitboard {
     
     /// 
     mutating func popbits() -> [Self.Point] {

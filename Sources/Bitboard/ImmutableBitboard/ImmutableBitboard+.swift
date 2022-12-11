@@ -1,5 +1,5 @@
 
-public extension MutableBitboard {
+public extension ImmutableBitboard {
     
     // 2点が直線上にあるかどうかを判定する
     static func straight(_ left: Self.Point, _ right: Self.Point) -> Bool {
