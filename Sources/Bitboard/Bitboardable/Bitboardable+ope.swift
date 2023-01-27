@@ -1,5 +1,19 @@
 
 public extension Bitboardable {
+
+  // ==
+  static func == (_ lhs: Self, _ rhs: Self) -> Bool {
+    return lhs.rawValue == rhs.rawValue && lhs.fileWidth == rhs.fileWidth && lhs.rankWidth == rhs.rankWidth
+  }
+  
+  static func < (lhs: Self, rhs: Self) -> Bool {
+    return lhs.dimension == rhs.dimension 
+    ? lhs.rawValue < rhs.rawValue
+    : lhs.dimension < rhs.dimension
+  }
+  
+  
+  
 //
 //  // ~
 //  static prefix func ~ (arg: Self) -> Self {

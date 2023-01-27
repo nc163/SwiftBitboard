@@ -1,9 +1,8 @@
 import Foundation
 
-public protocol Bitboardable: Equatable, CustomStringConvertible, CustomDebugStringConvertible {
+public protocol Bitboardable: Comparable, Hashable, Equatable, CustomStringConvertible, CustomDebugStringConvertible {
   // e.g. UInt8, UInt16, UInt32, UInt64 etc
   associatedtype RawValue: FixedWidthInteger & UnsignedInteger
-  typealias Dimension = BitboardDimension
   typealias Line = BitBoardLine<Self>
   typealias Point = BitBoardPoint<Self>
 

@@ -1,4 +1,6 @@
 internal struct SkelBitboard<T: FixedWidthInteger & UnsignedInteger>: Bitboardable {
+
+  
   typealias RawValue = T
 
   var rawValue: RawValue

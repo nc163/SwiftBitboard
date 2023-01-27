@@ -1,4 +1,2 @@
 
-public protocol Bitboard: ImmutableBitboard, MutableBitboard {
-
-}
+public protocol Bitboard: ImmutableBitboard, MutableBitboard { }
