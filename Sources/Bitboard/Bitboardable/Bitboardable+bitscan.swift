@@ -35,9 +35,9 @@ public extension Bitboardable {
   func bitscan(file: Int, rank: Int) -> Bool {
     var any = self.rawValue
     do {
-      let p: RawValue = ~(1 << (file - 1))
-      let mask = p << ((rank - 1) * (self.fileWidth))
-      any = any & ~mask
+      let p: RawValue = (1 << (file - 1))
+      let mask: Self.RawValue = p << ((rank - 1) * (self.fileWidth))
+      any = any & mask
     }
     return any > 0
   }

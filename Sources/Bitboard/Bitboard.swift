@@ -10,6 +10,12 @@ public struct Bitboard<T: Bitboardable.RawValueType>: ImmutableBitboard, Mutable
     self.fileWidth = fileWidth
     self.rankWidth = rankWidth
   }
+  
+  public init(fileWidth: Int, rankWidth: Int) {
+    self.rawValue = .zero 
+    self.fileWidth = fileWidth
+    self.rankWidth = rankWidth
+  }
 
   public func clone() -> Self {
       .init(rawValue: self.rawValue, fileWidth: self.fileWidth, rankWidth: self.rankWidth)

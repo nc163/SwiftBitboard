@@ -1,10 +1,25 @@
 import XCTest
+import Bitboard
 
 final class BitsacnTests: XCTestCase {
 
   //= bitscan
   //
   //
+  
+  func test_bitscan() throws {
+    // unit test
+    do {
+      let bitboard: Bitboard<UInt8> = .init(rawValue: 63, fileWidth: 2, rankWidth: 3)
+      XCTAssertTrue(bitboard.bitscan(file: 1, rank: 1))
+      XCTAssertTrue(bitboard.bitscan(file: 1, rank: 2))
+      XCTAssertTrue(bitboard.bitscan(file: 2, rank: 1))
+      XCTAssertTrue(bitboard.bitscan(file: 2, rank: 2))
+      XCTAssertTrue(bitboard.bitscan(file: 3, rank: 1))
+      XCTAssertTrue(bitboard.bitscan(file: 3, rank: 2))
+      print(bitboard.debugDescription)
+    }
+  }
 
   func test_bitscan_all_false() throws {
     EmptyBitboards().forEach { bitboard in
