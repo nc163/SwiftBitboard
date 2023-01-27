@@ -1,39 +1,39 @@
 
 public extension MutableBitboard {
 
-    ///
-    /// - Parameter file: <#file description#>
-    mutating func bitset(file: Int) {
-        do {
-            var mask: RawValue = 0
-            let _mask_: RawValue = 1 << (file - 1)
-            for i in 0..<self.rankWidth {
-                mask |= (_mask_ << (self.rankWidth * i))
-            }
-        }
+  ///
+  /// - Parameter file: <#file description#>
+  mutating func bitset(file: Int) {
+    do {
+      var mask: RawValue = 0
+      let _mask_: RawValue = 1 << (file - 1)
+      for i in 0..<self.rankWidth {
+        mask |= (_mask_ << (self.rankWidth * i))
+      }
     }
+  }
 
-    ///
-    /// - Parameter rank: <#rank description#>
-    mutating func bitset(rank: Int) {
-        do {
-            let line: RawValue = ~(RawValue.max << self.fileWidth)
-            let mask = line << ((rank - 1) * (self.fileWidth))
-            self.rawValue &= mask
-        }
+  ///
+  /// - Parameter rank: <#rank description#>
+  mutating func bitset(rank: Int) {
+    do {
+      let line: RawValue = ~(RawValue.max << self.fileWidth)
+      let mask = line << ((rank - 1) * (self.fileWidth))
+      self.rawValue &= mask
     }
+  }
 
-    ///
-    /// - Parameters:
-    ///   - file: <#file description#>
-    ///   - rank: <#rank description#>
-    mutating func bitset(file: Int, rank: Int) {
-        do {
-            let bit: RawValue = 1
-            let mask = bit << ((file - 1) + ((rank - 1) * (self.fileWidth)))
-            self.rawValue |= mask
-        }
+  ///
+  /// - Parameters:
+  ///   - file: <#file description#>
+  ///   - rank: <#rank description#>
+  mutating func bitset(file: Int, rank: Int) {
+    do {
+      let bit: RawValue = 1
+      let mask = bit << ((file - 1) + ((rank - 1) * (self.fileWidth)))
+      self.rawValue |= mask
     }
+  }
 
 
     /// 指定した2点間の線分のbitを立ち上げる

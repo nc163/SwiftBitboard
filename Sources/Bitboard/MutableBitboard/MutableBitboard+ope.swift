@@ -1,74 +1,74 @@
 
 public extension MutableBitboard {
 
-    // ~
-    static prefix func ~ (arg: Self) -> Self {
-        var bb: Self = arg.clone()
-        bb.rawValue = ~bb.rawValue
-        return bb
-    }
+  // ~
+  static prefix func ~ (arg: Self) -> Self {
+    var bb: Self = arg.clone()
+    bb.rawValue = ~bb.rawValue
+    return bb
+  }
 
-    // &
-    static func & (_ lhs: Self,  _ rhs: Self) -> Self {
-        guard lhs.fileWidth == rhs.fileWidth && lhs.rankWidth == rhs.rankWidth else {
-            // TODO: error
-            fatalError("")
-        }
-        var bb: Self = lhs.clone()
-        bb.rawValue = (lhs.rawValue & rhs.rawValue)
-        return bb
+  // &
+  static func & (_ lhs: Self,  _ rhs: Self) -> Self {
+    guard lhs.fileWidth == rhs.fileWidth && lhs.rankWidth == rhs.rankWidth else {
+        // TODO: error
+        fatalError("")
     }
+    var bb: Self = lhs.clone()
+    bb.rawValue = (lhs.rawValue & rhs.rawValue)
+    return bb
+  }
 
 
-    // |
-    static func | (_ lhs: Self, _ rhs: Self) -> Self {
-        guard lhs.fileWidth == rhs.fileWidth && lhs.rankWidth == rhs.rankWidth else {
-            // TODO: error
-            fatalError("")
-        }
-        var bb: Self = lhs.clone()
-        bb.rawValue = (lhs.rawValue | rhs.rawValue)
-        return bb
+  // |
+  static func | (_ lhs: Self, _ rhs: Self) -> Self {
+    guard lhs.fileWidth == rhs.fileWidth && lhs.rankWidth == rhs.rankWidth else {
+        // TODO: error
+        fatalError("")
     }
+    var bb: Self = lhs.clone()
+    bb.rawValue = (lhs.rawValue | rhs.rawValue)
+    return bb
+  }
 
-    // ^
-    static func ^ (_ lhs: Self, _ rhs: Self) -> Self {
-        guard lhs.fileWidth == rhs.fileWidth && lhs.rankWidth == rhs.rankWidth else {
-            // TODO: error
-            fatalError("")
-        }
-        var bb: Self = lhs.clone()
-        bb.rawValue = (lhs.rawValue ^ rhs.rawValue)
-        return bb
+  // ^
+  static func ^ (_ lhs: Self, _ rhs: Self) -> Self {
+    guard lhs.fileWidth == rhs.fileWidth && lhs.rankWidth == rhs.rankWidth else {
+        // TODO: error
+        fatalError("")
     }
+    var bb: Self = lhs.clone()
+    bb.rawValue = (lhs.rawValue ^ rhs.rawValue)
+    return bb
+  }
 
-    // 左回転
-    static func << (lhs: Self, reg: Digree) -> Self {
-        switch reg {
-        case .deg0, .deg360:
-            return lhs
-        case .deg90:
-            return lhs
-        case .deg180:
-            return lhs
-        case .deg270:
-            return lhs
-        }
+  // 左回転
+  static func << (lhs: Self, reg: Digree) -> Self {
+    switch reg {
+    case .deg0, .deg360:
+      return lhs
+    case .deg90:
+      return lhs
+    case .deg180:
+      return lhs
+    case .deg270:
+      return lhs
     }
+  }
 
-    // 右回転
-    static func >> (lhs: Self, reg: Digree) -> Self {
-        switch reg {
-        case .deg0, .deg360:
-            return lhs
-        case .deg90:
-            return lhs
-        case .deg180:
-            return lhs
-        case .deg270:
-            return lhs
-        }
+  // 右回転
+  static func >> (lhs: Self, reg: Digree) -> Self {
+    switch reg {
+    case .deg0, .deg360:
+      return lhs
+    case .deg90:
+      return lhs
+    case .deg180:
+      return lhs
+    case .deg270:
+      return lhs
     }
+  }
 
 
 //    static func << (lhs: Self, rhs: Int) -> Self {
