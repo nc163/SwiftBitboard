@@ -1,8 +1,8 @@
 @testable import Bitboard
 import Foundation
 
-func EmptyBitboards() -> Array<any Bitboard> {
-  var retval: Array<any Bitboard> = []
+func EmptyBitboards() -> Array<any BB> {
+  var retval: Array<any BB> = []
   
   retval.append(Bitboard2x2.init(rawValue: .zero))
   retval.append(Bitboard3x3.init(rawValue: .zero))
@@ -18,8 +18,8 @@ func EmptyBitboards() -> Array<any Bitboard> {
   return retval
 }
 
-func FillBitboards() -> Array<any Bitboard> {
-  var retval: Array<any Bitboard> = []
+func FillBitboards() -> Array<any BB> {
+  var retval: Array<any BB> = []
   
   retval.append(Bitboard2x2.init(rawValue: .max))
   retval.append(Bitboard3x3.init(rawValue: .max))
@@ -35,8 +35,8 @@ func FillBitboards() -> Array<any Bitboard> {
   return retval
 }
 
-func RandomAnyBitboard() -> Array<any Bitboard> {
-  var retval: Array<any Bitboard> = []
+func RandomAnyBitboard() -> Array<any BB> {
+  var retval: Array<any BB> = []
   
   retval.append(Bitboard2x2.init(rawValue: .zero))
   retval.append(Bitboard3x3.init(rawValue: .zero))
@@ -49,11 +49,11 @@ func RandomAnyBitboard() -> Array<any Bitboard> {
   retval.append(Bitboard10x10.init(rawValue: .zero))
   retval.append(Bitboard11x11.init(rawValue: .zero))
   
-  for _ in 1..<10 { retval.append(AnyBitboard<UInt8>.init()) }
-  for _ in 1..<10 { retval.append(AnyBitboard<UInt16>.init()) }
-  for _ in 1..<10 { retval.append(AnyBitboard<UInt32>.init()) }
-  for _ in 1..<10 { retval.append(AnyBitboard<UInt64>.init()) }
-  for _ in 1..<10 { retval.append(AnyBitboard<UInt128>.init()) }
+  for _ in 1..<10 { retval.append(Bitboard<UInt8>.init()) }
+  for _ in 1..<10 { retval.append(Bitboard<UInt16>.init()) }
+  for _ in 1..<10 { retval.append(Bitboard<UInt32>.init()) }
+  for _ in 1..<10 { retval.append(Bitboard<UInt64>.init()) }
+  for _ in 1..<10 { retval.append(Bitboard<UInt128>.init()) }
 
   return retval
 }

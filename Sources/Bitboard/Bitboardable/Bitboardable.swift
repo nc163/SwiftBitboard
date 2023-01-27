@@ -15,6 +15,10 @@ public protocol Bitboardable: Comparable, Hashable, Equatable, CustomStringConve
 
 extension Bitboardable {
 
+  public var dimension: Dimension {
+      Dimension.init(fileWidth: self.fileWidth, rankWidth: self.rankWidth)
+  }
+
   public var square: Bool {
     return self.fileWidth == self.rankWidth
   }
@@ -26,14 +30,14 @@ extension Bitboardable {
   public var rankRange: ClosedRange<Int> {
     return 1...self.rankWidth
   }
-  
+
   ///
   var popcount: Int {
     return self.rawValue.nonzeroBitCount
   }
-  
+
   ///
-  func popbits() -> [Self.Point] {
+  func popbitPoint() -> Array<Self.Point> {
     var swapped: RawValue = self.rawValue.bitSwapped
     var popbits: Array<Self.Point> = .init()
 
@@ -42,7 +46,7 @@ extension Bitboardable {
       let swapped_pop_bit = (zero_bit_count + 1)
       swapped = swapped >> swapped_pop_bit
 
-      popbits.append( bit_to_point(bit: swapped_pop_bit) )
+      popbits.append(number_to_point(number: swapped_pop_bit) )
     } while( swapped == 0 )
 
     return popbits
@@ -58,16 +62,11 @@ extension Bitboardable {
     || abs( Double(left.file - right.file) / Double(left.rank - right.rank)) == 1.00
   }
 
-  var dimension: Dimension {
-      Dimension.init(fileWidth: self.fileWidth, rankWidth: self.rankWidth)
-  }
-
-
-  func bit_to_point (bit: Int) -> Self.Point {
+  func number_to_point(number: Int) -> Self.Point {
     return .init(file: 0, rank: 0, owner: self)
   }
 
-  func point_to_bit (point: Self.Point) -> (file: Int, rank: Int) {
+  func point_to_number(point: Self.Point) -> (file: Int, rank: Int) {
     return (0 , 0)
   }
 }
@@ -105,7 +104,7 @@ extension Bitboardable {
 
 // MARK: CustomDebugStringConvertible
 extension Bitboardable {
-  
+
   /// <#Description#>
   private var space_padding: String {
     return self.rankWidth >= 10 ? "  " : " ";

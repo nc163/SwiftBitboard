@@ -1,33 +1,41 @@
 @testable import Bitboard
 import Foundation
 
-struct AnyBitboard<T: FixedWidthInteger & UnsignedInteger>: Bitboard {
-  typealias RawValue = T
-
-  var rawValue: RawValue
-  var fileWidth: Int
-  var rankWidth: Int
-
+extension Bitboard {
+  
   init() {
     let max: Int = Int(floor(sqrt(Double(RawValue.bitWidth))))
-
-    self.fileWidth = Int.random(in: 2...max)
-    self.rankWidth = Int.random(in: 2...max)
-    self.rawValue = RawValue.random(in: 0...RawValue.max)
-  }
-
-  init(rawValue: RawValue, fileWidth: Int, rankWidth: Int) {
-    self.rawValue = rawValue
-    self.fileWidth = fileWidth
-    self.rankWidth = rankWidth
-  }
-
-  func clone() -> Self {
-      .init(rawValue: self.rawValue, fileWidth: self.fileWidth, rankWidth: self.rankWidth)
+    
+    self.init(rawValue: RawValue.random(in: 0...RawValue.max), fileWidth: Int.random(in: 2...max), rankWidth: Int.random(in: 2...max))
   }
 }
+//struct AnyBitboard<T: FixedWidthInteger & UnsignedInteger>: Bitboard {
+//  typealias RawValue = T
+//
+//  var rawValue: RawValue
+//  var fileWidth: Int
+//  var rankWidth: Int
+//
+//  init() {
+//    let max: Int = Int(floor(sqrt(Double(RawValue.bitWidth))))
+//
+//    self.fileWidth = Int.random(in: 2...max)
+//    self.rankWidth = Int.random(in: 2...max)
+//    self.rawValue = RawValue.random(in: 0...RawValue.max)
+//  }
+//
+//  init(rawValue: RawValue, fileWidth: Int, rankWidth: Int) {
+//    self.rawValue = rawValue
+//    self.fileWidth = fileWidth
+//    self.rankWidth = rankWidth
+//  }
+//
+//  func clone() -> Self {
+//      .init(rawValue: self.rawValue, fileWidth: self.fileWidth, rankWidth: self.rankWidth)
+//  }
+//}
 
-struct Bitboard2x2: Bitboard {
+struct Bitboard2x2: BB {
 
   typealias RawValue = UInt8
 
@@ -40,7 +48,7 @@ struct Bitboard2x2: Bitboard {
   }
 }
 
-struct Bitboard3x3: Bitboard {
+struct Bitboard3x3: BB {
 
   typealias RawValue = UInt16
 
@@ -53,7 +61,7 @@ struct Bitboard3x3: Bitboard {
   }
 }
 
-struct Bitboard4x4: Bitboard {
+struct Bitboard4x4: BB {
 
   typealias RawValue = UInt16
 
@@ -66,7 +74,7 @@ struct Bitboard4x4: Bitboard {
   }
 }
 
-struct Bitboard5x5: Bitboard {
+struct Bitboard5x5: BB {
 
   typealias RawValue = UInt32
 
@@ -79,7 +87,7 @@ struct Bitboard5x5: Bitboard {
   }
 }
 
-struct Bitboard6x6: Bitboard {
+struct Bitboard6x6: BB {
 
   typealias RawValue = UInt64
 
@@ -92,7 +100,7 @@ struct Bitboard6x6: Bitboard {
   }
 }
 
-struct Bitboard7x7: Bitboard {
+struct Bitboard7x7: BB {
 
   typealias RawValue = UInt64
 
@@ -105,7 +113,7 @@ struct Bitboard7x7: Bitboard {
   }
 }
 
-struct Bitboard8x8: Bitboard {
+struct Bitboard8x8: BB {
 
   typealias RawValue = UInt64
 
@@ -118,7 +126,7 @@ struct Bitboard8x8: Bitboard {
   }
 }
 
-struct Bitboard9x9: Bitboard {
+struct Bitboard9x9: BB {
 
   typealias RawValue = UInt128
 
@@ -131,7 +139,7 @@ struct Bitboard9x9: Bitboard {
   }
 }
 
-struct Bitboard10x10: Bitboard {
+struct Bitboard10x10: BB {
 
   typealias RawValue = UInt128
 
@@ -144,7 +152,7 @@ struct Bitboard10x10: Bitboard {
   }
 }
 
-struct Bitboard11x11: Bitboard {
+struct Bitboard11x11: BB {
 
   typealias RawValue = UInt128
 
