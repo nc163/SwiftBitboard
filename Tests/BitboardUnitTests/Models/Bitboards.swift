@@ -11,8 +11,8 @@ struct AnyBitboard<T: FixedWidthInteger & UnsignedInteger>: Bitboard {
   init() {
     let max: Int = Int(floor(sqrt(Double(RawValue.bitWidth))))
 
-    self.fileWidth = Int.random(in: 1...max)
-    self.rankWidth = Int.random(in: 1...max)
+    self.fileWidth = Int.random(in: 2...max)
+    self.rankWidth = Int.random(in: 2...max)
     self.rawValue = RawValue.random(in: 0...RawValue.max)
   }
 

@@ -27,7 +27,53 @@ extension Bitboardable {
   public var rankRange: ClosedRange<Int> {
     return 1...self.rankWidth
   }
+  
+  ///
+  var popcount: Int {
+    return self.rawValue.nonzeroBitCount
+  }
+  
+  ///
+  func popbits() -> [Self.Point] {
+    var swapped: RawValue = self.rawValue.bitSwapped
+    var popbits: Array<Self.Point> = .init()
+
+    repeat {
+      let zero_bit_count = swapped.trailingZeroBitCount
+      let swapped_pop_bit = (zero_bit_count + 1)
+      swapped = swapped >> swapped_pop_bit
+
+      popbits.append( bit_to_point(bit: swapped_pop_bit) )
+    } while( swapped == 0 )
+
+    return popbits
+  }
 }
+
+extension Bitboardable {
+
+  // 2点が直線上にあるかどうかを判定する
+  static func straight(_ left: Self.Point, _ right: Self.Point) -> Bool {
+    return left.file == right.file
+    || left.rank == right.rank
+    || abs( Double(left.file - right.file) / Double(left.rank - right.rank)) == 1.00
+  }
+
+  var dimension: Dimension {
+      Dimension.init(fileWidth: self.fileWidth, rankWidth: self.rankWidth)
+  }
+
+
+  func bit_to_point (bit: Int) -> Self.Point {
+    return .init(file: 0, rank: 0, owner: self)
+  }
+
+  func point_to_bit (point: Self.Point) -> (file: Int, rank: Int) {
+    return (0 , 0)
+  }
+}
+
+
 
 // MARK: CustomStringConvertible
 extension Bitboardable {
