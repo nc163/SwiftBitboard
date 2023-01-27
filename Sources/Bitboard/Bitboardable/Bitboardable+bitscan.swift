@@ -1,5 +1,5 @@
 
-public extension ImmutableBitboard {
+public extension Bitboardable {
 
   ///
   func bitscan() -> Bool {

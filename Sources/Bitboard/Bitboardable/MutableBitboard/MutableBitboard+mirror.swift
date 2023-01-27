@@ -1,5 +1,5 @@
 
-public extension ImmutableBitboard {
+public extension MutableBitboard {
 
     // https://www.chessprogramming.org/Flipping_Mirroring_and_Rotating
 
