@@ -1,20 +1,23 @@
+/** 変更不可能なBitboard protocol
+ *
+ */
 public protocol ImmutableBitboard: Equatable, Hashable, CustomStringConvertible {
     // e.g. UInt8, UInt16, UInt32, UInt64 etc
     associatedtype RawValue: FixedWidthInteger & UnsignedInteger
     typealias Size = BitboardSize
     typealias Line = BitBoardLine<Self>
     typealias Point = BitBoardPoint<Self>
-    
+
     var fileWidth: Int { get }
     var rankWidth: Int { get }
     var rawValue: RawValue { get }
-    
+
     func clone() -> Self
 }
 
 // MARK: CustomStringConvertible
 extension ImmutableBitboard {
-    
+
     /// <#Description#>
     private var space_padding: String {
         if self.rankWidth >= 10 {
@@ -22,7 +25,7 @@ extension ImmutableBitboard {
         }
         return " "
     }
-    
+
     /// 桁数を合わせて０埋めで出力する
     /// - Parameter rank: <#rank description#>
     /// - Returns: <#description#>
@@ -33,7 +36,7 @@ extension ImmutableBitboard {
         }
         return String(repeating: "%01d", count: rank)
     }
-    
+
     /// <#Description#>
     /// example:
     ///  ABCDE       ABCDE
@@ -47,7 +50,7 @@ extension ImmutableBitboard {
         let current: RawValue = self.rawValue
         let fileRange = (1..<(self.fileWidth + 1))
         let rankRange = (1..<(self.rankWidth + 1))
-        
+
         // " ABCDE..."
         retval += space_padding;
         fileRange.forEach { retval += String(UnicodeScalar(64 + $0)!) };  retval += "\n";
@@ -59,9 +62,9 @@ extension ImmutableBitboard {
             }
             if r != self.rankWidth { retval += "\n"; }
         }
-        
+
         return retval
     }
-    
+
     public var debugDescription: String { return self.description }
 }

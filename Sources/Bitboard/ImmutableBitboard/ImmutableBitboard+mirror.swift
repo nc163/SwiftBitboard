@@ -8,18 +8,18 @@ public enum Mirror {
 
 
 public extension ImmutableBitboard {
-    
+
     // https://www.chessprogramming.org/Flipping_Mirroring_and_Rotating
-    
+
     /// <#Description#>
     /// - Parameter dir: <#dir description#>
     /// - Throws: <#description#>
     func mirror(_ dir: Mirror) -> Self? {
-        
+
         return nil
-//        
+//
 //        guard self.quadrate else { fatalError("未実装") }
-//        
+//
 //        switch dir {
 //        case .vertical:
 //            return self.vertical(bb: self);
@@ -27,13 +27,13 @@ public extension ImmutableBitboard {
 //            fatalError("未実装");
 ////            return self.mirrorVertical(bb: self)
 //        }
-        
+
 //        switch dir {
 //        case .horizontal: return self.mirror_square_horizontal()
 //        case .vertical: return self.mirror_square_vertical()
 //        }
     }
-    
+
 // . 1 1 1 1 . . .   . 1 1 1 1 . . .   . 1 1 1 1 . . .   . 1 1 1 1 . . .
 // . 1 . . . 1 . .   . 1 . . . 1 . .   . 1 . . . 1 . .   . 1 . . . 1 . .
 // . 1 . . . 1 . .   . 1 . . . 1 . .   . 1 . . . 1 . .   . 1 . . . 1 . .
@@ -53,29 +53,29 @@ public extension ImmutableBitboard {
 // . 1 . . . 1 . .   . . . . 1 . 1 .   . . . 1 . . . 1   . 1 1 . . . . 1
 // . 1 . . . 1 . .   . . . 1 . . 1 .   1 1 1 1 1 1 1 1   . . . . . . . .
 // . 1 1 1 1 . . .   . . 1 . . . 1 .   . . . . . . . .   . . . . . . . .
-//    
+//
 //    //
 //    // MARK: flipVertical
 //    //
 //    // URL https://www.chessprogramming.org/Flipping_Mirroring_and_Rotating#Flip_and_Mirror
 //    //
 //    // 2進数、8進数、10進数、16進数相互変換ツール https://hogehoge.tk/tool/number.html
-//    
-//    
+//
+//
 //    /// from 列を、 to 列 へシフトする
 //    /// - Parameters:
 //    ///   - rank: <#rank description#>
 //    ///   - shift: <#shift description#>
 //    fileprivate func rank_shift(from: Int, to: Int) {
-//        
+//
 //    }
-//    
+//
 //    /// flipVertical
 //    /// - Parameter bb: <#bb description#>
 //    /// - Returns: <#description#>
 //    fileprivate func vertical(bb: Self) -> Self {
 ////        var rawValue = bb.rawValue
-//        
+//
 //        // 素直に演算すると...
 //        // The compiler is unable to type-check this expression in reasonable time; try breaking up the expression into distinct sub-expressions
 //        // と,エラーが発生したので一時的に演算の途中結果を結果を配列に保存するようにした
@@ -136,7 +136,7 @@ public extension ImmutableBitboard {
 //        default:
 //            fatalError()
 //        }
-//            
+//
 //        // ここは isSquare 関係なく用意しておく必要ある
 //        // 横一列を配列に入れてるから、横列分とって | すればよい？
 //        let retval: BigUInt = self.rankRange.reduce(0) { result, rank in
@@ -145,12 +145,12 @@ public extension ImmutableBitboard {
 //
 //        return Bitboard(rawValue: retval)
 //    }
-//    
+//
 //    fileprivate func horizontal() -> Self {
-//        
+//
 //        return Bitboard(rawValue: 0)
 //    }
-    
+
 //    fileprivate func mirror_square_horizontal() -> Self {
 //
 //        var x = self.rawValue

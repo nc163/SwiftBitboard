@@ -1,7 +1,7 @@
 
 public extension MutableBitboard {
-    
-    /// 
+
+    ///
     /// - Parameter file: <#file description#>
     mutating func bitset(file: Int) {
         do {
@@ -12,8 +12,8 @@ public extension MutableBitboard {
             }
         }
     }
-    
-    /// 
+
+    ///
     /// - Parameter rank: <#rank description#>
     mutating func bitset(rank: Int) {
         do {
@@ -22,8 +22,8 @@ public extension MutableBitboard {
             self.rawValue &= mask
         }
     }
-    
-    /// 
+
+    ///
     /// - Parameters:
     ///   - file: <#file description#>
     ///   - rank: <#rank description#>
@@ -34,18 +34,18 @@ public extension MutableBitboard {
             self.rawValue |= mask
         }
     }
-    
-    
+
+
     /// 指定した2点間の線分のbitを立ち上げる
     /// - Parameters:
     ///   - file: <#file description#>
     ///   - rank: <#rank description#>
 //    mutating func bitset(between: Point, at: Point) {
 //        guard between.straight(at) else { return }
-//        
+//
 //        let A = between < at ? between : at
 //        let B = between < at ? at : between
-//        
+//
 //        var file = (between < at ? between : at).file
 //        var rank = (between < at ? at : between).rank
 //

@@ -1,5 +1,5 @@
 extension FixedWidthInteger {
-    
+
     /// bit swap
     /// e.g) 0x01010_0011_1100 --swap-> 0x0011_1100_0101
     /// https://stackoverflow.com/questions/60594125/is-there-a-way-to-reverse-the-bit-order-in-uint64
@@ -15,7 +15,7 @@ extension FixedWidthInteger {
         } while s > 1
         return v
     }
-    
+
     ///
     /// https://developer.apple.com/documentation/swift/fixedwidthinteger
     var binaryString: String {

@@ -1,12 +1,12 @@
 
 public extension ImmutableBitboard {
-    
-    /// 
+
+    ///
     func bitscan() -> Bool {
         return self.rawValue > 0
     }
-    
-    /// 
+
+    ///
     func bitscan(file: Int) -> Bool {
         var any = self.rawValue
         do {
@@ -19,8 +19,8 @@ public extension ImmutableBitboard {
         }
         return any > 0
     }
-    
-    /// 
+
+    ///
     func bitscan(rank: Int) -> Bool {
         var any = self.rawValue
         do {
@@ -30,8 +30,8 @@ public extension ImmutableBitboard {
         }
         return any > 0
     }
-    
-    /// 
+
+    ///
     func bitscan(file: Int, rank: Int) -> Bool {
         var any = self.rawValue
         do {

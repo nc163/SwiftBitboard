@@ -1,6 +1,6 @@
 //
 //  BitboardPerformanceTests.swift
-//  
+//
 //
 //  Created by noda on 2022/11/25.
 //

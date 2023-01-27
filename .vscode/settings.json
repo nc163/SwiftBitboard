@@ -1,0 +1,17 @@
+{
+  // editor
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.minimap.enabled": true,
+  "editor.wordWrap": "off",
+  "editor.cursorBlinking": "solid",
+
+  // files
+  //= ファイルの末尾の空白をトリミング
+  "files.trimTrailingWhitespace": true,
+  //= 最終行以降の新しい行をトリミング
+  "files.trimFinalNewlines": true,
+  //= ファイルの末尾に改行を追加
+  "files.insertFinalNewline": true,
+}

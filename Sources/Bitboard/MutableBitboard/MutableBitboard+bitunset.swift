@@ -1,7 +1,7 @@
 
 public extension MutableBitboard {
-    
-    /// 
+
+    ///
     /// - Parameter file: <#file description#>
     mutating func bitunset(file: Int) {
         do {
@@ -13,8 +13,8 @@ public extension MutableBitboard {
             self.rawValue &= ~mask
         }
     }
-    
-    /// 
+
+    ///
     /// - Parameter rank: <#rank description#>
     mutating func bitunset(rank: Int) {
         do {
@@ -23,8 +23,8 @@ public extension MutableBitboard {
             self.rawValue &= ~mask
         }
     }
-    
-    /// 
+
+    ///
     /// - Parameters:
     ///   - file: <#file description#>
     ///   - rank: <#rank description#>
