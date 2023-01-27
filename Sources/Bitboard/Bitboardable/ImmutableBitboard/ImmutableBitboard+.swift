@@ -8,8 +8,8 @@ public extension ImmutableBitboard {
     || abs( Double(left.file - right.file) / Double(left.rank - right.rank)) == 1.00
   }
 
-  var size: Size {
-      Size.init(fileWidth: self.fileWidth, rankWidth: self.rankWidth)
+  var dimension: Dimension {
+      Dimension.init(fileWidth: self.fileWidth, rankWidth: self.rankWidth)
   }
 
 

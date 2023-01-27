@@ -1,5 +1,0 @@
-
-public extension Bitboard.Size {
-
-
-}

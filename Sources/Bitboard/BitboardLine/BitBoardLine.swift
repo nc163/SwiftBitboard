@@ -1,5 +1,5 @@
 
-public struct BitBoardLine<Owner: ImmutableBitboard>: ImmutableBitboard {
+public struct BitBoardLine<Owner: Bitboardable>: ImmutableBitboard {
 
   public typealias Point = BitBoardPoint<Owner>
   public typealias RawValue = Owner.RawValue

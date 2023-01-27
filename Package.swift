@@ -13,7 +13,7 @@ let package = Package(
     ],
     targets: [
         .target(name: "Bitboard"),
-//        .testTarget(name: "BitboardUnitTests", dependencies: ["Bitboard"], path: "Tests/BitboardUnitTests"),
+        .testTarget(name: "BitboardUnitTests", dependencies: ["Bitboard"], path: "Tests/BitboardUnitTests"),
 //        .testTarget(name: "BitboardPerformanceTests", dependencies: ["Bitboard"], path: "Tests/BitboardPerformanceTests"),
     ]
 )

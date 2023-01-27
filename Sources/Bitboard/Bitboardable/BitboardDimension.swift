@@ -1,5 +1,5 @@
 
-public struct BitboardSize: Hashable {
+public struct BitboardDimension: Hashable {
   let fileWidth: Int
   let rankWidth: Int
 

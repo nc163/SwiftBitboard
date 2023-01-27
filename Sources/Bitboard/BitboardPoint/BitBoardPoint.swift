@@ -1,4 +1,4 @@
-public struct BitBoardPoint<Owner: ImmutableBitboard>: ImmutableBitboard, Comparable {
+public struct BitBoardPoint<Owner: Bitboardable>: ImmutableBitboard, Comparable {
 
   public typealias RawValue = Owner.RawValue
 
