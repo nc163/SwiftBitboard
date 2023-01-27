@@ -1,28 +1,29 @@
 # Bitboard
 
+## protocol
+- [x] MutableBitboard
+- [x] ImutableBitboard
+
 ## function
+- [x] bitscan
 - [x] bitset
 - [x] bitunset
 - [ ] diagonal
 - [ ] mirror
+- [ ] rotate (180)
 - [x] popcount(nonzeroBitCount)
 - [x] poppoint
-- [ ] rotate (180)
-- [ ] scan
 
 ## operator
 - [x] ==
+- [x] `<`, `>`, `<=`, `>=` 
 - [x] &
 - [x] |
 - [x] ^
 - [x] ~
-- [ ] <<
-- [ ] >>
 
-# Package manager
+## Package manager
 
-- [ ] Swift Package Manager
+- [x] Swift Package Manager
 - [ ] Cocoapod
-
-
 
