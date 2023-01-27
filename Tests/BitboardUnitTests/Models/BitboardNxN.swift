@@ -1,39 +1,5 @@
-@testable import Bitboard
+import Bitboard
 import Foundation
-
-extension Bitboard {
-  
-  init() {
-    let max: Int = Int(floor(sqrt(Double(RawValue.bitWidth))))
-    
-    self.init(rawValue: RawValue.random(in: 0...RawValue.max), fileWidth: Int.random(in: 2...max), rankWidth: Int.random(in: 2...max))
-  }
-}
-//struct AnyBitboard<T: FixedWidthInteger & UnsignedInteger>: Bitboard {
-//  typealias RawValue = T
-//
-//  var rawValue: RawValue
-//  var fileWidth: Int
-//  var rankWidth: Int
-//
-//  init() {
-//    let max: Int = Int(floor(sqrt(Double(RawValue.bitWidth))))
-//
-//    self.fileWidth = Int.random(in: 2...max)
-//    self.rankWidth = Int.random(in: 2...max)
-//    self.rawValue = RawValue.random(in: 0...RawValue.max)
-//  }
-//
-//  init(rawValue: RawValue, fileWidth: Int, rankWidth: Int) {
-//    self.rawValue = rawValue
-//    self.fileWidth = fileWidth
-//    self.rankWidth = rankWidth
-//  }
-//
-//  func clone() -> Self {
-//      .init(rawValue: self.rawValue, fileWidth: self.fileWidth, rankWidth: self.rankWidth)
-//  }
-//}
 
 struct Bitboard2x2: BB {
 
@@ -164,43 +130,3 @@ struct Bitboard11x11: BB {
       .init(rawValue: self.rawValue, fileWidth: self.fileWidth, rankWidth: self.rankWidth)
   }
 }
-
-//
-//struct Bitboard32: Bitboard {
-//
-//  typealias RawValue = UInt32
-//
-//  var rawValue: RawValue
-//  var fileWidth: Int
-//  var rankWidth: Int
-//
-//  func clone() -> Self {
-//      .init(rawValue: self.rawValue, fileWidth: self.fileWidth, rankWidth: self.rankWidth)
-//  }
-//}
-//
-//struct Bitboard64: Bitboard {
-//
-//  typealias RawValue = UInt64
-//
-//  var rawValue: RawValue
-//  var fileWidth: Int
-//  var rankWidth: Int
-//
-//  func clone() -> Self {
-//      .init(rawValue: self.rawValue, fileWidth: self.fileWidth, rankWidth: self.rankWidth)
-//  }
-//}
-//
-//struct Bitboard128: Bitboard {
-//
-//  typealias RawValue = UInt128
-//
-//  var rawValue: RawValue
-//  var fileWidth: Int
-//  var rankWidth: Int
-//
-//  func clone() -> Self {
-//      .init(rawValue: self.rawValue, fileWidth: self.fileWidth, rankWidth: self.rankWidth)
-//  }
-//}
