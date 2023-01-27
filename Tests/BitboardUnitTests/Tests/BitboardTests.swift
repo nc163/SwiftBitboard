@@ -18,7 +18,7 @@ final class BitboardTests: XCTestCase {
     XCTAssertNoThrow(Bitboard10x10.init(rawValue: .zero))
     XCTAssertNoThrow(Bitboard11x11.init(rawValue: .zero))
     
-    XCTAssertNoThrow(RandomAnyBitboard())
+    XCTAssertNoThrow(RandomBitboards())
     
     print(Bitboard11x11.init(rawValue: .zero).description)
     print(Bitboard11x11.init(rawValue: .zero).debugDescription)
@@ -74,7 +74,7 @@ final class BitboardTests: XCTestCase {
   //
   
   func test_property() throws {
-    let bitboards = RandomAnyBitboard()
+    let bitboards = RandomBitboards()
     
     // square
     bitboards.forEach { bitboard in
@@ -129,7 +129,7 @@ final class BitboardTests: XCTestCase {
   }
   
   func test_bitscan() throws {
-    RandomAnyBitboard().forEach { bitboard in
+    RandomBitboards().forEach { bitboard in
       
       bitboard.fileRange.forEach { file in
         XCTAssertNoThrow(bitboard.bitscan(file: file))

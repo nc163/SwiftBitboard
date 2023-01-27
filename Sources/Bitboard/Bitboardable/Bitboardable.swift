@@ -1,8 +1,11 @@
 import Foundation
 
 public protocol Bitboardable: Comparable, Hashable, Equatable, CustomStringConvertible, CustomDebugStringConvertible {
+  typealias RawValueType = FixedWidthInteger & UnsignedInteger
+  
   // e.g. UInt8, UInt16, UInt32, UInt64 etc
-  associatedtype RawValue: FixedWidthInteger & UnsignedInteger
+  associatedtype RawValue: RawValueType
+  
   typealias Line = BitBoardLine<Self>
   typealias Point = BitBoardPoint<Self>
 
@@ -56,10 +59,10 @@ extension Bitboardable {
 extension Bitboardable {
 
   // 2点が直線上にあるかどうかを判定する
-  static func straight(_ left: Self.Point, _ right: Self.Point) -> Bool {
-    return left.file == right.file
-    || left.rank == right.rank
-    || abs( Double(left.file - right.file) / Double(left.rank - right.rank)) == 1.00
+  static func straight(_ A: Self.Point, _ B: Self.Point) -> Bool {
+    return A.file == B.file
+    || A.rank == B.rank
+    || abs( Double(A.file - B.file) / Double(A.rank - B.rank)) == 1.00
   }
 
   func number_to_point(number: Int) -> Self.Point {

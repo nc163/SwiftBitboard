@@ -1,8 +1,7 @@
 
-public struct Bitboard<T: FixedWidthInteger & UnsignedInteger>: ImmutableBitboard, MutableBitboard {
-  public typealias RawValue = T
-
-  public var rawValue: RawValue
+public struct Bitboard<T: Bitboardable.RawValueType>: ImmutableBitboard, MutableBitboard {
+  
+  public var rawValue: T
   public var fileWidth: Int
   public var rankWidth: Int
 

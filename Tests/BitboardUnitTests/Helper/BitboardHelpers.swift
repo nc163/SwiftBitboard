@@ -1,9 +1,9 @@
 @testable import Bitboard
 import Foundation
 
-func EmptyBitboards() -> Array<any BB> {
-  var retval: Array<any BB> = []
-  
+func EmptyBitboards() -> Array<any MutableBitboard> {
+  var retval: Array<any MutableBitboard> = []
+
   retval.append(Bitboard2x2.init(rawValue: .zero))
   retval.append(Bitboard3x3.init(rawValue: .zero))
   retval.append(Bitboard4x4.init(rawValue: .zero))
@@ -18,9 +18,9 @@ func EmptyBitboards() -> Array<any BB> {
   return retval
 }
 
-func FillBitboards() -> Array<any BB> {
-  var retval: Array<any BB> = []
-  
+func FillBitboards() -> Array<any MutableBitboard> {
+  var retval: Array<any MutableBitboard> = []
+
   retval.append(Bitboard2x2.init(rawValue: .max))
   retval.append(Bitboard3x3.init(rawValue: .max))
   retval.append(Bitboard4x4.init(rawValue: .max))
@@ -35,9 +35,9 @@ func FillBitboards() -> Array<any BB> {
   return retval
 }
 
-func RandomAnyBitboard() -> Array<any BB> {
-  var retval: Array<any BB> = []
-  
+func RandomBitboards(numset: Int = 10) -> Array<any MutableBitboard> {
+  var retval: Array<any MutableBitboard> = []
+
   retval.append(Bitboard2x2.init(rawValue: .zero))
   retval.append(Bitboard3x3.init(rawValue: .zero))
   retval.append(Bitboard4x4.init(rawValue: .zero))
@@ -48,12 +48,12 @@ func RandomAnyBitboard() -> Array<any BB> {
   retval.append(Bitboard9x9.init(rawValue: .zero))
   retval.append(Bitboard10x10.init(rawValue: .zero))
   retval.append(Bitboard11x11.init(rawValue: .zero))
-  
-  for _ in 1..<10 { retval.append(Bitboard<UInt8>.init()) }
-  for _ in 1..<10 { retval.append(Bitboard<UInt16>.init()) }
-  for _ in 1..<10 { retval.append(Bitboard<UInt32>.init()) }
-  for _ in 1..<10 { retval.append(Bitboard<UInt64>.init()) }
-  for _ in 1..<10 { retval.append(Bitboard<UInt128>.init()) }
+
+  for _ in 1..<numset { retval.append(Bitboard<UInt8>.random()) }
+  for _ in 1..<numset { retval.append(Bitboard<UInt16>.random()) }
+  for _ in 1..<numset { retval.append(Bitboard<UInt32>.random()) }
+  for _ in 1..<numset { retval.append(Bitboard<UInt64>.random()) }
+  for _ in 1..<numset { retval.append(Bitboard<UInt128>.random()) }
 
   return retval
 }

@@ -3,11 +3,17 @@ public extension MutableBitboard {
 
   ///
   /// - Parameter file: <#file description#>
+  /// bitunset(file: 5)
+  ///  ABCDE
+  /// 1****-
+  /// 2****-
+  /// 3****-
+  /// 4****-
   mutating func bitunset(file: Int) {
     do {
       var mask: RawValue = 0
       let _mask_: RawValue = 1 << (file - 1)
-      for i in 0..<self.rankWidth {
+      for i: Int in 0..<self.rankWidth {
         mask |= (_mask_ << (self.rankWidth * i))
       }
       self.rawValue &= ~mask
@@ -16,6 +22,12 @@ public extension MutableBitboard {
 
   ///
   /// - Parameter rank: <#rank description#>
+  /// bitset(rank: 3)
+  ///  ABCDE
+  /// 1*****
+  /// 2*****
+  /// 3-----
+  /// 4*****
   mutating func bitunset(rank: Int) {
     do {
       let line: RawValue = ~(RawValue.max << self.fileWidth)
@@ -28,6 +40,12 @@ public extension MutableBitboard {
   /// - Parameters:
   ///   - file: <#file description#>
   ///   - rank: <#rank description#>
+  /// bitset(file: 2, rank: 3)
+  ///  ABCDE
+  /// 1*****
+  /// 2*****
+  /// 3*-***
+  /// 4*****
   mutating func bitunset(file: Int, rank: Int) {
     do {
       let bit: RawValue = 1
