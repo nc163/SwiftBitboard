@@ -19,7 +19,6 @@ public extension MutableBitboard {
     return bb
   }
 
-
   // |
   static func | (_ lhs: Self, _ rhs: Self) -> Self {
     guard lhs.fileWidth == rhs.fileWidth && lhs.rankWidth == rhs.rankWidth else {
