@@ -19,7 +19,7 @@ public protocol Bitboardable: Comparable, Hashable, Equatable, CustomStringConve
 extension Bitboardable {
 
   public var dimension: Dimension {
-      Dimension.init(fileWidth: self.fileWidth, rankWidth: self.rankWidth)
+    Dimension.init(fileWidth: self.fileWidth, rankWidth: self.rankWidth)
   }
 
   public var square: Bool {
