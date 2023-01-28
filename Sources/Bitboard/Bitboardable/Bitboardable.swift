@@ -2,10 +2,10 @@ import Foundation
 
 public protocol Bitboardable: Comparable, Hashable, Equatable, CustomStringConvertible, CustomDebugStringConvertible {
   typealias RawValueType = FixedWidthInteger & UnsignedInteger
-  
+
   // e.g. UInt8, UInt16, UInt32, UInt64 etc
   associatedtype RawValue: RawValueType
-  
+
   typealias Line = BitBoardLine<Self>
   typealias Point = BitBoardPoint<Self>
 
@@ -89,12 +89,12 @@ extension Bitboardable {
     var retval: String = ""
     var index: RawValue = 1
     let current: RawValue = self.rawValue
-    let fileRange = (1..<(self.fileWidth + 1))
-    let rankRange = (1..<(self.rankWidth + 1))
+    let fileRange: (Range<Int>) = (1..<(self.fileWidth + 1))
+    let rankRange: (Range<Int>) = (1..<(self.rankWidth + 1))
 
     // " ABCDE..."
-    rankRange.forEach { (r) in
-      fileRange.forEach { (f) in
+    rankRange.forEach { (r: Range<Int>.Element) in
+      fileRange.forEach { (f: Range<Int>.Element) in
         retval += (current & index) > 0 ? "*" : "-"
         index <<= 1
       }
