@@ -3,31 +3,31 @@ import XCTest
 import Foundation
 
 extension BitsetTests {
-  
-  
+
+
   func bitset_all_pattern_test<T: Bitboard.RawValueType>(_ bb: Bitboard<T>) {
       var bitboard = bb.clone();
 
       bitboard.fileRange.forEach { file in
         bitboard.rankRange.forEach { rank in
-          
+
           let scan: Bool = bitboard.bitscan(file: file, rank: rank)
 
           if(scan) {
             XCTAssertNoThrow(bitboard.bitunset(file: file, rank: rank))
-            
+
             XCTAssertFalse(bitboard.bitscan(file: file, rank: rank), "\(bitboard.rawValue.binaryString) \n (\(file), \(rank)) \n \(bitboard.debugDescription)")
-            
+
             XCTAssertNoThrow(bitboard.bitset(file: file, rank: rank))
-            
+
             XCTAssertTrue(bitboard.bitscan(file: file, rank: rank), "\(bitboard.rawValue.binaryString) \n (\(file), \(rank)) \n \(bitboard.debugDescription)")
           } else {
             XCTAssertNoThrow(bitboard.bitset(file: file, rank: rank))
-            
+
             XCTAssertTrue(bitboard.bitscan(file: file, rank: rank), "\(bitboard.rawValue.binaryString) \n (\(file), \(rank)) \n \(bitboard.debugDescription)")
-            
+
             XCTAssertNoThrow(bitboard.bitunset(file: file, rank: rank))
-              
+
             XCTAssertFalse(bitboard.bitscan(file: file, rank: rank), "\(bitboard.rawValue.binaryString) \n (\(file), \(rank)) \n \(bitboard.debugDescription)")
           }
 
@@ -45,5 +45,4 @@ extension BitsetTests {
         XCTAssertNoThrow(bitboard.bitscan(rank: rank))
       }
   }
-
 }
