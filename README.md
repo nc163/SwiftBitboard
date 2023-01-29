@@ -8,9 +8,9 @@
 - [x] `bitscan`
 - [x] `bitset`
 - [x] `bitunset`
-- [ ] `diagonal`
 - [ ] `mirror`
-- [ ] `rotate`
+- [ ] `rotate90`
+- [x] `rotate180`
 - [x] `popcount(nonzeroBitCount)`
 - [x] `poppoint`
 
