@@ -1,4 +1,4 @@
-import Bitboard
+import SwiftBitboard
 import Foundation
 
 typealias Bitboard8   = Bitboard<UInt8>

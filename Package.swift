@@ -4,15 +4,15 @@
 import PackageDescription
 
 let package = Package(
-    name: "Bitboard",
+    name: "SwiftBitboard",
     products: [
-        .library(name: "Bitboard", targets: ["Bitboard"]),
+        .library(name: "SwiftBitboard", targets: ["SwiftBitboard"]),
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.0.0"),
     ],
     targets: [
-        .target(name: "Bitboard"),
-        .testTarget(name: "BitboardUnitTests", dependencies: ["Bitboard"], path: "Tests/BitboardUnitTests"),
+        .target(name: "SwiftBitboard"),
+        .testTarget(name: "SwiftBitboardUnitTests", dependencies: ["SwiftBitboard"], path: "Tests/SwiftBitboardUnitTests"),
     ]
 )

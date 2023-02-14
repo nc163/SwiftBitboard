@@ -1,5 +1,5 @@
 import XCTest
-@testable import Bitboard
+@testable import SwiftBitboard
 import Foundation
 
 extension BitsetTests {

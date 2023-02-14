@@ -1,5 +1,5 @@
 import XCTest
-@testable import Bitboard
+@testable import SwiftBitboard
 import Foundation
 
 fileprivate let R: Bitboard8x8.RawValue = 0b00100010_00010010_00001010_00001110_00010010_00100010_00100010_00011110

@@ -1,4 +1,4 @@
-@testable import Bitboard
+@testable import SwiftBitboard
 import Foundation
 
 func EmptyBitboards() -> Array<any MutableBitboard> {

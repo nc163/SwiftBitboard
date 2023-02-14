@@ -1,4 +1,4 @@
-import Bitboard
+import SwiftBitboard
 import Foundation
 
 extension Bitboard {

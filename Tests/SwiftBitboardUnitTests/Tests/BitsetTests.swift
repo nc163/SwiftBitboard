@@ -1,5 +1,5 @@
 import XCTest
-import Bitboard
+import SwiftBitboard
 
 final class BitsetTests: XCTestCase {
 

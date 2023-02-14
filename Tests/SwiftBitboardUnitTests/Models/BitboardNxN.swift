@@ -1,4 +1,4 @@
-import Bitboard
+import SwiftBitboard
 import Foundation
 
 struct Bitboard2x2: MutableBitboard {
