@@ -1,4 +1,5 @@
-# Bitboard
+# SwiftBitboard
+This liblary is a bitboard library for Swift.
 
 ## protocol
 - [x] `MutableBitboard`
