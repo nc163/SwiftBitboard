@@ -27,3 +27,10 @@ This liblary is a bitboard library for Swift.
 
 - [x] Swift Package Manager
 - [ ] Cocoapod
+
+
+# Doc
+
+```bash
+swift package --allow-writing-to-directory ./.docs generate-documentation  --output-path ./.docs
+```

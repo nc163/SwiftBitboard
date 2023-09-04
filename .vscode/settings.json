@@ -14,4 +14,6 @@
   "files.trimFinalNewlines": true,
   //= ファイルの末尾に改行を追加
   "files.insertFinalNewline": true,
+
+  "extensions.ignoreRecommendations": false
 }
