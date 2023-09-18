@@ -1,9 +1,10 @@
 # SwiftBitboard
-This liblary is a bitboard library for Swift.
+swiftのお勉強用
 
-## protocol
-- [x] `MutableBitboard`
-- [x] `ImutableBitboard`
+## setup
+```bash
+./Scripts/run-gyb.bash
+```
 
 ## function
 - [x] `bitscan`
@@ -15,6 +16,7 @@ This liblary is a bitboard library for Swift.
 - [x] `popcount(nonzeroBitCount)`
 - [x] `poppoint`
 
+
 ## operator
 - [x] `==`
 - [x] `<`, `>`, `<=`, `>=`
@@ -23,6 +25,7 @@ This liblary is a bitboard library for Swift.
 - [x] `^`
 - [x] `~`
 
+
 ## Package manager
 
 - [x] Swift Package Manager
@@ -30,6 +33,8 @@ This liblary is a bitboard library for Swift.
 
 
 # Doc
+https://github.com/omochi/gysb
+https://github.com/apple/swift/blob/main/utils/gyb.py
 
 ```bash
 swift package --allow-writing-to-directory ./.docs generate-documentation  --output-path ./.docs

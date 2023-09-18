@@ -13,6 +13,6 @@ let package = Package(
     ],
     targets: [
         .target(name: "SwiftBitboard"),
-        .testTarget(name: "SwiftBitboardUnitTests", dependencies: ["SwiftBitboard"], path: "Tests/SwiftBitboardUnitTests"),
+        .testTarget(name: "SwiftBitboardUnitTests", dependencies: ["SwiftBitboard"], path: "Tests"),
     ]
 )

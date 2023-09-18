@@ -1,0 +1,71 @@
+%{
+  # UInt8 , 16...
+  RawValueSize = [8, 16, 32, 64, 128] 
+  Sizes = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  
+  # n x m の組み合わせを取り出す
+  def find_combinations(n):
+    combinations = []
+    for i in range(2, n + 1):
+        for j in range(i, n + 1):
+            if i * j <= n:
+                combinations.append((i, j))
+    return combinations
+}%
+import SwiftBitboard
+
+% for valueSize in RawValueSize:
+%   type = f'UInt{valueSize}' 
+protocol Bitboard${type}Configuration: BitboardConfiguration where RawValue == ${type} { }
+%end
+
+
+% for valueSize in RawValueSize:
+%   type = f'UInt{valueSize}' 
+%   arrayTupleNxMs = find_combinations(valueSize)
+%   for tuple in arrayTupleNxMs[-5:]:
+%     size_s = f'{tuple[0]}x{tuple[1]}'
+class Bitboard${size_s}Configuration: Bitboard${type}Configuration {
+  static var fileWidth: Int { ${tuple[0]} }
+  static var rankWidth: Int { ${tuple[1]} }
+}
+%   end
+% end
+
+
+% for valueSize in RawValueSize:
+%   type = f'UInt{valueSize}' 
+%   arrayTupleNxMs = find_combinations(valueSize)
+%   for tuple in arrayTupleNxMs[-5:]:
+%     size_s = f'{tuple[0]}x{tuple[1]}'
+typealias Bitboard${size_s} = Bitboard<Bitboard${size_s}Configuration>
+%   end
+% end
+
+
+
+func EmptyBitboards() -> Array<any Bitboardable> {
+  var retval: Array<any Bitboardable> = []
+% for valueSize in RawValueSize:
+%   type = f'UInt{valueSize}' 
+%   arrayTupleNxMs = find_combinations(valueSize)
+%   for tuple in arrayTupleNxMs[-5:]:
+%     size_s = f'{tuple[0]}x{tuple[1]}'
+  retval.append(Bitboard${size_s}.init(rawValue: .zero))
+%   end
+% end
+  return retval
+}
+
+func MaxBitboards() -> Array<any Bitboardable> {
+  var retval: Array<any Bitboardable> = []
+% for valueSize in RawValueSize:
+%   type = f'UInt{valueSize}' 
+%   arrayTupleNxMs = find_combinations(valueSize)
+%   for tuple in arrayTupleNxMs[-5:]:
+%     size_s = f'{tuple[0]}x{tuple[1]}'
+  retval.append(Bitboard${size_s}.init(rawValue: .max))
+%   end
+% end
+  return retval
+}

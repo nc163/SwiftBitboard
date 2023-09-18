@@ -1,23 +1,130 @@
 
-public struct Bitboard<T: Bitboardable.RawValueType>: ImmutableBitboard, MutableBitboard {
+public struct Bitboard<Configuration: BitboardConfiguration>: Bitboardable {
   
-  public var rawValue: T
-  public var fileWidth: Int
-  public var rankWidth: Int
+  public typealias RawValue = Configuration.RawValue
+  
+  public var rawValue: RawValue
+  public var fileWidth: Int { Configuration.fileWidth }
+  public var rankWidth: Int { Configuration.rankWidth }
 
-  public init(rawValue: RawValue, fileWidth: Int, rankWidth: Int) {
-    self.rawValue = rawValue
-    self.fileWidth = fileWidth
-    self.rankWidth = rankWidth
+  public init(rawValue: RawValue = .zero) {
+    self.rawValue  = rawValue
+  }
+    
+  public func clone(rawValue: RawValue? = nil) -> Self {
+    .init(rawValue: rawValue ?? self.rawValue)
+  }
+}
+
+
+// MARK: Bitboardable
+public extension Bitboard {
+
+}
+
+
+// MARK: FixedSizeable
+extension Bitboard where Self: FixedSizeable {
+  
+
+}
+
+
+// MARK: Collection
+extension Bitboard: Collection {
+  
+  public subscript(file: Int, rank: Int) -> Bool {
+    self.bitscan(forFile: file, forRank: rank)
   }
   
-  public init(fileWidth: Int, rankWidth: Int) {
-    self.rawValue = .zero 
-    self.fileWidth = fileWidth
-    self.rankWidth = rankWidth
+  public subscript(range: Range<Point>) -> Slice<Bitboard<Configuration>> {
+    return .init(base: self, bounds: range)
+  } 
+}
+
+
+// MARK: Compareble
+extension Bitboard: Comparable {
+  
+  public static func < (lhs: Self, rhs: Self) -> Bool {
+    lhs.rawValue < rhs.rawValue
+  }
+}
+
+
+// MARK: CustomStringConvertible
+extension Bitboard: CustomStringConvertible {
+
+  /// <#Description#>
+  /// example:
+  ///*----
+  ///-*---
+  ///--*--
+  ///---*-
+  public var description: String {
+    var retval: String = ""
+    var index: RawValue = 1
+    let current: RawValue = self.rawValue
+    let fileRange: (Range<Int>) = (1..<(self.fileWidth + 1))
+    let rankRange: (Range<Int>) = (1..<(self.rankWidth + 1))
+
+    // " ABCDE..."
+    rankRange.forEach { (r: Range<Int>.Element) in
+      fileRange.forEach { (f: Range<Int>.Element) in
+        retval += (current & index) > 0 ? "*" : "-"
+        index <<= 1
+      }
+      if r != self.rankWidth { retval += "\n"; }
+    }
+
+    return retval
+  }
+}
+
+
+// MARK: CustomDebugStringConvertible
+extension Bitboard: CustomDebugStringConvertible {
+
+  /// <#Description#>
+  private var space_padding: String {
+    return self.rankWidth >= 10 ? "  " : " ";
   }
 
-  public func clone() -> Self {
-      .init(rawValue: self.rawValue, fileWidth: self.fileWidth, rankWidth: self.rankWidth)
+  /// 桁数を合わせて０埋めで出力する
+  /// - Parameter rank: <#rank description#>
+  /// - Returns: <#description#>
+  @inline(__always)
+  private func zeroPadding_fileWidthformat (rank: Int) -> String {
+    let format: String = self.rankWidth >= 10 ? "%02d" : "%01d";
+    return String(format: format, rank)
+  }
+
+  /// <#Description#>
+  /// example:
+  ///  ABCDE       ABCDE
+  ///01*----      1*----
+  ///02-*---  or  2-*---
+  ///03--*--      3--*--
+  ///04---*-      4---*-
+  public var debugDescription: String {
+    var retval: String = ""
+    var index: RawValue = 1
+    let current: RawValue = self.rawValue
+    let fileRange = (1..<(self.fileWidth + 1))
+    let rankRange = (1..<(self.rankWidth + 1))
+
+    // " ABCDE..."
+    retval += space_padding;
+    fileRange.forEach { retval += String(UnicodeScalar(64 + $0)!) };  retval += "\n";
+    rankRange.forEach { (r) in
+      retval += zeroPadding_fileWidthformat(rank: r)
+      fileRange.forEach { (f) in
+        retval += (current & index) > 0 ? "*" : "-"
+        index <<= 1
+      }
+      if r != self.rankWidth { retval += "\n"; }
+    }
+
+    return retval
   }
 }
