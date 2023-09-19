@@ -18,8 +18,22 @@ public struct Bitboard<Configuration: BitboardConfiguration>: Bitboardable {
 
 
 // MARK: Bitboardable
-public extension Bitboard {
-
+extension Bitboard {
+  public static prefix func ~ (arg: Self) -> Self {
+    return Self(rawValue: ~arg.rawValue)
+  }
+  public static func & (_ lhs: Self,  _ rhs: Self) -> Self {
+    return Self(rawValue: lhs.rawValue & rhs.rawValue)
+  }
+  public static func | (_ lhs: Self, _ rhs: Self) -> Self {
+    return Self(rawValue: lhs.rawValue | rhs.rawValue)
+  }
+  public static func ^ (_ lhs: Self, _ rhs: Self) -> Self {
+    return Self(rawValue: lhs.rawValue ^ rhs.rawValue)
+  }
+  public static func == (_ lhs: Self, _ rhs: Self) -> Bool {
+    return lhs.rawValue == rhs.rawValue && lhs.fileWidth == rhs.fileWidth && lhs.rankWidth == rhs.rankWidth
+  }
 }
 
 

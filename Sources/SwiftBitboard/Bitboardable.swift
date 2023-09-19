@@ -13,21 +13,101 @@ public protocol Bitboardable: FixedSizeable, Comparable, Hashable, Equatable whe
   
   func clone(rawValue: RawValue?) -> Self
   
-//  func bitscan(forFile file: Int) -> Bool
-//  func bitscan(forRank rank: Int) -> Bool
-//  func bitscan(forFile file: Int, forRank rank: Int) -> Bool
-//  mutating func bitset(forFile file: Int) -> Bool
-//  mutating func bitset(forRank rank: Int) -> Bool
-//  mutating func bitset(forFile file: Int, forRank rank: Int) -> Bool
-//  mutating func bitunset(forFile file: Int) -> Bool
-//  mutating func bitunset(forRank rank: Int) -> Bool
-//  mutating func bitunset(forFile file: Int, forRank rank: Int) -> Bool
-//  mutating func rotate(_ digree: Digree) -> Bool
-//  mutating func mirror(_ mirror: Mirror) -> Bool
-//  static prefix func ~ (arg: Self) -> Self
-//  static func & (_ lhs: Self,  _ rhs: Self) -> Self
-//  static func | (_ lhs: Self, _ rhs: Self) -> Self
-//  static func ^ (_ lhs: Self, _ rhs: Self) -> Self
+  func bitscan(forFile file: Int) -> Bool
+  func bitscan(forRank rank: Int) -> Bool
+  func bitscan(forFile file: Int, forRank rank: Int) -> Bool
+  
+  static prefix func ~ (arg: Self) -> Self
+  static func & (_ lhs: Self,  _ rhs: Self) -> Self
+  static func | (_ lhs: Self, _ rhs: Self) -> Self
+  static func ^ (_ lhs: Self, _ rhs: Self) -> Self
+  static func == (_ lhs: Self,  _ rhs: Self) -> Bool
 //  static func << (lhs: Self, reg: Digree) -> Self
 //  static func >> (lhs: Self, reg: Digree) -> Self
+}
+
+extension Bitboard {
+
+
+
+  /// - Parameter file: <#file description#>
+  public func bitscan(forFile file: Int) -> Bool {
+    return (self.rawValue & mask(forFile: file)) > 0
+  }
+  /// - Parameter rank: <#file description#>
+  public func bitscan(forRank rank: Int) -> Bool {
+    return (self.rawValue & mask(forRank: rank)) > 0
+  }
+  /// - Parameters:
+  ///   - file: <#file description#>
+  ///   - rank: <#rank description#>
+  public func bitscan(forFile file: Int, forRank rank: Int) -> Bool {
+    return self.rawValue & mask(forFile: file, forRank: rank) > 0
+  }
+
+
+
+  /// - Parameter file: <#file description#>
+  public mutating func bitset(forFile file: Int) {
+    self.rawValue |= mask(forFile: file)
+  }
+  /// - Parameter rank: <#rank description#>
+  public mutating func bitset(forRank rank: Int) {
+    self.rawValue |= mask(forRank: rank)
+  }
+  /// - Parameters:
+  ///   - file: <#file description#>
+  ///   - rank: <#rank description#>
+  public mutating func bitset(forFile file: Int, forRank rank: Int) {
+    self.rawValue |= mask(forFile: file, forRank: rank)
+  }
+
+
+
+  /// - Parameter file: <#file description#>
+  public mutating func bitunset(forFile file: Int) {
+    self.rawValue &= ~mask(forFile: file)
+  }
+  /// - Parameter rank: <#rank description#>
+  public mutating func bitunset(forRank rank: Int) {
+    self.rawValue &= ~mask(forRank: rank)
+  }
+  /// - Parameters:
+  ///   - file: <#file description#>
+  ///   - rank: <#rank description#>
+  public mutating func bitunset(forFile file: Int, forRank rank: Int) {
+    self.rawValue &= ~mask(forFile: file, forRank: rank)
+  }
+
+
+
+  public mutating func rotate(_ digree: Digree) {
+    // bitwidth が 2^n の場合しか処理をできない
+    guard self.isBitWidthPowerOfTwo && self.square else {
+        return
+    }
+
+    guard digree == .deg0 || digree == .deg180 || digree == .deg360 else {
+        return
+    }
+
+    let rotate_count = digree.rawValue / 180
+
+    var next: Self.RawValue = self.rawValue
+    for _ in 0..<rotate_count {
+        next = rotate180(fileWidth: self.fileWidth, rankWidth: self.rankWidth, rawValue: next)
+
+        /// bitboardはSelf.RawValueの一部しか使っていないが、getBitRotate90ではSelf.RawValue全体を回転させている
+        /// ので回転させた後で値の先頭をbitboardの先頭になるように辻褄を合わせる必要がある。
+        let shift: Int = Self.RawValue.bitWidth - (self.rankWidth * (self.fileWidth - 1) + self.fileWidth)
+        next = Self.RawValue(next) >> shift
+    }
+    self.rawValue = next
+  }
+  
+  
+  
+  public mutating func mirror(_ mirror: Mirror) {
+    return
+  }
 }

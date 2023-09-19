@@ -6,26 +6,6 @@ swiftのお勉強用
 ./Scripts/run-gyb.bash
 ```
 
-## function
-- [x] `bitscan`
-- [x] `bitset`
-- [x] `bitunset`
-- [ ] `mirror`
-- [ ] `rotate90`
-- [x] `rotate180`
-- [x] `popcount(nonzeroBitCount)`
-- [x] `poppoint`
-
-
-## operator
-- [x] `==`
-- [x] `<`, `>`, `<=`, `>=`
-- [x] `&`
-- [x] `|`
-- [x] `^`
-- [x] `~`
-
-
 ## Package manager
 
 - [x] Swift Package Manager

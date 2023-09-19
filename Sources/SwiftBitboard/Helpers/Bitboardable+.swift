@@ -22,6 +22,25 @@ extension Bitboardable {
   var isBitWidthPowerOfTwo: Bool {
     RawValue.bitWidth.nonzeroBitCount == 1
   }
+  
+  func mask(forFile file: Int) -> RawValue {
+    let f: RawValue = 1 << (file - 1)
+    var mask: RawValue = 0
+    for i in 0..<self.rankWidth {
+        mask |= (f << (self.rankWidth * i))
+    }
+    return mask
+  }
+  
+  func mask(forRank rank: Int) -> RawValue {
+    let line: RawValue = ~(RawValue.max << self.fileWidth)
+    return line << ((rank - 1) * self.fileWidth)
+  }
+  
+  func mask(forFile file: Int, forRank rank: Int) -> RawValue {
+    let bit: RawValue = 1
+    return bit << ((file - 1) + ((rank - 1) * self.fileWidth))
+  }
 
   ///
   func rotate180 (fileWidth: Int, rankWidth: Int, rawValue: RawValue) -> Self.RawValue {
