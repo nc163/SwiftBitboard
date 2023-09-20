@@ -38,7 +38,7 @@ extension Bitboard {
 
 
 // MARK: FixedSizeable
-extension Bitboard where Self: FixedSizeable {
+extension Bitboard: FixedSizeable {
   
   public static var fileRange: ClosedRange<Int> {
     return 1...Configuration.fileWidth
