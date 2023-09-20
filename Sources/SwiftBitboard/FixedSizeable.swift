@@ -24,6 +24,10 @@ public extension FixedSizeable {
     self.fileWidth == self.rankWidth
   }
   
+  func inside(point: any Pointable) -> Bool {
+    return self.fileRange.contains(point.file) && self.rankRange.contains(point.rank)
+  }
+  
   // 2点が垂直の直線上にあるか  
   func arePointsVertical(_ point1: Point, _ point2: Point) -> Bool {
     return point1.file == point2.file

@@ -40,7 +40,21 @@ extension Bitboard {
 // MARK: FixedSizeable
 extension Bitboard where Self: FixedSizeable {
   
+  public static var fileRange: ClosedRange<Int> {
+    return 1...Configuration.fileWidth
+  }
 
+  public static var rankRange: ClosedRange<Int> {
+    return 1...Configuration.rankWidth
+  }
+  
+  public var square: Bool {
+    Configuration.fileWidth == Configuration.rankWidth
+  }
+  
+  public func inside(point: any Pointable) -> Bool {
+    return Self.fileRange.contains(point.file) && Self.rankRange.contains(point.rank)
+  }
 }
 
 
