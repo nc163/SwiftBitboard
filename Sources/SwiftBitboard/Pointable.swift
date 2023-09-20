@@ -17,6 +17,10 @@ extension Pointable {
     .init(file: self.file, rank: self.rank + rank)
   }
   
+  public mutating func move_to<Point :Pointable>(file: Int, rank: Int) -> Point {
+    .init(file: self.file + file, rank: self.rank + rank)
+  }
+  
   public mutating func move_to<Point :Pointable>(point: any Pointable) -> Point {
     .init(file: self.file + point.file, rank: self.rank + point.rank)
   }
