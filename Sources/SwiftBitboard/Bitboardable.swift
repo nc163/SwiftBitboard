@@ -7,7 +7,7 @@ public protocol Bitboardable: FixedSizeable, Comparable, Hashable, Equatable whe
 
   var fileWidth: Int { get }
   var rankWidth: Int { get }
-  var rawValue: RawValue { get }
+  var rawValue: RawValue { set get }
   
   init(rawValue: RawValue)
   
@@ -26,7 +26,7 @@ public protocol Bitboardable: FixedSizeable, Comparable, Hashable, Equatable whe
 //  static func >> (lhs: Self, reg: Digree) -> Self
 }
 
-extension Bitboard {
+extension Bitboardable {
 
 
 
