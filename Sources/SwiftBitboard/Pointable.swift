@@ -1,6 +1,6 @@
 import Foundation
 
-public protocol Pointable: Equatable, Comparable {
+public protocol Pointable: Equatable, Comparable, Hashable {
   var file: Int { get }
   var rank: Int { get }
 }
