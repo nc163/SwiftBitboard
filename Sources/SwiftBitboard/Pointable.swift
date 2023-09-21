@@ -9,19 +9,19 @@ public protocol Pointable: Equatable, Comparable, Hashable {
 
 extension Pointable {
   
-  public mutating func move_to<Point :Pointable>(file: Int) -> Point {
+  public mutating func move_to(file: Int) -> Self {
     .init(file: self.file + file, rank: self.rank)
   }
   
-  public mutating func move_to<Point :Pointable>(rank: Int) -> Point {
+  public mutating func move_to(rank: Int) -> Self {
     .init(file: self.file, rank: self.rank + rank)
   }
   
-  public mutating func move_to<Point :Pointable>(file: Int, rank: Int) -> Point {
+  public mutating func move_to(file: Int, rank: Int) -> Self {
     .init(file: self.file + file, rank: self.rank + rank)
   }
   
-  public mutating func move_to<Point :Pointable>(point: any Pointable) -> Point {
+  public mutating func move_to(point: any Pointable) -> Self {
     .init(file: self.file + point.file, rank: self.rank + point.rank)
   }
   
