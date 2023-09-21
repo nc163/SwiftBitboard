@@ -52,7 +52,7 @@ extension Bitboard: FixedSizeable {
     Configuration.fileWidth == Configuration.rankWidth
   }
   
-  public static func Inside(point: any Pointable) -> Bool {
+  public static func Inside(point: any CoordinaterePresentable) -> Bool {
     return Self.FileRange.contains(point.file) && Self.RankRange.contains(point.rank)
   }
 }

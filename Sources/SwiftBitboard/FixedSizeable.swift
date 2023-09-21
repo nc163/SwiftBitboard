@@ -24,7 +24,7 @@ public extension FixedSizeable {
     self.fileWidth == self.rankWidth
   }
   
-  func inside(point: any Pointable) -> Bool {
+  func inside(point: any CoordinaterePresentable) -> Bool {
     return self.fileRange.contains(point.file) && self.rankRange.contains(point.rank)
   }
   

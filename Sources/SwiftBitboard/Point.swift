@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Point: Pointable {
+public struct Point: CoordinaterePresentable {
   public var file: Int 
   public var rank: Int
   

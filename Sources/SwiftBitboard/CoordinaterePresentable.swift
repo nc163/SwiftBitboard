@@ -1,13 +1,13 @@
 import Foundation
 
-public protocol Pointable: Equatable, Comparable, Hashable {
+public protocol CoordinaterePresentable: Equatable, Comparable, Hashable {
   var file: Int { get }
   var rank: Int { get }
   
   init(file: Int, rank: Int)
 }
 
-extension Pointable {
+extension CoordinaterePresentable {
   
   public mutating func move_to(file: Int) -> Self {
     .init(file: self.file + file, rank: self.rank)
@@ -21,7 +21,7 @@ extension Pointable {
     .init(file: self.file + file, rank: self.rank + rank)
   }
   
-  public mutating func move_to(point: any Pointable) -> Self {
+  public mutating func move_to(point: any CoordinaterePresentable) -> Self {
     .init(file: self.file + point.file, rank: self.rank + point.rank)
   }
   
@@ -31,7 +31,7 @@ extension Pointable {
 }
 
 // MARK: Comparable
-extension Pointable {
+extension CoordinaterePresentable {
   public static func <(lhs: Self, rhs: Self) -> Bool {
     if lhs.file != rhs.file {
       return lhs.file < rhs.file
