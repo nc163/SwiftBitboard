@@ -4,7 +4,7 @@ public struct Point: CoordinaterePresentable {
   public var file: Int 
   public var rank: Int
   
-  public init(file: Int, rank: Int) {
+  public init(file: Int = 0, rank: Int = 0) {
     self.file = file
     self.rank = rank
   }

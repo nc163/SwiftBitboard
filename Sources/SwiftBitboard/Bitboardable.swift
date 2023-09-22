@@ -13,10 +13,6 @@ public protocol Bitboardable: FixedSizeable, Comparable, Hashable, Equatable whe
   
   func clone(rawValue: RawValue?) -> Self
   
-  func bitscan(forFile file: Int) -> Bool
-  func bitscan(forRank rank: Int) -> Bool
-  func bitscan(forFile file: Int, forRank rank: Int) -> Bool
-  
   static prefix func ~ (arg: Self) -> Self
   static func & (_ lhs: Self,  _ rhs: Self) -> Self
   static func | (_ lhs: Self, _ rhs: Self) -> Self
@@ -30,14 +26,6 @@ extension Bitboardable {
 
 
 
-  /// - Parameter file: <#file description#>
-  public func bitscan(forFile file: Int) -> Bool {
-    return (self.rawValue & mask(forFile: file)) > 0
-  }
-  /// - Parameter rank: <#file description#>
-  public func bitscan(forRank rank: Int) -> Bool {
-    return (self.rawValue & mask(forRank: rank)) > 0
-  }
   /// - Parameters:
   ///   - file: <#file description#>
   ///   - rank: <#rank description#>
@@ -45,16 +33,6 @@ extension Bitboardable {
     return self.rawValue & mask(forFile: file, forRank: rank) > 0
   }
 
-
-
-  /// - Parameter file: <#file description#>
-  public mutating func bitset(forFile file: Int) {
-    self.rawValue |= mask(forFile: file)
-  }
-  /// - Parameter rank: <#rank description#>
-  public mutating func bitset(forRank rank: Int) {
-    self.rawValue |= mask(forRank: rank)
-  }
   /// - Parameters:
   ///   - file: <#file description#>
   ///   - rank: <#rank description#>
@@ -62,16 +40,6 @@ extension Bitboardable {
     self.rawValue |= mask(forFile: file, forRank: rank)
   }
 
-
-
-  /// - Parameter file: <#file description#>
-  public mutating func bitunset(forFile file: Int) {
-    self.rawValue &= ~mask(forFile: file)
-  }
-  /// - Parameter rank: <#rank description#>
-  public mutating func bitunset(forRank rank: Int) {
-    self.rawValue &= ~mask(forRank: rank)
-  }
   /// - Parameters:
   ///   - file: <#file description#>
   ///   - rank: <#rank description#>

@@ -2,6 +2,7 @@
 public struct Bitboard<Configuration: BitboardConfiguration>: Bitboardable {
   
   public typealias RawValue = Configuration.RawValue
+  public typealias Index    = Point
   
   public var rawValue: RawValue
   public var fileWidth: Int { Configuration.fileWidth }
@@ -19,18 +20,23 @@ public struct Bitboard<Configuration: BitboardConfiguration>: Bitboardable {
 
 // MARK: Bitboardable
 extension Bitboard {
+  
   public static prefix func ~ (arg: Self) -> Self {
     return Self(rawValue: ~arg.rawValue)
   }
+  
   public static func & (_ lhs: Self,  _ rhs: Self) -> Self {
     return Self(rawValue: lhs.rawValue & rhs.rawValue)
   }
+  
   public static func | (_ lhs: Self, _ rhs: Self) -> Self {
     return Self(rawValue: lhs.rawValue | rhs.rawValue)
   }
+  
   public static func ^ (_ lhs: Self, _ rhs: Self) -> Self {
     return Self(rawValue: lhs.rawValue ^ rhs.rawValue)
   }
+  
   public static func == (_ lhs: Self, _ rhs: Self) -> Bool {
     return lhs.rawValue == rhs.rawValue && lhs.fileWidth == rhs.fileWidth && lhs.rankWidth == rhs.rankWidth
   }
@@ -40,12 +46,27 @@ extension Bitboard {
 // MARK: FixedSizeable
 extension Bitboard: FixedSizeable {
   
+  public mutating func set_(point: any CoordinaterePresentable) {
+    self.bitset(forFile: point.file, forRank: point.rank)
+  }
+  
+  public mutating func unset_(point: any CoordinaterePresentable) {
+    self.bitunset(forFile: point.file, forRank: point.rank)
+  }
+  
+  public mutating func mapping(points: any CoordinaterePresentable...) {
+    for point in points {
+      self.bitset(forFile: point.file, forRank: point.rank)
+    }
+  }
+  
+  
   public static var FileRange: ClosedRange<Int> {
-    return 1...Configuration.fileWidth
+    return 0...Configuration.fileWidth
   }
 
   public static var RankRange: ClosedRange<Int> {
-    return 1...Configuration.rankWidth
+    return 0...Configuration.rankWidth
   }
   
   public static var Square: Bool {
@@ -64,10 +85,10 @@ extension Bitboard: Collection {
   public subscript(file: Int, rank: Int) -> Bool {
     self.bitscan(forFile: file, forRank: rank)
   }
-  
+
   public subscript(range: Range<Point>) -> Slice<Bitboard<Configuration>> {
     return .init(base: self, bounds: range)
-  } 
+  }
 }
 
 

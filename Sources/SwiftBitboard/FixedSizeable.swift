@@ -1,30 +1,35 @@
 import Foundation
 
-public protocol FixedSizeable: Collection where Index == Point {
+public protocol FixedSizeable: Collection where Index: CoordinaterePresentable {
   
   associatedtype Element
+  associatedtype Index
   
   subscript(file: Int, rank: Int) -> Element { get }
   
   var fileWidth: Int { get }
   var rankWidth: Int { get }
+  
+  mutating func set_(point: any CoordinaterePresentable)
+  mutating func unset_(point: any CoordinaterePresentable)
+  mutating func mapping(points: any CoordinaterePresentable...)
 }
 
 public extension FixedSizeable {
   
   var fileRange: ClosedRange<Int> {
-    return 1...self.fileWidth
+    return 0...self.fileWidth
   }
 
   var rankRange: ClosedRange<Int> {
-    return 1...self.rankWidth
+    return 0...self.rankWidth
   }
   
   var square: Bool {
     self.fileWidth == self.rankWidth
   }
   
-  func inside(point: any CoordinaterePresentable) -> Bool {
+  func contains(point: any CoordinaterePresentable) -> Bool {
     return self.fileRange.contains(point.file) && self.rankRange.contains(point.rank)
   }
   
@@ -46,17 +51,18 @@ public extension FixedSizeable {
   }
 }
 
+
 // MARK: Collection
 extension FixedSizeable {
   
-  public var startIndex: Point { .init(file: 0, rank: 0) }
-  public var endIndex: Point { .init(file: self.fileWidth, rank: self.rankWidth) }
+  public var startIndex: Index { .init(file: 0, rank: 0) }
+  public var endIndex: Index { .init(file: self.fileWidth, rank: self.rankWidth) }
   
-  public subscript(position: Point) -> Element {
+  public subscript(position: Index) -> Element {
     return self[position.file, position.rank]
   }
   
-  public func index(after i: Point) -> Index {
+  public func index(after i: Index) -> Index {
     if i.rank < rankWidth - 1 {
       return .init(file: i.file, rank: i.rank + 1)
     } else if i.file < fileWidth - 1 {
