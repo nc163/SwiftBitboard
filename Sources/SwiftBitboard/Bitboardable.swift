@@ -10,6 +10,7 @@ public protocol Bitboardable: FixedSizeable, Comparable, Hashable, Equatable whe
   var rawValue: RawValue { set get }
   
   init(rawValue: RawValue)
+  init(indexes: Index...)
   
   func clone(rawValue: RawValue?) -> Self
   
@@ -72,8 +73,6 @@ extension Bitboardable {
     }
     self.rawValue = next
   }
-  
-  
   
   public mutating func mirror(_ mirror: Mirror) {
     return

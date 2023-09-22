@@ -10,9 +10,9 @@ public protocol FixedSizeable: Collection where Index: CoordinaterePresentable {
   var fileWidth: Int { get }
   var rankWidth: Int { get }
   
-  mutating func set_(point: any CoordinaterePresentable)
-  mutating func unset_(point: any CoordinaterePresentable)
-  mutating func mapping(points: any CoordinaterePresentable...)
+  mutating func set_index(_ index: Index)
+  mutating func unset_index(_ index: Index)
+  mutating func mapping_indexes(_ indexes: Index...)
 }
 
 public extension FixedSizeable {
@@ -31,6 +31,19 @@ public extension FixedSizeable {
   
   func contains(point: any CoordinaterePresentable) -> Bool {
     return self.fileRange.contains(point.file) && self.rankRange.contains(point.rank)
+  }
+  
+  /// 全ての座標を返す
+  func to_indexes() -> [Index] {
+      var indexes: [Index] = []
+      var currentIndex = startIndex
+      
+      while currentIndex < endIndex {
+          indexes.append(currentIndex)
+          currentIndex = index(after: currentIndex)
+      }
+      
+      return indexes
   }
   
   // 2点が垂直の直線上にあるか  

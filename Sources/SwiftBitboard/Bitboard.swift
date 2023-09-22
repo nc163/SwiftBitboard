@@ -11,6 +11,12 @@ public struct Bitboard<Configuration: BitboardConfiguration>: Bitboardable {
   public init(rawValue: RawValue = .zero) {
     self.rawValue  = rawValue
   }
+  public init(indexes: Index...) {
+    self.rawValue = .zero
+    for i in indexes {
+      self.set_index(i)
+    }
+  }
     
   public func clone(rawValue: RawValue? = nil) -> Self {
     .init(rawValue: rawValue ?? self.rawValue)
@@ -46,17 +52,17 @@ extension Bitboard {
 // MARK: FixedSizeable
 extension Bitboard: FixedSizeable {
   
-  public mutating func set_(point: any CoordinaterePresentable) {
-    self.bitset(forFile: point.file, forRank: point.rank)
+  public mutating func set_index(_ index: Index) {
+    self.bitset(forFile: index.file, forRank: index.rank)
   }
   
-  public mutating func unset_(point: any CoordinaterePresentable) {
-    self.bitunset(forFile: point.file, forRank: point.rank)
+  public mutating func unset_index(_ index: Index) {
+    self.bitunset(forFile: index.file, forRank: index.rank)
   }
   
-  public mutating func mapping(points: any CoordinaterePresentable...) {
-    for point in points {
-      self.bitset(forFile: point.file, forRank: point.rank)
+  public mutating func mapping_indexes(_ indexes: Index...) {
+    for index in indexes {
+      self.bitset(forFile: index.file, forRank: index.rank)
     }
   }
   
