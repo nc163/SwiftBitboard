@@ -8,14 +8,6 @@ public struct Movable: VectorPresentable {
 
   private (set) public var file: Int
   private (set) public var rank: Int
-//
-//  public var flip_vertically: Movable {
-//    return .init(file: -self.file, rank: self.rank, infinity)
-//  }
-//
-//  public var flip_horizontally: Movable {
-//    return .init(file: self.file, rank: -self.rank, infinity)
-//  }
   
   public init(file: Int, rank: Int, _ infinity: Bool = false) {
       self.file = file
