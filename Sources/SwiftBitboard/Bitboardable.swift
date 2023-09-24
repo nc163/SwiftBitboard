@@ -47,6 +47,19 @@ extension Bitboardable {
   public mutating func bitunset(forFile file: Int, forRank rank: Int) {
     self.rawValue &= ~mask(forFile: file, forRank: rank)
   }
+  
+  public mutating func bitset(point: any CoordinaterePresentable) {
+    self.rawValue |= mask(forFile: point.file, forRank: point.rank)
+  }
+  
+  public mutating func bitunset(point: any CoordinaterePresentable) {
+    self.rawValue &= ~mask(forFile: point.file, forRank: point.rank)
+  }
+  
+  public mutating func bitmove(move: any MovePresentable) {
+    self.rawValue &= ~mask(forFile: move.from.file, forRank: move.from.rank)
+    self.rawValue |= mask(forFile: move.to.file, forRank: move.to.rank)
+  }
 
 
 

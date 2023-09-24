@@ -1,20 +1,21 @@
 import Foundation
 
-// 移動方向を示す
+// 移動可能方向を示す
 public struct Movable: VectorPresentable {
   
   // 飛び道具
   public let infinity: Bool
+
   private (set) public var file: Int
   private (set) public var rank: Int
-  
-  public var flip_vertically: Movable {
-    return .init(file: -self.file, rank: self.rank, infinity)
-  }
-  
-  public var flip_horizontally: Movable {
-    return .init(file: self.file, rank: -self.rank, infinity)
-  }
+//
+//  public var flip_vertically: Movable {
+//    return .init(file: -self.file, rank: self.rank, infinity)
+//  }
+//
+//  public var flip_horizontally: Movable {
+//    return .init(file: self.file, rank: -self.rank, infinity)
+//  }
   
   public init(file: Int, rank: Int, _ infinity: Bool = false) {
       self.file = file
