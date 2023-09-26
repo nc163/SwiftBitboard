@@ -66,13 +66,14 @@ extension Bitboard: FixedSizeable {
     }
   }
   
-  
+  /// <#Description#>
   public static var FileRange: ClosedRange<Int> {
-    return 0...Configuration.fileWidth
+    return 0...(Configuration.fileWidth - 1)
   }
-
+  
+  /// <#Description#>
   public static var RankRange: ClosedRange<Int> {
-    return 0...Configuration.rankWidth
+    return 0...(Configuration.rankWidth - 1)
   }
   
   public static var Square: Bool {
