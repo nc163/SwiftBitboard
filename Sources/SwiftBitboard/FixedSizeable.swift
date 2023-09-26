@@ -17,12 +17,14 @@ public protocol FixedSizeable: Collection where Index: CoordinaterePresentable {
 
 public extension FixedSizeable {
   
+  /// 列（横）の数
   var fileRange: ClosedRange<Int> {
-    return 0...self.fileWidth
+    return 0...(self.fileWidth - 1)
   }
 
+  /// 行（縦）の数
   var rankRange: ClosedRange<Int> {
-    return 0...self.rankWidth
+    return 0...(self.rankWidth - 1)
   }
   
   var square: Bool {
