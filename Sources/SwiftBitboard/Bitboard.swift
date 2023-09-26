@@ -14,7 +14,7 @@ public struct Bitboard<Configuration: BitboardConfiguration>: Bitboardable {
   public init(indexes: Index...) {
     self.rawValue = .zero
     for i in indexes {
-      self.set_index(i)
+      self.bitset(point: i)
     }
   }
     
@@ -52,19 +52,19 @@ extension Bitboard {
 // MARK: FixedSizeable
 extension Bitboard: FixedSizeable {
   
-  public mutating func set_index(_ index: Index) {
-    self.bitset(forFile: index.file, forRank: index.rank)
-  }
-  
-  public mutating func unset_index(_ index: Index) {
-    self.bitunset(forFile: index.file, forRank: index.rank)
-  }
-  
-  public mutating func mapping_indexes(_ indexes: Index...) {
-    for index in indexes {
-      self.bitset(forFile: index.file, forRank: index.rank)
-    }
-  }
+//  public mutating func set_index(_ index: Index) {
+//    self.bitset(forFile: index.file, forRank: index.rank)
+//  }
+//  
+//  public mutating func unset_index(_ index: Index) {
+//    self.bitunset(forFile: index.file, forRank: index.rank)
+//  }
+//  
+//  public mutating func mapping_indexes(_ indexes: Index...) {
+//    for index in indexes {
+//      self.bitset(forFile: index.file, forRank: index.rank)
+//    }
+//  }
   
   /// <#Description#>
   public static var FileRange: ClosedRange<Int> {

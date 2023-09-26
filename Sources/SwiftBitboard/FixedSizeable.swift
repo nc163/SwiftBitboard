@@ -10,9 +10,9 @@ public protocol FixedSizeable: Collection where Index: CoordinaterePresentable {
   var fileWidth: Int { get }
   var rankWidth: Int { get }
   
-  mutating func set_index(_ index: Index)
-  mutating func unset_index(_ index: Index)
-  mutating func mapping_indexes(_ indexes: Index...)
+//  mutating func set_index(_ index: Index)
+//  mutating func unset_index(_ index: Index)
+//  mutating func mapping_indexes(_ indexes: Index...)
 }
 
 public extension FixedSizeable {
