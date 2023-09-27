@@ -51,6 +51,13 @@ extension Bitboard {
 
 // MARK: FixedSizeable
 extension Bitboard: FixedSizeable {
+  public typealias Element = Bool
+  
+  public subscript(file: Int, rank: Int) -> Element {
+    true
+  }
+  
+  
   
 //  public mutating func set_index(_ index: Index) {
 //    self.bitset(forFile: index.file, forRank: index.rank)
@@ -86,17 +93,17 @@ extension Bitboard: FixedSizeable {
 }
 
 
-// MARK: Collection
-extension Bitboard: Collection {
-  
-  public subscript(file: Int, rank: Int) -> Bool {
-    self.bitscan(forFile: file, forRank: rank)
-  }
-
-  public subscript(range: Range<Point>) -> Slice<Bitboard<Configuration>> {
-    return .init(base: self, bounds: range)
-  }
-}
+//// MARK: Collection
+//extension Bitboard: Collection {
+//  
+//  public subscript(file: Int, rank: Int) -> Bool {
+//    self.bitscan(forFile: file, forRank: rank)
+//  }
+//
+//  public subscript(range: Range<Point>) -> Slice<Bitboard<Configuration>> {
+//    return .init(base: self, bounds: range)
+//  }
+//}
 
 
 // MARK: Compareble
@@ -166,15 +173,13 @@ extension Bitboard: CustomDebugStringConvertible {
     var retval: String = ""
     var index: RawValue = 1
     let current: RawValue = self.rawValue
-    let fileRange = (1..<(self.fileWidth + 1))
-    let rankRange = (1..<(self.rankWidth + 1))
 
     // " ABCDE..."
     retval += space_padding;
-    fileRange.forEach { retval += String(UnicodeScalar(64 + $0)!) };  retval += "\n";
-    rankRange.forEach { (r) in
+    self.fileRange.forEach { retval += String(UnicodeScalar(64 + $0)!) };  retval += "\n";
+    self.rankRange.forEach { (r) in
       retval += zeroPadding_fileWidthformat(rank: r)
-      fileRange.forEach { (f) in
+      self.fileRange.forEach { (f) in
         retval += (current & index) > 0 ? "*" : "-"
         index <<= 1
       }

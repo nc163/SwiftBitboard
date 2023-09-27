@@ -1,16 +1,19 @@
 import Foundation
 
-public protocol Bitboardable: FixedSizeable, Comparable, Hashable, Equatable where Element == Bool {
-
+public protocol Bitboardable: FixedSizeable, Comparable, Hashable, Equatable 
+  where Index     == Point,
+        Element   == Bool,
+        Iterator  == FixedSizeableIterator<Self> {
+  
   // e.g. UInt8, UInt16, UInt32, UInt64 etc
   associatedtype RawValue: FixedWidthInteger & UnsignedInteger
-
+  
   var fileWidth: Int { get }
   var rankWidth: Int { get }
   var rawValue: RawValue { set get }
   
   init(rawValue: RawValue)
-  init(indexes: Index...)
+//  init(indexes: Index...)
   
   func clone(rawValue: RawValue?) -> Self
   
@@ -64,12 +67,9 @@ extension Bitboardable {
 
 
   public mutating func rotate(_ digree: Digree) {
-    // bitwidth が 2^n の場合しか処理をできない
-    guard self.isBitWidthPowerOfTwo && self.square else {
-        return
-    }
-
-    guard digree == .deg0 || digree == .deg180 || digree == .deg360 else {
+    let isPowerOfTwoAndSquare     = self.isBitWidthPowerOfTwo && self.square
+    let supportedDigree: [Digree] = [.dig0, .dig180, .dig360]
+    guard isPowerOfTwoAndSquare && supportedDigree.contains(digree) else {
         return
     }
 
