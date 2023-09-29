@@ -1,4 +1,4 @@
-import SwiftBitboard
+@testable import SwiftBitboard
 import XCTest
 
 extension BitboardTests {
@@ -39,19 +39,16 @@ extension BitboardTests {
     var bitboard = Bitboard9x9.init()
     let coordinates = [
       Coordinate.init(file: 1, rank:1),
-//      Coordinate.init(file: 5, rank:5),
-//      Coordinate.init(file: 8, rank:8)
+      Coordinate.init(file: 9, rank:9)
     ]
     for coordinate in coordinates {
-      print(coordinate)
       bitboard.bitset(coordinate)
     }
     
-    bitboard.forEach { point in
-      print("____ \(point)")
+    bitboard.makeIterator().enumerated().filter { $0.element == true }.forEach { value in
+      let coordinate = Bitboard9x9.index_to_coordinate(index: value.offset)
+      XCTAssertTrue(coordinates.contains(coordinate))
+      XCTAssertTrue(value.element)
     }
-    
-//    XCTAssertTrue(bitboard1.is_square)
-//    XCTAssertFalse(bitboard2.is_square)
   }
 }

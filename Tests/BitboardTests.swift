@@ -1,5 +1,5 @@
 import XCTest
-import SwiftBitboard
+@testable import SwiftBitboard
 
 class BitboardTests: XCTestCase {
 }

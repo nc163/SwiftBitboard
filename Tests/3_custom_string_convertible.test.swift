@@ -1,4 +1,4 @@
-import SwiftBitboard
+@testable import SwiftBitboard
 import XCTest
 
 extension BitboardTests {

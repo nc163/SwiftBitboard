@@ -56,7 +56,9 @@ extension Bitboard {
 // MARK: FixedSizeable
 extension Bitboard: FixedSizeable {
   
-  public typealias Element = Bool
+  public func makeIterator() -> Iterator {
+    .init(self)
+  }
   
 }
 
@@ -91,23 +93,6 @@ extension Bitboard: LosslessStringConvertible {
       }
       index += 1
     }
-//    
-//    for line in lines {
-//      guard line.count == Self.fileWidth else { return nil }
-//      
-//      for char in line {
-//        index += 1
-//        switch char {
-//        case "*":
-//          let coordinate = Self.index_to_coordinate(index: index)
-//          coordinates.append(coordinate)
-//        case "-":
-//          continue // noop
-//        default:
-//          return nil
-//        }
-//      }
-//    }
     self.init(coordinates: coordinates)
   }
 }

@@ -8,12 +8,6 @@ public protocol Coordinater: Equatable, Comparable, Hashable {
   init(file: Int, rank: Int)
 }
 
-extension Coordinater {
- 
-  public mutating func move_to(point: any VectorPresentable) -> Self {
-    .init(file: self.file + point.file, rank: self.rank + point.rank)
-  }
-}
 
 // MARK: Comparable
 extension Coordinater {

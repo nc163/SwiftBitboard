@@ -2,8 +2,7 @@ import Foundation
 
 public protocol Bitboardable: FixedSizeable, Comparable, Hashable, Equatable 
   where Index     == Coordinate,
-        Element   == Bool,
-        Iterator  == FixedSizeableIterator<Self> {
+        Element   == Bool {
   
   associatedtype Configuration: BitboardConfiguration
   
@@ -67,10 +66,10 @@ extension Bitboardable {
 // MARK: FixedSizeable
 extension Bitboardable {
   
-  public subscript(file: Int, rank: Int) -> Element {
-    self.bittest(forFile: file, forRank: rank)
+  public subscript(coordinate: any Coordinater) -> Bool { 
+    self.bittest(forFile: coordinate.file, forRank: coordinate.rank)
   }
-  
+
   ///
   public var isZeroBasedIndexing: Bool { 
     Configuration.isZeroBasedIndexing 

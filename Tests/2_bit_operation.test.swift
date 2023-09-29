@@ -1,4 +1,4 @@
-import SwiftBitboard
+@testable import SwiftBitboard
 import XCTest
 
 extension BitboardTests {
@@ -33,7 +33,6 @@ extension BitboardTests {
     let results = bitboard.bitscan()
     
     for result in results {
-      print(result)
       XCTAssertTrue( coordinates.contains(result), "\(result)" )
     }
   }
