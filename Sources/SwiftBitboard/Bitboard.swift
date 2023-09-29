@@ -2,19 +2,17 @@
 public struct Bitboard<Configuration: BitboardConfiguration>: Bitboardable {
   
   public typealias RawValue = Configuration.RawValue
-  public typealias Index    = Point
+  public typealias Index    = Coordinate
   
   public var rawValue: RawValue
-  public var fileWidth: Int { Configuration.fileWidth }
-  public var rankWidth: Int { Configuration.rankWidth }
 
   public init(rawValue: RawValue = .zero) {
     self.rawValue  = rawValue
   }
-  public init(indexes: Index...) {
+  public init(coordinates: Array<Index>) {
     self.rawValue = .zero
-    for i in indexes {
-      self.bitset(point: i)
+    for i in coordinates {
+      self.bitset(forFile: i.file, forRank: i.rank)
     }
   }
     
@@ -23,6 +21,13 @@ public struct Bitboard<Configuration: BitboardConfiguration>: Bitboardable {
   }
 }
 
+extension Bitboard {
+  
+  public static func Inside(point: any Coordinater) -> Bool {
+    return Self.fileRange.contains(point.file) && Self.rankRange.contains(point.rank)
+  }
+  
+}
 
 // MARK: Bitboardable
 extension Bitboard {
@@ -44,66 +49,17 @@ extension Bitboard {
   }
   
   public static func == (_ lhs: Self, _ rhs: Self) -> Bool {
-    return lhs.rawValue == rhs.rawValue && lhs.fileWidth == rhs.fileWidth && lhs.rankWidth == rhs.rankWidth
+    return lhs.rawValue == rhs.rawValue
   }
 }
-
 
 // MARK: FixedSizeable
 extension Bitboard: FixedSizeable {
+  
   public typealias Element = Bool
   
-  public subscript(file: Int, rank: Int) -> Element {
-    true
-  }
-  
-  
-  
-//  public mutating func set_index(_ index: Index) {
-//    self.bitset(forFile: index.file, forRank: index.rank)
-//  }
-//  
-//  public mutating func unset_index(_ index: Index) {
-//    self.bitunset(forFile: index.file, forRank: index.rank)
-//  }
-//  
-//  public mutating func mapping_indexes(_ indexes: Index...) {
-//    for index in indexes {
-//      self.bitset(forFile: index.file, forRank: index.rank)
-//    }
-//  }
-  
-  /// <#Description#>
-  public static var FileRange: ClosedRange<Int> {
-    return 0...(Configuration.fileWidth - 1)
-  }
-  
-  /// <#Description#>
-  public static var RankRange: ClosedRange<Int> {
-    return 0...(Configuration.rankWidth - 1)
-  }
-  
-  public static var Square: Bool {
-    Configuration.fileWidth == Configuration.rankWidth
-  }
-  
-  public static func Inside(point: any CoordinaterePresentable) -> Bool {
-    return Self.FileRange.contains(point.file) && Self.RankRange.contains(point.rank)
-  }
 }
 
-
-//// MARK: Collection
-//extension Bitboard: Collection {
-//  
-//  public subscript(file: Int, rank: Int) -> Bool {
-//    self.bitscan(forFile: file, forRank: rank)
-//  }
-//
-//  public subscript(range: Range<Point>) -> Slice<Bitboard<Configuration>> {
-//    return .init(base: self, bounds: range)
-//  }
-//}
 
 
 // MARK: Compareble
@@ -111,6 +67,48 @@ extension Bitboard: Comparable {
   
   public static func < (lhs: Self, rhs: Self) -> Bool {
     lhs.rawValue < rhs.rawValue
+  }
+  
+}
+
+
+extension Bitboard: LosslessStringConvertible {
+  
+  public init?(_ description: String) {
+    var index: Int = 0
+    var coordinates: Array<Index> = []
+    
+    let lines = description.split(separator: "\n")
+    let _description_ = description.replacingOccurrences(of: "\n", with: "")
+    
+    guard lines.count == Self.rankWidth else { return nil }
+    guard description.count == (Self.rankWidth * Self.Configuration.fileWidth + (Self.fileWidth - 1)) else { return nil }
+    
+    for text in _description_ {
+      if text == "*" {
+        let coordinate = Self.index_to_coordinate(index: index)
+        coordinates.append(coordinate)
+      }
+      index += 1
+    }
+//    
+//    for line in lines {
+//      guard line.count == Self.fileWidth else { return nil }
+//      
+//      for char in line {
+//        index += 1
+//        switch char {
+//        case "*":
+//          let coordinate = Self.index_to_coordinate(index: index)
+//          coordinates.append(coordinate)
+//        case "-":
+//          continue // noop
+//        default:
+//          return nil
+//        }
+//      }
+//    }
+    self.init(coordinates: coordinates)
   }
 }
 
@@ -128,16 +126,14 @@ extension Bitboard: CustomStringConvertible {
     var retval: String = ""
     var index: RawValue = 1
     let current: RawValue = self.rawValue
-    let fileRange: (Range<Int>) = (1..<(self.fileWidth + 1))
-    let rankRange: (Range<Int>) = (1..<(self.rankWidth + 1))
 
     // " ABCDE..."
-    rankRange.forEach { (r: Range<Int>.Element) in
-      fileRange.forEach { (f: Range<Int>.Element) in
+    Self.rankRange.forEach { (r: Range<Int>.Element) in
+      Self.fileRange.forEach { (f: Range<Int>.Element) in
         retval += (current & index) > 0 ? "*" : "-"
         index <<= 1
       }
-      if r != self.rankWidth { retval += "\n"; }
+      if r != Self.rankWidth { retval += "\n"; }
     }
 
     return retval
@@ -150,7 +146,7 @@ extension Bitboard: CustomDebugStringConvertible {
 
   /// <#Description#>
   private var space_padding: String {
-    return self.rankWidth >= 10 ? "  " : " ";
+    return Self.rankWidth >= 10 ? "  " : " ";
   }
 
   /// 桁数を合わせて０埋めで出力する
@@ -158,7 +154,7 @@ extension Bitboard: CustomDebugStringConvertible {
   /// - Returns: <#description#>
   @inline(__always)
   private func zeroPadding_fileWidthformat (rank: Int) -> String {
-    let format: String = self.rankWidth >= 10 ? "%02d" : "%01d";
+    let format: String = Self.rankWidth >= 10 ? "%02d" : "%01d";
     return String(format: format, rank)
   }
 
@@ -176,14 +172,14 @@ extension Bitboard: CustomDebugStringConvertible {
 
     // " ABCDE..."
     retval += space_padding;
-    self.fileRange.forEach { retval += String(UnicodeScalar(64 + $0)!) };  retval += "\n";
-    self.rankRange.forEach { (r) in
+    Self.fileRange.forEach { retval += String(UnicodeScalar(64 + $0)!) };  retval += "\n";
+    Self.rankRange.forEach { (r) in
       retval += zeroPadding_fileWidthformat(rank: r)
-      self.fileRange.forEach { (f) in
+      Self.fileRange.forEach { (f) in
         retval += (current & index) > 0 ? "*" : "-"
         index <<= 1
       }
-      if r != self.rankWidth { retval += "\n"; }
+      if r != Self.rankWidth { retval += "\n"; }
     }
 
     return retval

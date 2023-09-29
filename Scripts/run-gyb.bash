@@ -9,7 +9,7 @@ GYB_PATH="$(dirname "$0")/gyb/gyb"
 set -ueo pipefail
 cd "$(dirname "$0")"
 cd ..
-for file in $(find Tests -name "*.gyb"); do
+for file in $(find Sources -name "*.gyb"); do
   dest=${file%.*}
   echo "gyb: $file => $dest"
   $GYB_PATH "$file" -o "$dest" --line-directive ""

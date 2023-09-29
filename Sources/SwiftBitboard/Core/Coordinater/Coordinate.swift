@@ -1,5 +1,6 @@
 import Foundation
 
+/// 座標
 public struct Coordinate: Coordinater {
   public var file: Int 
   public var rank: Int

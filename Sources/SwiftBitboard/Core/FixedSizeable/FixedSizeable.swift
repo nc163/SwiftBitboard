@@ -8,49 +8,42 @@ public protocol FixedSizeable: Sequence
   associatedtype Element
   associatedtype Index
   
-
   subscript(file: Int, rank: Int) -> Element { get }
   
   var fileWidth: Int { get }
   var rankWidth: Int { get }
+  
+  // file rank が 0 始まりかどうか
+  var isZeroBasedIndexing: Bool { get }
 }
+
+
+extension FixedSizeable {
+
+  // 0始まりか、1始まりかの定義
+  var baseIndex: Int { self.isZeroBasedIndexing ? 0 : 1 }
+}
+
 
 public extension FixedSizeable {
   
-  subscript(point: Coordinate) -> Element {
+  subscript(point: any Coordinater) -> Element {
     self[point.file, point.rank]
   }
   
-  /// 列（横）の数
-  var fileRange: ClosedRange<Int> {
-    return 0...(self.fileWidth - 1)
-  }
-
-  /// 行（縦）の数
-  var rankRange: ClosedRange<Int> {
-    return 0...(self.rankWidth - 1)
-  }
-  
-  var square: Bool {
+  var is_square: Bool {
     self.fileWidth == self.rankWidth
   }
   
-  func contains(point: any Coordinater) -> Bool {
-    return self.fileRange.contains(point.file) && self.rankRange.contains(point.rank)
+  /// <#Description#>
+  var fileRange: ClosedRange<Int> {
+    return baseIndex...(self.fileWidth - (1 - baseIndex))
   }
   
-//  /// 全ての座標を返す
-//  func to_indexes() -> [Index] {
-//      var indexes: [Index] = []
-//      var currentIndex = startIndex
-//      
-//      while currentIndex < endIndex {
-//          indexes.append(currentIndex)
-//          currentIndex = index(after: currentIndex)
-//      }
-//      
-//      return indexes
-//  }
+  /// <#Description#>
+  var rankRange: ClosedRange<Int> {
+    return baseIndex...(self.rankWidth - (1 - baseIndex))
+  }
   
   // 2点が垂直の直線上にあるか  
   func arePointsVertical(_ point1: any Coordinater, _ point2: any Coordinater) -> Bool {
@@ -77,25 +70,3 @@ extension FixedSizeable where Iterator == FixedSizeableIterator<Self> {
       return Iterator(self)
   }
 }
-
-
-// MARK: Collection
-//extension FixedSizeable {
-//  
-//  public var startIndex: Index { .init(file: 0, rank: 0) }
-//  public var endIndex: Index { .init(file: self.fileWidth, rank: self.rankWidth) }
-//  
-//  public subscript(position: Index) -> Element {
-//    return self[position.file, position.rank]
-//  }
-//  
-//  public func index(after i: Index) -> Index {
-//    if i.rank < rankWidth - 1 {
-//      return .init(file: i.file, rank: i.rank + 1)
-//    } else if i.file < fileWidth - 1 {
-//      return .init(file: i.file + 1, rank: 0)
-//    } else {
-//      return endIndex
-//    }
-//  }
-//}

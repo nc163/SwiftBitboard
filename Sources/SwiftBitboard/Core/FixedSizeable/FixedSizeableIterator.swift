@@ -9,7 +9,9 @@ public struct FixedSizeableIterator<T: FixedSizeable>: IteratorProtocol {
   let fixedSizeable: T
   
   init(_ fixedSizeable: T) {
-      self.fixedSizeable = fixedSizeable
+    self.fixedSizeable = fixedSizeable
+    self.currentFile = fixedSizeable.baseIndex
+    self.currentRank = fixedSizeable.baseIndex
   }
   
   public mutating func next() -> Element? {
@@ -24,6 +26,6 @@ public struct FixedSizeableIterator<T: FixedSizeable>: IteratorProtocol {
       currentRank += 1
     }
     
-    return element
+    return nil
   }
 }
