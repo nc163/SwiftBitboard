@@ -1,7 +1,7 @@
 import Foundation
 
 public protocol FixedSizeable: Sequence 
-  where Index: CoordinaterePresentable, 
+  where Index: Coordinater, 
         Iterator: IteratorProtocol, 
         Iterator.Element == Element {
   
@@ -17,7 +17,7 @@ public protocol FixedSizeable: Sequence
 
 public extension FixedSizeable {
   
-  subscript(point: Point) -> Element {
+  subscript(point: Coordinate) -> Element {
     self[point.file, point.rank]
   }
   
@@ -35,7 +35,7 @@ public extension FixedSizeable {
     self.fileWidth == self.rankWidth
   }
   
-  func contains(point: any CoordinaterePresentable) -> Bool {
+  func contains(point: any Coordinater) -> Bool {
     return self.fileRange.contains(point.file) && self.rankRange.contains(point.rank)
   }
   
@@ -53,17 +53,17 @@ public extension FixedSizeable {
 //  }
   
   // 2点が垂直の直線上にあるか  
-  func arePointsVertical(_ point1: any CoordinaterePresentable, _ point2: any CoordinaterePresentable) -> Bool {
+  func arePointsVertical(_ point1: any Coordinater, _ point2: any Coordinater) -> Bool {
     return point1.file == point2.file
   }
   
   // 2点が水平の直線上にあるか
-  func arePointsHorizontal(_ point1: any CoordinaterePresentable, _ point2: any CoordinaterePresentable) -> Bool {
+  func arePointsHorizontal(_ point1: any Coordinater, _ point2: any Coordinater) -> Bool {
     return point1.rank == point2.rank
   }
   
   // 2点が直線上にあるかどうかを判定する
-  func arePointsAligned(_ point1: any CoordinaterePresentable, _ point2: any CoordinaterePresentable) -> Bool {
+  func arePointsAligned(_ point1: any Coordinater, _ point2: any Coordinater) -> Bool {
     return point1.file == point2.file 
       || point1.rank == point2.rank
       || abs(point1.file - point2.file) == abs(point1.rank - point2.rank)

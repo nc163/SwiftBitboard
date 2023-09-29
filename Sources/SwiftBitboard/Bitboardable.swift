@@ -1,7 +1,7 @@
 import Foundation
 
 public protocol Bitboardable: FixedSizeable, Comparable, Hashable, Equatable 
-  where Index     == Point,
+  where Index     == Coordinate,
         Element   == Bool,
         Iterator  == FixedSizeableIterator<Self> {
   
@@ -27,45 +27,62 @@ public protocol Bitboardable: FixedSizeable, Comparable, Hashable, Equatable
 }
 
 extension Bitboardable {
-
-
-
   /// - Parameters:
   ///   - file: <#file description#>
   ///   - rank: <#rank description#>
   public func bitscan(forFile file: Int, forRank rank: Int) -> Bool {
     return self.rawValue & mask(forFile: file, forRank: rank) > 0
   }
-
+  
   /// - Parameters:
   ///   - file: <#file description#>
   ///   - rank: <#rank description#>
   public mutating func bitset(forFile file: Int, forRank rank: Int) {
     self.rawValue |= mask(forFile: file, forRank: rank)
   }
-
+  
   /// - Parameters:
   ///   - file: <#file description#>
   ///   - rank: <#rank description#>
   public mutating func bitunset(forFile file: Int, forRank rank: Int) {
     self.rawValue &= ~mask(forFile: file, forRank: rank)
   }
+}
+
+extension Bitboardable {
   
-  public mutating func bitset(point: any CoordinaterePresentable) {
+  /// - Parameters:
+  ///   - file: <#file description#>
+  ///   - rank: <#rank description#>
+  public func bitscan(_ point: any Coordinater) -> Bool {
+    return self.rawValue & mask(forFile: point.file, forRank: point.rank) > 0
+  }
+  
+  /// <#Description#>
+  /// - Parameter point: <#point description#>
+  public mutating func bitset(_ point: any Coordinater) {
     self.rawValue |= mask(forFile: point.file, forRank: point.rank)
   }
   
-  public mutating func bitunset(point: any CoordinaterePresentable) {
+  
+  /// <#Description#>
+  /// - Parameter point: <#point description#>
+  public mutating func bitunset(_ point: any Coordinater) {
     self.rawValue &= ~mask(forFile: point.file, forRank: point.rank)
   }
   
-  public mutating func bitmove(move: any MovePresentable) {
+  
+  /// <#Description#>
+  /// - Parameter move: <#move description#>
+  public mutating func bitmove(_ move: any MovePresentable) {
     self.rawValue &= ~mask(forFile: move.from.file, forRank: move.from.rank)
     self.rawValue |= mask(forFile: move.to.file, forRank: move.to.rank)
   }
+}
 
 
-
+extension Bitboardable {
+  
   public mutating func rotate(_ digree: Digree) {
     let isPowerOfTwoAndSquare     = self.isBitWidthPowerOfTwo && self.square
     let supportedDigree: [Digree] = [.dig0, .dig180, .dig360]

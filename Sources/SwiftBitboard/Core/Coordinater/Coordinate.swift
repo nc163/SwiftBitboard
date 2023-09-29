@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Point: CoordinaterePresentable {
+public struct Coordinate: Coordinater {
   public var file: Int 
   public var rank: Int
   
@@ -9,7 +9,7 @@ public struct Point: CoordinaterePresentable {
     self.rank = rank
   }
   
-  public static func ==(lhs: Point, rhs: Point) -> Bool {
+  public static func ==(lhs: Coordinate, rhs: Coordinate) -> Bool {
     return lhs.file == rhs.file && lhs.rank == rhs.rank
   }
 }
