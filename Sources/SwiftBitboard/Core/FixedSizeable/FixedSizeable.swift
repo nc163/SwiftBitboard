@@ -13,8 +13,6 @@ public protocol FixedSizeable where Index: Coordinater {
   
   /// file rank が 0 始まりかどうか
   var isZeroBasedIndexing: Bool { get }
-  
-  func makeIterator() -> Iterator
 }
 
 
@@ -73,11 +71,10 @@ public extension FixedSizeable {
   }
 }
 
-//// MARK: Sequence
-//extension FixedSizeable where Iterator == FixedSizeableIterator<Self> {
-//
-//  public func makeIterator() -> Iterator {
-//    print("makeIterator")
-//    return Iterator(self)
-//  }
-//}
+// MARK: Sequence
+extension FixedSizeable where Iterator == FixedSizeableIterator<Self> {
+
+  public func makeIterator() -> Iterator {
+    .init(self)
+  }
+}

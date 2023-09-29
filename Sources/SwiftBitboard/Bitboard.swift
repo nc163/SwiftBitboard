@@ -53,15 +53,6 @@ extension Bitboard {
   }
 }
 
-// MARK: FixedSizeable
-extension Bitboard: FixedSizeable {
-  
-  public func makeIterator() -> Iterator {
-    .init(self)
-  }
-  
-}
-
 
 
 // MARK: Compareble
