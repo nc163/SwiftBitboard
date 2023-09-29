@@ -1,7 +1,6 @@
 import Foundation
 
-public protocol FixedSizeable:  Hashable
-  where Index: Coordinater {
+public protocol FixedSizeable where Index: Coordinater {
   
   associatedtype Element
   associatedtype Index
