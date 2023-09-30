@@ -12,14 +12,12 @@ public protocol BitboardConfiguration {
   /// 行（縦）の数
   static var rankWidth: Int { get }
   
-  
   //
   // options
   //
   
-  
   // file rank が 0 始まりかどうか
-//  static var isZeroBasedIndexing: Bool { get }
+  static var isZeroBasedIndexing: Bool { get }
 }
 
 // Default

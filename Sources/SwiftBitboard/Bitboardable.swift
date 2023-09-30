@@ -1,8 +1,8 @@
 import Foundation
 
 public protocol Bitboardable: FixedSizeable, Comparable, Hashable, Equatable 
-  where Index     == Coordinate,
-        Element   == Bool {
+  where Index   == Coordinate,
+        Element == Bool {
   
   associatedtype Configuration: BitboardConfiguration
   
