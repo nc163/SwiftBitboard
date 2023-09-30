@@ -11,6 +11,8 @@ public protocol FixedSizeable where Index: Coordinater {
   var fileWidth: Int { get }
   var rankWidth: Int { get }
   
+  // option
+  
   /// file rank が 0 始まりかどうか
   var isZeroBasedIndexing: Bool { get }
 }
@@ -21,6 +23,8 @@ extension FixedSizeable {
   // 0始まりか、1始まりかの定義
   var baseIndex: Int { self.isZeroBasedIndexing ? 0 : 1 }
   
+  // default
+  var isZeroBasedIndexing: Bool { false }
 }
 
 public extension FixedSizeable {
