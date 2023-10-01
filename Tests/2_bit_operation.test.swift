@@ -36,4 +36,21 @@ extension BitboardTests {
       XCTAssertTrue( coordinates.contains(result), "\(result)" )
     }
   }
+  
+  func test_bit_or() throws {
+    var coordinates: [Coordinate] = .init()
+    coordinates.append(.init(file: 1, rank:1))
+    coordinates.append(.init(file: 8, rank:8))
+    
+    var bitboard1 = Bitboard9x9.init()
+    var bitboard2 = Bitboard9x9.init()
+    bitboard1.bitset(coordinates.first!)
+    bitboard2.bitset(coordinates.last!)
+    bitboard1 |= bitboard2
+    
+    let result = bitboard1.bitscan()
+    for coordinate in coordinates {
+      XCTAssertTrue(result.contains(coordinate))
+    }
+  }
 }

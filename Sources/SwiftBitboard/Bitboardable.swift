@@ -20,6 +20,10 @@ public protocol Bitboardable: FixedSizeable, Comparable, Hashable, Equatable
   static func | (_ lhs: Self, _ rhs: Self) -> Self
   static func ^ (_ lhs: Self, _ rhs: Self) -> Self
   static func == (_ lhs: Self,  _ rhs: Self) -> Bool
+  
+  static func &= (_ lhs: inout Self, _ rhs: Self)
+  static func |= (_ lhs: inout Self, _ rhs: Self)
+  static func ^= (_ lhs: inout Self, _ rhs: Self)
 }
 
 

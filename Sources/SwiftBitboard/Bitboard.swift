@@ -51,6 +51,18 @@ extension Bitboard {
   public static func == (_ lhs: Self, _ rhs: Self) -> Bool {
     return lhs.rawValue == rhs.rawValue
   }
+  
+  public static func &= (lhs: inout Bitboard<Configuration>, rhs: Bitboard<Configuration>) {
+    lhs.rawValue &= rhs.rawValue
+  }
+  
+  public static func |= (lhs: inout Bitboard<Configuration>, rhs: Bitboard<Configuration>) {
+    lhs.rawValue |= rhs.rawValue
+  }
+  
+  public static func ^= (lhs: inout Bitboard<Configuration>, rhs: Bitboard<Configuration>) {
+    lhs.rawValue ^= rhs.rawValue
+  }
 }
 
 
