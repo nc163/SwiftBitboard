@@ -5,7 +5,6 @@
 /*.xcodeproj
 xcuserdata/
 DerivedData/
-/.docs
 
 # python
 __pycache__

@@ -1,0 +1,44 @@
+@testable import SwiftBitboard
+
+% # UInt8, 16...
+% RawValueSize = [8, 16, 32, 64, 128]
+%
+% for valueSize in RawValueSize:
+%   type = f'UInt{valueSize}'
+public protocol Bitboard${type}Configuration: BitboardConfiguration where RawValue == ${type} { }
+% end
+%{
+  # n x m の組み合わせ
+  def find_combinations(start, end):
+    combinations = []
+    for i in range(int(2), int(end)):
+        for j in range(int(2), end):
+            product = i * j
+            if start <= product < end:
+                combinations.append((i, j))
+    return combinations
+}%
+% for valueSize in RawValueSize:
+%   type = f'UInt{valueSize}'
+
+// MARK: Bitboard${type}Configuration
+%     combination = find_combinations(valueSize / 2, valueSize)
+%     for tuple in combination:
+%       size = f'{tuple[0]}x{tuple[1]}'
+public class Bitboard${size}Configuration: Bitboard${type}Configuration {
+  public static var fileWidth: Int { ${tuple[0]} }
+  public static var rankWidth: Int { ${tuple[1]} }
+  // public static var isZeroBasedIndexing: Bool { true }
+}
+%     end
+% end
+
+// MARK: typealias BitboardNxM = Bitboard<BitboardNxMConfiguration>
+% for valueSize in RawValueSize:
+%   type = f'UInt{valueSize}'
+%   combination = find_combinations(valueSize / 2, valueSize)
+%   for tuple in combination:
+%     size = f'{tuple[0]}x{tuple[1]}'
+public typealias Bitboard${size} = Bitboard<Bitboard${size}Configuration>
+%   end
+% end

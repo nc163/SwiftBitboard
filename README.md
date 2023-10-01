@@ -17,5 +17,5 @@ https://github.com/omochi/gysb
 https://github.com/apple/swift/blob/main/utils/gyb.py
 
 ```bash
-swift package --allow-writing-to-directory ./.docs generate-documentation  --output-path ./.docs
+swift package --allow-writing-to-directory ./Docs/SwiftBitboard.doccarchive generate-documentation --target SwiftBitboard --output-path ./Docs/SwiftBitboard.doccarchive
 ```
