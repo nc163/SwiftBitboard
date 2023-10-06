@@ -8,11 +8,14 @@ public protocol Coordinater: Equatable, Comparable, Hashable {
   
   init(x: Int, y: Int)
   
+  static var zero: Self { get }
+  
 }
 
 
 // MARK: Comparable
 extension Coordinater {
+  
   public static func <(lhs: Self, rhs: Self) -> Bool {
     if lhs.x != rhs.x {
       return lhs.x < rhs.x
@@ -20,4 +23,5 @@ extension Coordinater {
     
     return lhs.y < rhs.y
   }
+  
 }

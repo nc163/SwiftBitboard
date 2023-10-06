@@ -11,16 +11,13 @@ public struct Coordinate: Coordinater {
     self.y = y
   }
   
+  public static var zero: Self {
+    return .init(x: .zero, y: .zero)
+  }
+  
   public static func ==(lhs: Coordinate, rhs: Coordinate) -> Bool {
     return lhs.x == rhs.x && lhs.y == rhs.y
   }
   
 }
 
-extension Coordinate {
-  
-  static var zero: Self {
-    .init(x: .zero, y: .zero)
-  }
-  
-}

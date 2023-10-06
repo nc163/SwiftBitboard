@@ -10,7 +10,7 @@ public struct FixedSizeableIterator<T: FixedSizeable>: Sequence, IteratorProtoco
   
   init(_ fixedSizeable: T) {
     self.fixedSizeable = fixedSizeable
-    self.currentIndex = .init(x: 0, y: 0)
+    self.currentIndex = .zero
   }
   
   public mutating func next() -> Element? {
