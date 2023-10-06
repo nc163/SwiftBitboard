@@ -29,40 +29,28 @@ public protocol Bitboardable: FixedSizeable, Comparable, Hashable, Equatable
 
 extension Bitboardable {
   
-  ///  0始まりか、1始まりか
-  @inline(__always)
-  static var BasedIndex: Int { Configuration.isZeroBasedIndexing ? 0 : 1 }
-
-  @inline(__always)
-  var BasedIndex: Int { Self.BasedIndex }
-  
-}
-
-
-extension Bitboardable {
-  
   ///
-  public static var fileWidth: Int {
-    return Configuration.fileWidth
+  public static var x_max: Int {
+    return Configuration.xMax
   }
   
   ///
-  public static var rankWidth: Int {
-    return Configuration.rankWidth
+  public static var y_max: Int {
+    return Configuration.yMax
   }
 
   /// <#Description#>
-  public static var fileRange: ClosedRange<Int> {
-    return BasedIndex...(Self.fileWidth - (1 - BasedIndex))
+  public static var x_range: ClosedRange<Int> {
+    return 0...(Self.x_max - 1)
   }
   
   /// <#Description#>
-  public static var rankRange: ClosedRange<Int> {
-    return BasedIndex...(Self.rankWidth - (1 - BasedIndex))
+  public static var y_range: ClosedRange<Int> {
+    return 0...(Self.y_max - 1)
   }
   
   public static var is_square: Bool {
-    Self.fileWidth == Self.rankWidth
+    Self.x_max == Self.y_max
   }
 }
 
@@ -71,22 +59,17 @@ extension Bitboardable {
 extension Bitboardable {
   
   public subscript(coordinate: any Coordinater) -> Bool { 
-    self.bittest(forFile: coordinate.file, forRank: coordinate.rank)
-  }
-
-  ///
-  public var isZeroBasedIndexing: Bool { 
-    Configuration.isZeroBasedIndexing 
+    self.bittest(for_x: coordinate.x, for_y: coordinate.y)
   }
   
   ///
-  public var fileWidth: Int {
-    return Self.fileWidth
+  public var x_max: Int {
+    return Self.x_max
   }
   
   ///
-  public var rankWidth: Int {
-    return Self.rankWidth
+  public var y_max: Int {
+    return Self.y_max
   }
 }
 
@@ -113,28 +96,28 @@ extension Bitboardable {
   /// - Parameters:
   ///   - file: <#file description#>
   ///   - rank: <#rank description#>
-  public func bittest(forFile file: Int, forRank rank: Int) -> Bool {
-    IF_ASSERT_OUT_OF_BOUNDS(file, rank)
+  public func bittest(for_x x: Int, for_y y: Int) -> Bool {
+    IF_ASSERT_OUT_OF_BOUNDS(x, y)
 
-    return (self.rawValue & Self.mask(file, rank)) > 0
+    return (self.rawValue & Self.mask(x, y)) > 0
   }
   
   /// - Parameters:
   ///   - file: <#file description#>
   ///   - rank: <#rank description#>
-  public mutating func bitset(forFile file: Int, forRank rank: Int) {
-    IF_ASSERT_OUT_OF_BOUNDS(file, rank)
+  public mutating func bitset(for_x x: Int, for_y y: Int) {
+    IF_ASSERT_OUT_OF_BOUNDS(x, y)
 
-    self.rawValue |= Self.mask(file, rank)
+    self.rawValue |= Self.mask(x, y)
   }
   
   /// - Parameters:
   ///   - file: <#file description#>
   ///   - rank: <#rank description#>
-  public mutating func bitunset(forFile file: Int, forRank rank: Int) {
-    IF_ASSERT_OUT_OF_BOUNDS(file, rank)
+  public mutating func bitunset(for_x x: Int, for_y y: Int) {
+    IF_ASSERT_OUT_OF_BOUNDS(x, y)
     
-    self.rawValue &= ~Self.mask(file, rank)
+    self.rawValue &= ~Self.mask(x, y)
   }
 }
 
@@ -190,11 +173,11 @@ extension Bitboardable {
 
     var next: Self.RawValue = self.rawValue
     for _ in 0..<rotate_count {
-        next = rotate180(fileWidth: self.fileWidth, rankWidth: self.rankWidth, rawValue: next)
+        next = rotate180(fileWidth: self.x_max, rankWidth: self.y_max, rawValue: next)
 
         /// bitboardはSelf.RawValueの一部しか使っていないが、getBitRotate90ではSelf.RawValue全体を回転させている
         /// ので回転させた後で値の先頭をbitboardの先頭になるように辻褄を合わせる必要がある。
-        let shift: Int = Self.RawValue.bitWidth - (self.rankWidth * (self.fileWidth - 1) + self.fileWidth)
+        let shift: Int = Self.RawValue.bitWidth - (self.y_max * (self.x_max - 1) + self.x_max)
         next = Self.RawValue(next) >> shift
     }
     self.rawValue = next

@@ -5,7 +5,7 @@ extension BitboardTests {
   
   func test_subscript_file_rank() throws {
     var bitboard = Bitboard9x9.init()
-    bitboard.bitset(Coordinate.init(file: 1, rank:1))
+    bitboard.bitset(Coordinate.init(x: 1, y:1))
     
     let element1 = bitboard[1, 1]
     XCTAssertTrue(element1)
@@ -15,13 +15,13 @@ extension BitboardTests {
   
   func test_subscript_coordinate() throws {
     var bitboard = Bitboard9x9.init()
-    let coordinate1 = Coordinate.init(file: 1, rank:1)
+    let coordinate1 = Coordinate.init(x: 1, y:1)
     bitboard.bitset(coordinate1)
     
     let element1 = bitboard[coordinate1]
     XCTAssertTrue(element1)
     
-    let coordinate2 = Coordinate.init(file: 2, rank:2)
+    let coordinate2 = Coordinate.init(x: 2, y:2)
     let element2 = bitboard[coordinate2]
     XCTAssertFalse(element2)
   }
@@ -38,8 +38,8 @@ extension BitboardTests {
   func test_iteration() throws {
     var bitboard = Bitboard9x9.init()
     let coordinates = [
-      Coordinate.init(file: 1, rank:1),
-      Coordinate.init(file: 9, rank:9)
+      Coordinate.init(x: 0, y:0),
+      Coordinate.init(x: 8, y:8)
     ]
     for coordinate in coordinates {
       bitboard.bitset(coordinate)

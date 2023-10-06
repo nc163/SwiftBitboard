@@ -12,7 +12,7 @@ public struct Bitboard<Configuration: BitboardConfiguration>: Bitboardable {
   public init(coordinates: Array<Index>) {
     self.rawValue = .zero
     for i in coordinates {
-      self.bitset(forFile: i.file, forRank: i.rank)
+      self.bitset(for_x: i.x, for_y: i.y)
     }
   }
     
@@ -24,7 +24,7 @@ public struct Bitboard<Configuration: BitboardConfiguration>: Bitboardable {
 extension Bitboard {
   
   public static func Inside(point: any Coordinater) -> Bool {
-    return Self.fileRange.contains(point.file) && Self.rankRange.contains(point.rank)
+    return Self.x_range.contains(point.x) && Self.y_range.contains(point.y)
   }
   
 }
@@ -86,8 +86,8 @@ extension Bitboard: LosslessStringConvertible {
     let lines = description.split(separator: "\n")
     let _description_ = description.replacingOccurrences(of: "\n", with: "")
     
-    guard lines.count == Self.rankWidth else { return nil }
-    guard description.count == (Self.rankWidth * Self.Configuration.fileWidth + (Self.fileWidth - 1)) else { return nil }
+    guard lines.count == Self.y_max else { return nil }
+    guard description.count == (Self.y_max * Self.Configuration.xMax + (Self.x_max - 1)) else { return nil }
     
     for text in _description_ {
       if text == "*" {
@@ -116,15 +116,15 @@ extension Bitboard: CustomStringConvertible {
     let current: RawValue = self.rawValue
 
     // " ABCDE..."
-    Self.rankRange.forEach { (r: Range<Int>.Element) in
-      Self.fileRange.forEach { (f: Range<Int>.Element) in
+    Self.y_range.forEach { (r: Range<Int>.Element) in
+      Self.x_range.forEach { (f: Range<Int>.Element) in
         retval += (current & index) > 0 ? "*" : "-"
         index <<= 1
       }
-      if r != Self.rankWidth { retval += "\n"; }
+      if r != Self.y_max { retval += "\n"; }
     }
 
-    return retval
+    return String(retval.dropLast())
   }
 }
 
@@ -134,7 +134,7 @@ extension Bitboard: CustomDebugStringConvertible {
 
   /// <#Description#>
   private var space_padding: String {
-    return Self.rankWidth >= 10 ? "  " : " ";
+    return Self.y_max >= 10 ? "  " : " ";
   }
 
   /// 桁数を合わせて０埋めで出力する
@@ -142,7 +142,7 @@ extension Bitboard: CustomDebugStringConvertible {
   /// - Returns: <#description#>
   @inline(__always)
   private func zeroPadding_fileWidthformat (rank: Int) -> String {
-    let format: String = Self.rankWidth >= 10 ? "%02d" : "%01d";
+    let format: String = Self.y_max >= 10 ? "%02d" : "%01d";
     return String(format: format, rank)
   }
 
@@ -160,16 +160,16 @@ extension Bitboard: CustomDebugStringConvertible {
 
     // " ABCDE..."
     retval += space_padding;
-    Self.fileRange.forEach { retval += String(UnicodeScalar(64 + $0)!) };  retval += "\n";
-    Self.rankRange.forEach { (r) in
+    Self.x_range.forEach { retval += String(UnicodeScalar(64 + $0)!) };  retval += "\n";
+    Self.y_range.forEach { (r) in
       retval += zeroPadding_fileWidthformat(rank: r)
-      Self.fileRange.forEach { (f) in
+      Self.x_range.forEach { (f) in
         retval += (current & index) > 0 ? "*" : "-"
         index <<= 1
       }
-      if r != Self.rankWidth { retval += "\n"; }
+      if r != Self.y_max { retval += "\n"; }
     }
 
-    return retval
+    return String(retval.dropLast())
   }
 }

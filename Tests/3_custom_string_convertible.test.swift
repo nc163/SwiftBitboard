@@ -12,17 +12,12 @@ extension BitboardTests {
 ---------
 ---------
 """
-    XCTAssertEqual(bitboard.description, result1)
+    XCTAssertEqual(bitboard.description, result1, bitboard.description)
     
-    if Bitboard9x5.Configuration.isZeroBasedIndexing {
-      bitboard.bitset(forFile: 0, forRank: 0)
-      bitboard.bitset(forFile: 5, forRank: 1)
-      bitboard.bitset(forFile: 8, forRank: 4)
-    } else {
-      bitboard.bitset(forFile: 1, forRank: 1)
-      bitboard.bitset(forFile: 6, forRank: 2)
-      bitboard.bitset(forFile: 9, forRank: 5)
-    }
+    bitboard.bitset(for_x: 0, for_y: 0)
+    bitboard.bitset(for_x: 5, for_y: 1)
+    bitboard.bitset(for_x: 8, for_y: 4)
+
     let result2: String = """
 *--------
 -----*---
@@ -30,7 +25,7 @@ extension BitboardTests {
 ---------
 --------*
 """
-    XCTAssertEqual(bitboard.description, result2)
+    XCTAssertEqual(bitboard.description, result2, bitboard.description)
     
   }
 
@@ -39,13 +34,10 @@ extension BitboardTests {
   func test_lossless_string_convertible() throws {
     var bitboard = Bitboard9x9.init()
 
-    if Bitboard9x9.Configuration.isZeroBasedIndexing {
-      bitboard.bitset(forFile: 0, forRank: 0)
-      bitboard.bitset(forFile: 8, forRank: 8)
-    } else {
-      bitboard.bitset(forFile: 1, forRank: 1)
-      bitboard.bitset(forFile: 9, forRank: 9)
-    }
+    bitboard.bitset(for_x: 0, for_y: 0)
+    bitboard.bitset(for_x: 8, for_y: 8)
+
+      
     let result2: String = """
 *--------
 ---------

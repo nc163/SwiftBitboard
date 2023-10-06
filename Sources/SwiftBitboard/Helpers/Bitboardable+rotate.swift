@@ -66,7 +66,7 @@ extension Bitboardable {
         /* noop */
         break;
     }
-    value >>= (Self.RawValue.bitWidth - (self.fileWidth * self.rankWidth))
+    value >>= (Self.RawValue.bitWidth - (self.x_max * self.y_max))
     return value
   }
 }

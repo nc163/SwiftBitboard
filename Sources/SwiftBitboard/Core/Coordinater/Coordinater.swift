@@ -2,20 +2,21 @@ import Foundation
  
 // 座標(縦, 横)を示すことできる
 public protocol Coordinater: Equatable, Comparable, Hashable {
-  var file: Int { get }
-  var rank: Int { get }
   
-  init(file: Int, rank: Int)
+  var x: Int { get }
+  var y: Int { get }
+  
+  init(x: Int, y: Int)
 }
 
 
 // MARK: Comparable
 extension Coordinater {
   public static func <(lhs: Self, rhs: Self) -> Bool {
-    if lhs.file != rhs.file {
-      return lhs.file < rhs.file
+    if lhs.x != rhs.x {
+      return lhs.x < rhs.x
     }
     
-    return lhs.rank < rhs.rank
+    return lhs.y < rhs.y
   }
 }

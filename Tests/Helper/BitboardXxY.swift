@@ -8,1932 +8,1548 @@ public protocol BitboardUInt128Configuration: BitboardConfiguration where RawVal
 
 // MARK: BitboardUInt8Configuration
 public class Bitboard2x2Configuration: BitboardUInt8Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard2x3Configuration: BitboardUInt8Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard3x2Configuration: BitboardUInt8Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 2 }
 }
 
 // MARK: BitboardUInt16Configuration
 public class Bitboard2x4Configuration: BitboardUInt16Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 4 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 4 }
 }
 public class Bitboard2x5Configuration: BitboardUInt16Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 5 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 5 }
 }
 public class Bitboard2x6Configuration: BitboardUInt16Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 6 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 6 }
 }
 public class Bitboard2x7Configuration: BitboardUInt16Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 7 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 7 }
 }
 public class Bitboard3x3Configuration: BitboardUInt16Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard3x4Configuration: BitboardUInt16Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 4 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 4 }
 }
 public class Bitboard3x5Configuration: BitboardUInt16Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 5 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 5 }
 }
 public class Bitboard4x2Configuration: BitboardUInt16Configuration {
-  public static var fileWidth: Int { 4 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 4 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard4x3Configuration: BitboardUInt16Configuration {
-  public static var fileWidth: Int { 4 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 4 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard5x2Configuration: BitboardUInt16Configuration {
-  public static var fileWidth: Int { 5 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 5 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard5x3Configuration: BitboardUInt16Configuration {
-  public static var fileWidth: Int { 5 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 5 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard6x2Configuration: BitboardUInt16Configuration {
-  public static var fileWidth: Int { 6 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 6 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard7x2Configuration: BitboardUInt16Configuration {
-  public static var fileWidth: Int { 7 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 7 }
+  public static var yMax: Int { 2 }
 }
 
 // MARK: BitboardUInt32Configuration
 public class Bitboard2x8Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 8 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 8 }
 }
 public class Bitboard2x9Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 9 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 9 }
 }
 public class Bitboard2x10Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 10 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 10 }
 }
 public class Bitboard2x11Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 11 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 11 }
 }
 public class Bitboard2x12Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 12 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 12 }
 }
 public class Bitboard2x13Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 13 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 13 }
 }
 public class Bitboard2x14Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 14 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 14 }
 }
 public class Bitboard2x15Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 15 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 15 }
 }
 public class Bitboard3x6Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 6 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 6 }
 }
 public class Bitboard3x7Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 7 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 7 }
 }
 public class Bitboard3x8Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 8 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 8 }
 }
 public class Bitboard3x9Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 9 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 9 }
 }
 public class Bitboard3x10Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 10 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 10 }
 }
 public class Bitboard4x4Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 4 }
-  public static var rankWidth: Int { 4 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 4 }
+  public static var yMax: Int { 4 }
 }
 public class Bitboard4x5Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 4 }
-  public static var rankWidth: Int { 5 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 4 }
+  public static var yMax: Int { 5 }
 }
 public class Bitboard4x6Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 4 }
-  public static var rankWidth: Int { 6 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 4 }
+  public static var yMax: Int { 6 }
 }
 public class Bitboard4x7Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 4 }
-  public static var rankWidth: Int { 7 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 4 }
+  public static var yMax: Int { 7 }
 }
 public class Bitboard5x4Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 5 }
-  public static var rankWidth: Int { 4 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 5 }
+  public static var yMax: Int { 4 }
 }
 public class Bitboard5x5Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 5 }
-  public static var rankWidth: Int { 5 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 5 }
+  public static var yMax: Int { 5 }
 }
 public class Bitboard5x6Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 5 }
-  public static var rankWidth: Int { 6 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 5 }
+  public static var yMax: Int { 6 }
 }
 public class Bitboard6x3Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 6 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 6 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard6x4Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 6 }
-  public static var rankWidth: Int { 4 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 6 }
+  public static var yMax: Int { 4 }
 }
 public class Bitboard6x5Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 6 }
-  public static var rankWidth: Int { 5 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 6 }
+  public static var yMax: Int { 5 }
 }
 public class Bitboard7x3Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 7 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 7 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard7x4Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 7 }
-  public static var rankWidth: Int { 4 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 7 }
+  public static var yMax: Int { 4 }
 }
 public class Bitboard8x2Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 8 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 8 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard8x3Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 8 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 8 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard9x2Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 9 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 9 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard9x3Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 9 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 9 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard10x2Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 10 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 10 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard10x3Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 10 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 10 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard11x2Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 11 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 11 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard12x2Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 12 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 12 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard13x2Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 13 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 13 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard14x2Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 14 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 14 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard15x2Configuration: BitboardUInt32Configuration {
-  public static var fileWidth: Int { 15 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 15 }
+  public static var yMax: Int { 2 }
 }
 
 // MARK: BitboardUInt64Configuration
 public class Bitboard2x16Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 16 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 16 }
 }
 public class Bitboard2x17Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 17 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 17 }
 }
 public class Bitboard2x18Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 18 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 18 }
 }
 public class Bitboard2x19Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 19 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 19 }
 }
 public class Bitboard2x20Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 20 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 20 }
 }
 public class Bitboard2x21Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 21 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 21 }
 }
 public class Bitboard2x22Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 22 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 22 }
 }
 public class Bitboard2x23Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 23 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 23 }
 }
 public class Bitboard2x24Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 24 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 24 }
 }
 public class Bitboard2x25Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 25 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 25 }
 }
 public class Bitboard2x26Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 26 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 26 }
 }
 public class Bitboard2x27Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 27 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 27 }
 }
 public class Bitboard2x28Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 28 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 28 }
 }
 public class Bitboard2x29Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 29 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 29 }
 }
 public class Bitboard2x30Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 30 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 30 }
 }
 public class Bitboard2x31Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 31 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 31 }
 }
 public class Bitboard3x11Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 11 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 11 }
 }
 public class Bitboard3x12Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 12 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 12 }
 }
 public class Bitboard3x13Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 13 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 13 }
 }
 public class Bitboard3x14Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 14 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 14 }
 }
 public class Bitboard3x15Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 15 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 15 }
 }
 public class Bitboard3x16Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 16 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 16 }
 }
 public class Bitboard3x17Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 17 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 17 }
 }
 public class Bitboard3x18Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 18 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 18 }
 }
 public class Bitboard3x19Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 19 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 19 }
 }
 public class Bitboard3x20Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 20 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 20 }
 }
 public class Bitboard3x21Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 21 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 21 }
 }
 public class Bitboard4x8Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 4 }
-  public static var rankWidth: Int { 8 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 4 }
+  public static var yMax: Int { 8 }
 }
 public class Bitboard4x9Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 4 }
-  public static var rankWidth: Int { 9 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 4 }
+  public static var yMax: Int { 9 }
 }
 public class Bitboard4x10Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 4 }
-  public static var rankWidth: Int { 10 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 4 }
+  public static var yMax: Int { 10 }
 }
 public class Bitboard4x11Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 4 }
-  public static var rankWidth: Int { 11 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 4 }
+  public static var yMax: Int { 11 }
 }
 public class Bitboard4x12Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 4 }
-  public static var rankWidth: Int { 12 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 4 }
+  public static var yMax: Int { 12 }
 }
 public class Bitboard4x13Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 4 }
-  public static var rankWidth: Int { 13 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 4 }
+  public static var yMax: Int { 13 }
 }
 public class Bitboard4x14Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 4 }
-  public static var rankWidth: Int { 14 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 4 }
+  public static var yMax: Int { 14 }
 }
 public class Bitboard4x15Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 4 }
-  public static var rankWidth: Int { 15 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 4 }
+  public static var yMax: Int { 15 }
 }
 public class Bitboard5x7Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 5 }
-  public static var rankWidth: Int { 7 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 5 }
+  public static var yMax: Int { 7 }
 }
 public class Bitboard5x8Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 5 }
-  public static var rankWidth: Int { 8 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 5 }
+  public static var yMax: Int { 8 }
 }
 public class Bitboard5x9Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 5 }
-  public static var rankWidth: Int { 9 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 5 }
+  public static var yMax: Int { 9 }
 }
 public class Bitboard5x10Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 5 }
-  public static var rankWidth: Int { 10 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 5 }
+  public static var yMax: Int { 10 }
 }
 public class Bitboard5x11Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 5 }
-  public static var rankWidth: Int { 11 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 5 }
+  public static var yMax: Int { 11 }
 }
 public class Bitboard5x12Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 5 }
-  public static var rankWidth: Int { 12 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 5 }
+  public static var yMax: Int { 12 }
 }
 public class Bitboard6x6Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 6 }
-  public static var rankWidth: Int { 6 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 6 }
+  public static var yMax: Int { 6 }
 }
 public class Bitboard6x7Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 6 }
-  public static var rankWidth: Int { 7 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 6 }
+  public static var yMax: Int { 7 }
 }
 public class Bitboard6x8Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 6 }
-  public static var rankWidth: Int { 8 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 6 }
+  public static var yMax: Int { 8 }
 }
 public class Bitboard6x9Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 6 }
-  public static var rankWidth: Int { 9 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 6 }
+  public static var yMax: Int { 9 }
 }
 public class Bitboard6x10Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 6 }
-  public static var rankWidth: Int { 10 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 6 }
+  public static var yMax: Int { 10 }
 }
 public class Bitboard7x5Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 7 }
-  public static var rankWidth: Int { 5 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 7 }
+  public static var yMax: Int { 5 }
 }
 public class Bitboard7x6Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 7 }
-  public static var rankWidth: Int { 6 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 7 }
+  public static var yMax: Int { 6 }
 }
 public class Bitboard7x7Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 7 }
-  public static var rankWidth: Int { 7 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 7 }
+  public static var yMax: Int { 7 }
 }
 public class Bitboard7x8Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 7 }
-  public static var rankWidth: Int { 8 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 7 }
+  public static var yMax: Int { 8 }
 }
 public class Bitboard7x9Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 7 }
-  public static var rankWidth: Int { 9 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 7 }
+  public static var yMax: Int { 9 }
 }
 public class Bitboard8x4Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 8 }
-  public static var rankWidth: Int { 4 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 8 }
+  public static var yMax: Int { 4 }
 }
 public class Bitboard8x5Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 8 }
-  public static var rankWidth: Int { 5 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 8 }
+  public static var yMax: Int { 5 }
 }
 public class Bitboard8x6Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 8 }
-  public static var rankWidth: Int { 6 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 8 }
+  public static var yMax: Int { 6 }
 }
 public class Bitboard8x7Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 8 }
-  public static var rankWidth: Int { 7 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 8 }
+  public static var yMax: Int { 7 }
 }
 public class Bitboard9x4Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 9 }
-  public static var rankWidth: Int { 4 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 9 }
+  public static var yMax: Int { 4 }
 }
 public class Bitboard9x5Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 9 }
-  public static var rankWidth: Int { 5 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 9 }
+  public static var yMax: Int { 5 }
 }
 public class Bitboard9x6Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 9 }
-  public static var rankWidth: Int { 6 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 9 }
+  public static var yMax: Int { 6 }
 }
 public class Bitboard9x7Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 9 }
-  public static var rankWidth: Int { 7 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 9 }
+  public static var yMax: Int { 7 }
 }
 public class Bitboard10x4Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 10 }
-  public static var rankWidth: Int { 4 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 10 }
+  public static var yMax: Int { 4 }
 }
 public class Bitboard10x5Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 10 }
-  public static var rankWidth: Int { 5 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 10 }
+  public static var yMax: Int { 5 }
 }
 public class Bitboard10x6Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 10 }
-  public static var rankWidth: Int { 6 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 10 }
+  public static var yMax: Int { 6 }
 }
 public class Bitboard11x3Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 11 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 11 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard11x4Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 11 }
-  public static var rankWidth: Int { 4 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 11 }
+  public static var yMax: Int { 4 }
 }
 public class Bitboard11x5Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 11 }
-  public static var rankWidth: Int { 5 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 11 }
+  public static var yMax: Int { 5 }
 }
 public class Bitboard12x3Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 12 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 12 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard12x4Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 12 }
-  public static var rankWidth: Int { 4 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 12 }
+  public static var yMax: Int { 4 }
 }
 public class Bitboard12x5Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 12 }
-  public static var rankWidth: Int { 5 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 12 }
+  public static var yMax: Int { 5 }
 }
 public class Bitboard13x3Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 13 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 13 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard13x4Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 13 }
-  public static var rankWidth: Int { 4 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 13 }
+  public static var yMax: Int { 4 }
 }
 public class Bitboard14x3Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 14 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 14 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard14x4Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 14 }
-  public static var rankWidth: Int { 4 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 14 }
+  public static var yMax: Int { 4 }
 }
 public class Bitboard15x3Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 15 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 15 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard15x4Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 15 }
-  public static var rankWidth: Int { 4 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 15 }
+  public static var yMax: Int { 4 }
 }
 public class Bitboard16x2Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 16 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 16 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard16x3Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 16 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 16 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard17x2Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 17 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 17 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard17x3Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 17 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 17 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard18x2Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 18 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 18 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard18x3Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 18 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 18 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard19x2Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 19 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 19 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard19x3Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 19 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 19 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard20x2Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 20 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 20 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard20x3Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 20 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 20 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard21x2Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 21 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 21 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard21x3Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 21 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 21 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard22x2Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 22 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 22 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard23x2Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 23 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 23 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard24x2Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 24 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 24 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard25x2Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 25 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 25 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard26x2Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 26 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 26 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard27x2Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 27 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 27 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard28x2Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 28 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 28 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard29x2Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 29 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 29 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard30x2Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 30 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 30 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard31x2Configuration: BitboardUInt64Configuration {
-  public static var fileWidth: Int { 31 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 31 }
+  public static var yMax: Int { 2 }
 }
 
 // MARK: BitboardUInt128Configuration
 public class Bitboard2x32Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 32 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 32 }
 }
 public class Bitboard2x33Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 33 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 33 }
 }
 public class Bitboard2x34Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 34 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 34 }
 }
 public class Bitboard2x35Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 35 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 35 }
 }
 public class Bitboard2x36Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 36 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 36 }
 }
 public class Bitboard2x37Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 37 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 37 }
 }
 public class Bitboard2x38Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 38 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 38 }
 }
 public class Bitboard2x39Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 39 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 39 }
 }
 public class Bitboard2x40Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 40 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 40 }
 }
 public class Bitboard2x41Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 41 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 41 }
 }
 public class Bitboard2x42Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 42 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 42 }
 }
 public class Bitboard2x43Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 43 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 43 }
 }
 public class Bitboard2x44Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 44 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 44 }
 }
 public class Bitboard2x45Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 45 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 45 }
 }
 public class Bitboard2x46Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 46 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 46 }
 }
 public class Bitboard2x47Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 47 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 47 }
 }
 public class Bitboard2x48Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 48 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 48 }
 }
 public class Bitboard2x49Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 49 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 49 }
 }
 public class Bitboard2x50Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 50 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 50 }
 }
 public class Bitboard2x51Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 51 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 51 }
 }
 public class Bitboard2x52Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 52 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 52 }
 }
 public class Bitboard2x53Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 53 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 53 }
 }
 public class Bitboard2x54Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 54 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 54 }
 }
 public class Bitboard2x55Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 55 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 55 }
 }
 public class Bitboard2x56Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 56 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 56 }
 }
 public class Bitboard2x57Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 57 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 57 }
 }
 public class Bitboard2x58Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 58 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 58 }
 }
 public class Bitboard2x59Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 59 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 59 }
 }
 public class Bitboard2x60Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 60 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 60 }
 }
 public class Bitboard2x61Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 61 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 61 }
 }
 public class Bitboard2x62Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 62 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 62 }
 }
 public class Bitboard2x63Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 2 }
-  public static var rankWidth: Int { 63 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 2 }
+  public static var yMax: Int { 63 }
 }
 public class Bitboard3x22Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 22 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 22 }
 }
 public class Bitboard3x23Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 23 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 23 }
 }
 public class Bitboard3x24Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 24 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 24 }
 }
 public class Bitboard3x25Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 25 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 25 }
 }
 public class Bitboard3x26Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 26 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 26 }
 }
 public class Bitboard3x27Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 27 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 27 }
 }
 public class Bitboard3x28Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 28 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 28 }
 }
 public class Bitboard3x29Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 29 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 29 }
 }
 public class Bitboard3x30Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 30 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 30 }
 }
 public class Bitboard3x31Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 31 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 31 }
 }
 public class Bitboard3x32Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 32 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 32 }
 }
 public class Bitboard3x33Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 33 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 33 }
 }
 public class Bitboard3x34Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 34 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 34 }
 }
 public class Bitboard3x35Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 35 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 35 }
 }
 public class Bitboard3x36Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 36 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 36 }
 }
 public class Bitboard3x37Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 37 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 37 }
 }
 public class Bitboard3x38Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 38 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 38 }
 }
 public class Bitboard3x39Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 39 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 39 }
 }
 public class Bitboard3x40Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 40 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 40 }
 }
 public class Bitboard3x41Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 41 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 41 }
 }
 public class Bitboard3x42Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 3 }
-  public static var rankWidth: Int { 42 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 3 }
+  public static var yMax: Int { 42 }
 }
 public class Bitboard4x16Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 4 }
-  public static var rankWidth: Int { 16 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 4 }
+  public static var yMax: Int { 16 }
 }
 public class Bitboard4x17Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 4 }
-  public static var rankWidth: Int { 17 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 4 }
+  public static var yMax: Int { 17 }
 }
 public class Bitboard4x18Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 4 }
-  public static var rankWidth: Int { 18 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 4 }
+  public static var yMax: Int { 18 }
 }
 public class Bitboard4x19Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 4 }
-  public static var rankWidth: Int { 19 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 4 }
+  public static var yMax: Int { 19 }
 }
 public class Bitboard4x20Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 4 }
-  public static var rankWidth: Int { 20 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 4 }
+  public static var yMax: Int { 20 }
 }
 public class Bitboard4x21Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 4 }
-  public static var rankWidth: Int { 21 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 4 }
+  public static var yMax: Int { 21 }
 }
 public class Bitboard4x22Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 4 }
-  public static var rankWidth: Int { 22 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 4 }
+  public static var yMax: Int { 22 }
 }
 public class Bitboard4x23Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 4 }
-  public static var rankWidth: Int { 23 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 4 }
+  public static var yMax: Int { 23 }
 }
 public class Bitboard4x24Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 4 }
-  public static var rankWidth: Int { 24 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 4 }
+  public static var yMax: Int { 24 }
 }
 public class Bitboard4x25Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 4 }
-  public static var rankWidth: Int { 25 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 4 }
+  public static var yMax: Int { 25 }
 }
 public class Bitboard4x26Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 4 }
-  public static var rankWidth: Int { 26 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 4 }
+  public static var yMax: Int { 26 }
 }
 public class Bitboard4x27Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 4 }
-  public static var rankWidth: Int { 27 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 4 }
+  public static var yMax: Int { 27 }
 }
 public class Bitboard4x28Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 4 }
-  public static var rankWidth: Int { 28 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 4 }
+  public static var yMax: Int { 28 }
 }
 public class Bitboard4x29Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 4 }
-  public static var rankWidth: Int { 29 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 4 }
+  public static var yMax: Int { 29 }
 }
 public class Bitboard4x30Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 4 }
-  public static var rankWidth: Int { 30 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 4 }
+  public static var yMax: Int { 30 }
 }
 public class Bitboard4x31Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 4 }
-  public static var rankWidth: Int { 31 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 4 }
+  public static var yMax: Int { 31 }
 }
 public class Bitboard5x13Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 5 }
-  public static var rankWidth: Int { 13 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 5 }
+  public static var yMax: Int { 13 }
 }
 public class Bitboard5x14Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 5 }
-  public static var rankWidth: Int { 14 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 5 }
+  public static var yMax: Int { 14 }
 }
 public class Bitboard5x15Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 5 }
-  public static var rankWidth: Int { 15 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 5 }
+  public static var yMax: Int { 15 }
 }
 public class Bitboard5x16Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 5 }
-  public static var rankWidth: Int { 16 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 5 }
+  public static var yMax: Int { 16 }
 }
 public class Bitboard5x17Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 5 }
-  public static var rankWidth: Int { 17 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 5 }
+  public static var yMax: Int { 17 }
 }
 public class Bitboard5x18Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 5 }
-  public static var rankWidth: Int { 18 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 5 }
+  public static var yMax: Int { 18 }
 }
 public class Bitboard5x19Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 5 }
-  public static var rankWidth: Int { 19 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 5 }
+  public static var yMax: Int { 19 }
 }
 public class Bitboard5x20Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 5 }
-  public static var rankWidth: Int { 20 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 5 }
+  public static var yMax: Int { 20 }
 }
 public class Bitboard5x21Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 5 }
-  public static var rankWidth: Int { 21 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 5 }
+  public static var yMax: Int { 21 }
 }
 public class Bitboard5x22Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 5 }
-  public static var rankWidth: Int { 22 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 5 }
+  public static var yMax: Int { 22 }
 }
 public class Bitboard5x23Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 5 }
-  public static var rankWidth: Int { 23 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 5 }
+  public static var yMax: Int { 23 }
 }
 public class Bitboard5x24Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 5 }
-  public static var rankWidth: Int { 24 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 5 }
+  public static var yMax: Int { 24 }
 }
 public class Bitboard5x25Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 5 }
-  public static var rankWidth: Int { 25 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 5 }
+  public static var yMax: Int { 25 }
 }
 public class Bitboard6x11Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 6 }
-  public static var rankWidth: Int { 11 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 6 }
+  public static var yMax: Int { 11 }
 }
 public class Bitboard6x12Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 6 }
-  public static var rankWidth: Int { 12 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 6 }
+  public static var yMax: Int { 12 }
 }
 public class Bitboard6x13Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 6 }
-  public static var rankWidth: Int { 13 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 6 }
+  public static var yMax: Int { 13 }
 }
 public class Bitboard6x14Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 6 }
-  public static var rankWidth: Int { 14 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 6 }
+  public static var yMax: Int { 14 }
 }
 public class Bitboard6x15Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 6 }
-  public static var rankWidth: Int { 15 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 6 }
+  public static var yMax: Int { 15 }
 }
 public class Bitboard6x16Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 6 }
-  public static var rankWidth: Int { 16 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 6 }
+  public static var yMax: Int { 16 }
 }
 public class Bitboard6x17Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 6 }
-  public static var rankWidth: Int { 17 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 6 }
+  public static var yMax: Int { 17 }
 }
 public class Bitboard6x18Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 6 }
-  public static var rankWidth: Int { 18 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 6 }
+  public static var yMax: Int { 18 }
 }
 public class Bitboard6x19Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 6 }
-  public static var rankWidth: Int { 19 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 6 }
+  public static var yMax: Int { 19 }
 }
 public class Bitboard6x20Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 6 }
-  public static var rankWidth: Int { 20 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 6 }
+  public static var yMax: Int { 20 }
 }
 public class Bitboard6x21Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 6 }
-  public static var rankWidth: Int { 21 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 6 }
+  public static var yMax: Int { 21 }
 }
 public class Bitboard7x10Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 7 }
-  public static var rankWidth: Int { 10 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 7 }
+  public static var yMax: Int { 10 }
 }
 public class Bitboard7x11Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 7 }
-  public static var rankWidth: Int { 11 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 7 }
+  public static var yMax: Int { 11 }
 }
 public class Bitboard7x12Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 7 }
-  public static var rankWidth: Int { 12 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 7 }
+  public static var yMax: Int { 12 }
 }
 public class Bitboard7x13Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 7 }
-  public static var rankWidth: Int { 13 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 7 }
+  public static var yMax: Int { 13 }
 }
 public class Bitboard7x14Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 7 }
-  public static var rankWidth: Int { 14 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 7 }
+  public static var yMax: Int { 14 }
 }
 public class Bitboard7x15Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 7 }
-  public static var rankWidth: Int { 15 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 7 }
+  public static var yMax: Int { 15 }
 }
 public class Bitboard7x16Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 7 }
-  public static var rankWidth: Int { 16 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 7 }
+  public static var yMax: Int { 16 }
 }
 public class Bitboard7x17Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 7 }
-  public static var rankWidth: Int { 17 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 7 }
+  public static var yMax: Int { 17 }
 }
 public class Bitboard7x18Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 7 }
-  public static var rankWidth: Int { 18 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 7 }
+  public static var yMax: Int { 18 }
 }
 public class Bitboard8x8Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 8 }
-  public static var rankWidth: Int { 8 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 8 }
+  public static var yMax: Int { 8 }
 }
 public class Bitboard8x9Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 8 }
-  public static var rankWidth: Int { 9 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 8 }
+  public static var yMax: Int { 9 }
 }
 public class Bitboard8x10Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 8 }
-  public static var rankWidth: Int { 10 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 8 }
+  public static var yMax: Int { 10 }
 }
 public class Bitboard8x11Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 8 }
-  public static var rankWidth: Int { 11 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 8 }
+  public static var yMax: Int { 11 }
 }
 public class Bitboard8x12Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 8 }
-  public static var rankWidth: Int { 12 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 8 }
+  public static var yMax: Int { 12 }
 }
 public class Bitboard8x13Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 8 }
-  public static var rankWidth: Int { 13 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 8 }
+  public static var yMax: Int { 13 }
 }
 public class Bitboard8x14Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 8 }
-  public static var rankWidth: Int { 14 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 8 }
+  public static var yMax: Int { 14 }
 }
 public class Bitboard8x15Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 8 }
-  public static var rankWidth: Int { 15 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 8 }
+  public static var yMax: Int { 15 }
 }
 public class Bitboard9x8Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 9 }
-  public static var rankWidth: Int { 8 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 9 }
+  public static var yMax: Int { 8 }
 }
 public class Bitboard9x9Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 9 }
-  public static var rankWidth: Int { 9 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 9 }
+  public static var yMax: Int { 9 }
 }
 public class Bitboard9x10Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 9 }
-  public static var rankWidth: Int { 10 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 9 }
+  public static var yMax: Int { 10 }
 }
 public class Bitboard9x11Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 9 }
-  public static var rankWidth: Int { 11 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 9 }
+  public static var yMax: Int { 11 }
 }
 public class Bitboard9x12Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 9 }
-  public static var rankWidth: Int { 12 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 9 }
+  public static var yMax: Int { 12 }
 }
 public class Bitboard9x13Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 9 }
-  public static var rankWidth: Int { 13 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 9 }
+  public static var yMax: Int { 13 }
 }
 public class Bitboard9x14Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 9 }
-  public static var rankWidth: Int { 14 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 9 }
+  public static var yMax: Int { 14 }
 }
 public class Bitboard10x7Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 10 }
-  public static var rankWidth: Int { 7 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 10 }
+  public static var yMax: Int { 7 }
 }
 public class Bitboard10x8Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 10 }
-  public static var rankWidth: Int { 8 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 10 }
+  public static var yMax: Int { 8 }
 }
 public class Bitboard10x9Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 10 }
-  public static var rankWidth: Int { 9 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 10 }
+  public static var yMax: Int { 9 }
 }
 public class Bitboard10x10Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 10 }
-  public static var rankWidth: Int { 10 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 10 }
+  public static var yMax: Int { 10 }
 }
 public class Bitboard10x11Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 10 }
-  public static var rankWidth: Int { 11 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 10 }
+  public static var yMax: Int { 11 }
 }
 public class Bitboard10x12Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 10 }
-  public static var rankWidth: Int { 12 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 10 }
+  public static var yMax: Int { 12 }
 }
 public class Bitboard11x6Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 11 }
-  public static var rankWidth: Int { 6 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 11 }
+  public static var yMax: Int { 6 }
 }
 public class Bitboard11x7Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 11 }
-  public static var rankWidth: Int { 7 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 11 }
+  public static var yMax: Int { 7 }
 }
 public class Bitboard11x8Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 11 }
-  public static var rankWidth: Int { 8 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 11 }
+  public static var yMax: Int { 8 }
 }
 public class Bitboard11x9Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 11 }
-  public static var rankWidth: Int { 9 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 11 }
+  public static var yMax: Int { 9 }
 }
 public class Bitboard11x10Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 11 }
-  public static var rankWidth: Int { 10 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 11 }
+  public static var yMax: Int { 10 }
 }
 public class Bitboard11x11Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 11 }
-  public static var rankWidth: Int { 11 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 11 }
+  public static var yMax: Int { 11 }
 }
 public class Bitboard12x6Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 12 }
-  public static var rankWidth: Int { 6 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 12 }
+  public static var yMax: Int { 6 }
 }
 public class Bitboard12x7Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 12 }
-  public static var rankWidth: Int { 7 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 12 }
+  public static var yMax: Int { 7 }
 }
 public class Bitboard12x8Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 12 }
-  public static var rankWidth: Int { 8 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 12 }
+  public static var yMax: Int { 8 }
 }
 public class Bitboard12x9Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 12 }
-  public static var rankWidth: Int { 9 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 12 }
+  public static var yMax: Int { 9 }
 }
 public class Bitboard12x10Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 12 }
-  public static var rankWidth: Int { 10 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 12 }
+  public static var yMax: Int { 10 }
 }
 public class Bitboard13x5Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 13 }
-  public static var rankWidth: Int { 5 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 13 }
+  public static var yMax: Int { 5 }
 }
 public class Bitboard13x6Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 13 }
-  public static var rankWidth: Int { 6 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 13 }
+  public static var yMax: Int { 6 }
 }
 public class Bitboard13x7Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 13 }
-  public static var rankWidth: Int { 7 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 13 }
+  public static var yMax: Int { 7 }
 }
 public class Bitboard13x8Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 13 }
-  public static var rankWidth: Int { 8 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 13 }
+  public static var yMax: Int { 8 }
 }
 public class Bitboard13x9Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 13 }
-  public static var rankWidth: Int { 9 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 13 }
+  public static var yMax: Int { 9 }
 }
 public class Bitboard14x5Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 14 }
-  public static var rankWidth: Int { 5 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 14 }
+  public static var yMax: Int { 5 }
 }
 public class Bitboard14x6Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 14 }
-  public static var rankWidth: Int { 6 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 14 }
+  public static var yMax: Int { 6 }
 }
 public class Bitboard14x7Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 14 }
-  public static var rankWidth: Int { 7 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 14 }
+  public static var yMax: Int { 7 }
 }
 public class Bitboard14x8Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 14 }
-  public static var rankWidth: Int { 8 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 14 }
+  public static var yMax: Int { 8 }
 }
 public class Bitboard14x9Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 14 }
-  public static var rankWidth: Int { 9 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 14 }
+  public static var yMax: Int { 9 }
 }
 public class Bitboard15x5Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 15 }
-  public static var rankWidth: Int { 5 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 15 }
+  public static var yMax: Int { 5 }
 }
 public class Bitboard15x6Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 15 }
-  public static var rankWidth: Int { 6 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 15 }
+  public static var yMax: Int { 6 }
 }
 public class Bitboard15x7Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 15 }
-  public static var rankWidth: Int { 7 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 15 }
+  public static var yMax: Int { 7 }
 }
 public class Bitboard15x8Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 15 }
-  public static var rankWidth: Int { 8 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 15 }
+  public static var yMax: Int { 8 }
 }
 public class Bitboard16x4Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 16 }
-  public static var rankWidth: Int { 4 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 16 }
+  public static var yMax: Int { 4 }
 }
 public class Bitboard16x5Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 16 }
-  public static var rankWidth: Int { 5 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 16 }
+  public static var yMax: Int { 5 }
 }
 public class Bitboard16x6Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 16 }
-  public static var rankWidth: Int { 6 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 16 }
+  public static var yMax: Int { 6 }
 }
 public class Bitboard16x7Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 16 }
-  public static var rankWidth: Int { 7 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 16 }
+  public static var yMax: Int { 7 }
 }
 public class Bitboard17x4Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 17 }
-  public static var rankWidth: Int { 4 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 17 }
+  public static var yMax: Int { 4 }
 }
 public class Bitboard17x5Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 17 }
-  public static var rankWidth: Int { 5 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 17 }
+  public static var yMax: Int { 5 }
 }
 public class Bitboard17x6Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 17 }
-  public static var rankWidth: Int { 6 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 17 }
+  public static var yMax: Int { 6 }
 }
 public class Bitboard17x7Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 17 }
-  public static var rankWidth: Int { 7 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 17 }
+  public static var yMax: Int { 7 }
 }
 public class Bitboard18x4Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 18 }
-  public static var rankWidth: Int { 4 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 18 }
+  public static var yMax: Int { 4 }
 }
 public class Bitboard18x5Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 18 }
-  public static var rankWidth: Int { 5 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 18 }
+  public static var yMax: Int { 5 }
 }
 public class Bitboard18x6Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 18 }
-  public static var rankWidth: Int { 6 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 18 }
+  public static var yMax: Int { 6 }
 }
 public class Bitboard18x7Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 18 }
-  public static var rankWidth: Int { 7 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 18 }
+  public static var yMax: Int { 7 }
 }
 public class Bitboard19x4Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 19 }
-  public static var rankWidth: Int { 4 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 19 }
+  public static var yMax: Int { 4 }
 }
 public class Bitboard19x5Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 19 }
-  public static var rankWidth: Int { 5 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 19 }
+  public static var yMax: Int { 5 }
 }
 public class Bitboard19x6Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 19 }
-  public static var rankWidth: Int { 6 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 19 }
+  public static var yMax: Int { 6 }
 }
 public class Bitboard20x4Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 20 }
-  public static var rankWidth: Int { 4 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 20 }
+  public static var yMax: Int { 4 }
 }
 public class Bitboard20x5Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 20 }
-  public static var rankWidth: Int { 5 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 20 }
+  public static var yMax: Int { 5 }
 }
 public class Bitboard20x6Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 20 }
-  public static var rankWidth: Int { 6 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 20 }
+  public static var yMax: Int { 6 }
 }
 public class Bitboard21x4Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 21 }
-  public static var rankWidth: Int { 4 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 21 }
+  public static var yMax: Int { 4 }
 }
 public class Bitboard21x5Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 21 }
-  public static var rankWidth: Int { 5 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 21 }
+  public static var yMax: Int { 5 }
 }
 public class Bitboard21x6Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 21 }
-  public static var rankWidth: Int { 6 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 21 }
+  public static var yMax: Int { 6 }
 }
 public class Bitboard22x3Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 22 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 22 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard22x4Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 22 }
-  public static var rankWidth: Int { 4 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 22 }
+  public static var yMax: Int { 4 }
 }
 public class Bitboard22x5Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 22 }
-  public static var rankWidth: Int { 5 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 22 }
+  public static var yMax: Int { 5 }
 }
 public class Bitboard23x3Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 23 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 23 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard23x4Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 23 }
-  public static var rankWidth: Int { 4 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 23 }
+  public static var yMax: Int { 4 }
 }
 public class Bitboard23x5Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 23 }
-  public static var rankWidth: Int { 5 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 23 }
+  public static var yMax: Int { 5 }
 }
 public class Bitboard24x3Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 24 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 24 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard24x4Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 24 }
-  public static var rankWidth: Int { 4 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 24 }
+  public static var yMax: Int { 4 }
 }
 public class Bitboard24x5Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 24 }
-  public static var rankWidth: Int { 5 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 24 }
+  public static var yMax: Int { 5 }
 }
 public class Bitboard25x3Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 25 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 25 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard25x4Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 25 }
-  public static var rankWidth: Int { 4 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 25 }
+  public static var yMax: Int { 4 }
 }
 public class Bitboard25x5Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 25 }
-  public static var rankWidth: Int { 5 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 25 }
+  public static var yMax: Int { 5 }
 }
 public class Bitboard26x3Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 26 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 26 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard26x4Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 26 }
-  public static var rankWidth: Int { 4 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 26 }
+  public static var yMax: Int { 4 }
 }
 public class Bitboard27x3Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 27 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 27 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard27x4Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 27 }
-  public static var rankWidth: Int { 4 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 27 }
+  public static var yMax: Int { 4 }
 }
 public class Bitboard28x3Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 28 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 28 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard28x4Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 28 }
-  public static var rankWidth: Int { 4 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 28 }
+  public static var yMax: Int { 4 }
 }
 public class Bitboard29x3Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 29 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 29 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard29x4Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 29 }
-  public static var rankWidth: Int { 4 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 29 }
+  public static var yMax: Int { 4 }
 }
 public class Bitboard30x3Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 30 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 30 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard30x4Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 30 }
-  public static var rankWidth: Int { 4 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 30 }
+  public static var yMax: Int { 4 }
 }
 public class Bitboard31x3Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 31 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 31 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard31x4Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 31 }
-  public static var rankWidth: Int { 4 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 31 }
+  public static var yMax: Int { 4 }
 }
 public class Bitboard32x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 32 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 32 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard32x3Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 32 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 32 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard33x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 33 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 33 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard33x3Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 33 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 33 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard34x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 34 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 34 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard34x3Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 34 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 34 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard35x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 35 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 35 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard35x3Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 35 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 35 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard36x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 36 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 36 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard36x3Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 36 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 36 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard37x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 37 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 37 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard37x3Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 37 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 37 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard38x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 38 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 38 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard38x3Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 38 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 38 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard39x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 39 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 39 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard39x3Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 39 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 39 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard40x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 40 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 40 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard40x3Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 40 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 40 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard41x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 41 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 41 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard41x3Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 41 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 41 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard42x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 42 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 42 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard42x3Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 42 }
-  public static var rankWidth: Int { 3 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 42 }
+  public static var yMax: Int { 3 }
 }
 public class Bitboard43x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 43 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 43 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard44x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 44 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 44 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard45x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 45 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 45 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard46x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 46 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 46 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard47x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 47 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 47 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard48x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 48 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 48 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard49x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 49 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 49 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard50x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 50 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 50 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard51x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 51 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 51 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard52x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 52 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 52 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard53x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 53 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 53 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard54x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 54 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 54 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard55x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 55 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 55 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard56x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 56 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 56 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard57x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 57 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 57 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard58x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 58 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 58 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard59x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 59 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 59 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard60x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 60 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 60 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard61x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 61 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 61 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard62x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 62 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 62 }
+  public static var yMax: Int { 2 }
 }
 public class Bitboard63x2Configuration: BitboardUInt128Configuration {
-  public static var fileWidth: Int { 63 }
-  public static var rankWidth: Int { 2 }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { 63 }
+  public static var yMax: Int { 2 }
 }
 
 // MARK: typealias BitboardNxM = Bitboard<BitboardNxMConfiguration>

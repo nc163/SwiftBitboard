@@ -8,70 +8,56 @@ public protocol FixedSizeable where Index: Coordinater {
   
   subscript(coordinate: any Coordinater) -> Element { get }
   
-  var fileWidth: Int { get }
-  var rankWidth: Int { get }
+  var x_max: Int { get }
+  var y_max: Int { get }
   
-  // option
-  
-  /// file rank が 0 始まりかどうか
-  var isZeroBasedIndexing: Bool { get }
-}
-
-
-extension FixedSizeable {
-  
-  // 0始まりか、1始まりかの定義
-  var baseIndex: Int { self.isZeroBasedIndexing ? 0 : 1 }
-  
-  // default
-  var isZeroBasedIndexing: Bool { false }
 }
 
 public extension FixedSizeable {
   
   
-  subscript(file: Int, rank: Int) -> Element {
-    self[Index.init(file:file, rank:rank)]
+  subscript(x: Int, y: Int) -> Element {
+    self[Index.init(x: x, y: y)]
   }
   
   
   var is_square: Bool {
-    self.fileWidth == self.rankWidth
+    self.x_max == self.y_max
   }
   
   /// <#Description#>
-  var fileRange: ClosedRange<Int> {
-    return baseIndex...(self.fileWidth - (1 - baseIndex))
+  var x_range: ClosedRange<Int> {
+    return 0...(self.x_max - 1)
   }
   
   
   /// <#Description#>
-  var rankRange: ClosedRange<Int> {
-    return baseIndex...(self.rankWidth - (1 - baseIndex))
+  var y_range: ClosedRange<Int> {
+    return 0...(self.y_max - 1)
   }
   
   func inside(coordinater: any Coordinater) -> Bool {
-    return self.fileRange.contains(coordinater.file) && self.rankRange.contains(coordinater.rank)
+    return self.x_range.contains(coordinater.x) && self.y_range.contains(coordinater.y)
   }
   
   
   // 2点が垂直の直線上にあるか  
   func arePointsVertical(_ point1: any Coordinater, _ point2: any Coordinater) -> Bool {
-    return point1.file == point2.file
+    return point1.x == point2.x
   }
   
   
   // 2点が水平の直線上にあるか
   func arePointsHorizontal(_ point1: any Coordinater, _ point2: any Coordinater) -> Bool {
-    return point1.rank == point2.rank
+    return point1.y == point2.y
   }
   
   
   // 2点が直線上にあるかどうかを判定する
   func arePointsAligned(_ point1: any Coordinater, _ point2: any Coordinater) -> Bool {
-    return point1.file == point2.file 
-      || point1.rank == point2.rank
-      || abs(point1.file - point2.file) == abs(point1.rank - point2.rank)
+    return point1.x == point2.x 
+      || point1.y == point2.y
+      || abs(point1.x - point2.x) == abs(point1.y - point2.y)
   }
 }
 

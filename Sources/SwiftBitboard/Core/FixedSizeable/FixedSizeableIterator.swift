@@ -10,7 +10,7 @@ public struct FixedSizeableIterator<T: FixedSizeable>: Sequence, IteratorProtoco
   
   init(_ fixedSizeable: T) {
     self.fixedSizeable = fixedSizeable
-    self.currentIndex = .init(file: fixedSizeable.baseIndex, rank: fixedSizeable.baseIndex)
+    self.currentIndex = .init(x: 0, y: 0)
   }
   
   public mutating func next() -> Element? {
@@ -18,10 +18,10 @@ public struct FixedSizeableIterator<T: FixedSizeable>: Sequence, IteratorProtoco
     
     let element = fixedSizeable[currentIndex]
 
-    if fixedSizeable.fileRange.contains(currentIndex.file + 1) {
-      currentIndex = .init(file: currentIndex.file + 1, rank: currentIndex.rank)
+    if fixedSizeable.x_range.contains(currentIndex.x + 1) {
+      currentIndex = .init(x: currentIndex.x + 1, y: currentIndex.y)
     } else {
-      currentIndex = .init(file: fixedSizeable.baseIndex, rank: currentIndex.rank + 1)
+      currentIndex = .init(x: 0, y: currentIndex.y + 1)
     }
     
     return element

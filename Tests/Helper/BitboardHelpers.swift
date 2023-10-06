@@ -7,7 +7,7 @@ extension Bitboard {
   /// <#Description#>
   /// - Returns: <#description#>
   func valid() -> Bool {
-    let need_bit_width: Int = (fileWidth * rankWidth)
+    let need_bit_width: Int = (x_max * y_max)
     return need_bit_width < self.rawValue.bitWidth
   }
 }

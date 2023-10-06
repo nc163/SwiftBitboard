@@ -5,13 +5,13 @@ extension BitboardTests {
   
   func test_bit_manipulation() throws {
     var bitboard = Bitboard9x9.init()
-    XCTAssertFalse( bitboard.bittest(forFile: 5, forRank: 5) )
-    bitboard.bitset(forFile: 5, forRank: 5)
-    XCTAssertTrue( bitboard.bittest(forFile: 5, forRank: 5) )
-    bitboard.bitunset(forFile: 5, forRank: 5)
-    XCTAssertFalse( bitboard.bittest(forFile: 5, forRank: 5) )
+    XCTAssertFalse( bitboard.bittest(for_x: 5, for_y: 5) )
+    bitboard.bitset(for_x: 5, for_y: 5)
+    XCTAssertTrue( bitboard.bittest(for_x: 5, for_y: 5) )
+    bitboard.bitunset(for_x: 5, for_y: 5)
+    XCTAssertFalse( bitboard.bittest(for_x: 5, for_y: 5) )
     
-    let point: Coordinate = .init(file: 1, rank: 8)
+    let point: Coordinate = .init(x: 1, y: 8)
     bitboard.bitset(point)
     XCTAssertTrue( bitboard.bittest(point) )
     bitboard.bitunset(point)
@@ -21,10 +21,10 @@ extension BitboardTests {
   func test_bit_scaning() throws {
     var bitboard = Bitboard9x9.init()
     var coordinates: [Coordinate] = .init()
-    coordinates.append(.init(file: 1, rank:1))
-    coordinates.append(.init(file: 2, rank:8))
-    coordinates.append(.init(file: 5, rank:5))
-    coordinates.append(.init(file: 8, rank:8))
+    coordinates.append(.init(x: 1, y:1))
+    coordinates.append(.init(x: 2, y:8))
+    coordinates.append(.init(x: 5, y:5))
+    coordinates.append(.init(x: 8, y:8))
     
     for coordinate in coordinates {
       bitboard.bitset(coordinate)
@@ -39,8 +39,8 @@ extension BitboardTests {
   
   func test_bit_or() throws {
     var coordinates: [Coordinate] = .init()
-    coordinates.append(.init(file: 1, rank:1))
-    coordinates.append(.init(file: 8, rank:8))
+    coordinates.append(.init(x: 1, y:1))
+    coordinates.append(.init(x: 8, y:8))
     
     var bitboard1 = Bitboard9x9.init()
     var bitboard2 = Bitboard9x9.init()

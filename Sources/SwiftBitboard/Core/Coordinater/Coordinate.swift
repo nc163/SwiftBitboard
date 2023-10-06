@@ -2,23 +2,23 @@ import Foundation
 
 /// 座標
 public struct Coordinate: Coordinater {
-  public var file: Int 
-  public var rank: Int
+  public var x: Int 
+  public var y: Int
   
-  public init(file: Int, rank: Int) {
-    self.file = file
-    self.rank = rank
+  public init(x: Int, y: Int) {
+    self.x = x
+    self.y = y
   }
   
   public static func ==(lhs: Coordinate, rhs: Coordinate) -> Bool {
-    return lhs.file == rhs.file && lhs.rank == rhs.rank
+    return lhs.x == rhs.x && lhs.y == rhs.y
   }
 }
 
 extension Coordinate {
   
   static var zero: Self {
-    return .init(file: .zero, rank: .zero)
+    .init(x: .zero, y: .zero)
   }
   
 }

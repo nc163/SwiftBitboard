@@ -26,9 +26,8 @@ public protocol Bitboard${type}Configuration: BitboardConfiguration where RawVal
 %     for tuple in combination:
 %       size = f'{tuple[0]}x{tuple[1]}'
 public class Bitboard${size}Configuration: Bitboard${type}Configuration {
-  public static var fileWidth: Int { ${tuple[0]} }
-  public static var rankWidth: Int { ${tuple[1]} }
-  // public static var isZeroBasedIndexing: Bool { true }
+  public static var xMax: Int { ${tuple[0]} }
+  public static var yMax: Int { ${tuple[1]} }
 }
 %     end
 % end
