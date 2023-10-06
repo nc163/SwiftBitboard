@@ -35,37 +35,3 @@ public struct Movable: VectorPresentable {
     public static var upLeft:     Movable { return .init(file: 1,  rank: -1, true) }
   }
 }
-//
-//// MARK: public extension Move
-//extension Move {
-//
-//  public func to_bitboard<BB: Bitboardable>(offset: any CoordinaterePresentable) -> BB {
-//    var retval: BB = .init(rawValue: .zero)
-//
-//    var current = offset
-//
-//    // 飛び道具のききの計算
-//    if self.infinity {
-//      while true {
-//
-//        var moved = current.move_to(point: self)
-//
-//        // 壁にぶつかるまで
-//        guard retval.inside(point: moved) else {
-//          break
-//        }
-//
-//        retval.bitset(forFile: moved.file, forRank: moved.rank)
-//      }
-//    } else {
-//
-//      var moved = current.move_to(point: self)
-//
-//      // 壁にぶつかるなら移動しない
-//      if retval.inside(point: moved) {
-//        retval.bitset(forFile: moved.file, forRank: moved.rank)
-//      }
-//    }
-//    return retval
-//  }
-//}
