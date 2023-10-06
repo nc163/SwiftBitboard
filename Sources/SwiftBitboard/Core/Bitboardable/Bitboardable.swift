@@ -8,7 +8,6 @@ public protocol Bitboardable: FixedSizeable, Comparable, Hashable, Equatable
   
   // e.g. UInt8, UInt16, UInt32, UInt64 etc
   typealias RawValue = Configuration.RawValue
-//  typealias Move     
   
   var rawValue: RawValue { set get }
   
@@ -120,10 +119,6 @@ extension Bitboardable {
     
     self.rawValue &= ~Self.mask(x, y)
   }
-  
-//  public mutating func bitmove(from: Index, to: Vector2) {
-//    
-//  }
   
   /// - Parameters:
   ///   - file: <#file description#>
