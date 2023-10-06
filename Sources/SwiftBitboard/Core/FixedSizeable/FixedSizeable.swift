@@ -15,7 +15,6 @@ public protocol FixedSizeable where Index: Coordinater {
 
 public extension FixedSizeable {
   
-  
   subscript(x: Int, y: Int) -> Element {
     self[Index.init(x: x, y: y)]
   }
