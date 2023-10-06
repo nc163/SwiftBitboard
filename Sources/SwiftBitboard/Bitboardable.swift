@@ -8,6 +8,7 @@ public protocol Bitboardable: FixedSizeable, Comparable, Hashable, Equatable
   
   // e.g. UInt8, UInt16, UInt32, UInt64 etc
   typealias RawValue = Configuration.RawValue
+//  typealias Move     
   
   var rawValue: RawValue { set get }
   
@@ -58,7 +59,7 @@ extension Bitboardable {
 // MARK: FixedSizeable
 extension Bitboardable {
   
-  public subscript(coordinate: any Coordinater) -> Bool { 
+  public subscript(coordinate: Index) -> Bool { 
     self.bittest(for_x: coordinate.x, for_y: coordinate.y)
   }
   
@@ -79,7 +80,7 @@ extension Bitboardable {
   /// - Parameters:
   ///   - file: <#file description#>
   ///   - rank: <#rank description#>
-  public func bitscan() -> [Coordinate] {
+  public func bitscan() -> [Index] {
     var word = self.rawValue
     var result: Array<Coordinate> = []
     
@@ -119,6 +120,10 @@ extension Bitboardable {
     
     self.rawValue &= ~Self.mask(x, y)
   }
+  
+//  public mutating func bitmove(from: Index, to: Vector2) {
+//    
+//  }
 }
 
 
@@ -127,7 +132,7 @@ extension Bitboardable {
   /// - Parameters:
   ///   - file: <#file description#>
   ///   - rank: <#rank description#>
-  public func bittest(_ coordinate: any Coordinater) -> Bool {
+  public func bittest(_ coordinate: Index) -> Bool {
     IF_ASSERT_OUT_OF_BOUNDS(coordinate)
     
     return (self.rawValue & Self.mask(coordinate)) > 0
@@ -135,7 +140,7 @@ extension Bitboardable {
   
   /// <#Description#>
   /// - Parameter point: <#point description#>
-  public mutating func bitset(_ coordinate: any Coordinater) {
+  public mutating func bitset(_ coordinate: Index) {
     IF_ASSERT_OUT_OF_BOUNDS(coordinate)
     
     self.rawValue |= Self.mask(coordinate)
@@ -144,7 +149,7 @@ extension Bitboardable {
   
   /// <#Description#>
   /// - Parameter point: <#point description#>
-  public mutating func bitunset(_ coordinate: any Coordinater) {
+  public mutating func bitunset(_ coordinate: Index) {
     IF_ASSERT_OUT_OF_BOUNDS(coordinate)
     
     self.rawValue &= ~Self.mask(coordinate)

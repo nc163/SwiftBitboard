@@ -6,7 +6,7 @@ public protocol FixedSizeable where Index: Coordinater {
   associatedtype Index
   typealias Iterator = FixedSizeableIterator<Self>
   
-  subscript(coordinate: any Coordinater) -> Element { get }
+  subscript(coordinate: Index) -> Element { get }
   
   var x_max: Int { get }
   var y_max: Int { get }
@@ -19,7 +19,6 @@ public extension FixedSizeable {
     self[Index.init(x: x, y: y)]
   }
   
-  
   var is_square: Bool {
     self.x_max == self.y_max
   }
@@ -29,35 +28,33 @@ public extension FixedSizeable {
     return 0...(self.x_max - 1)
   }
   
-  
   /// <#Description#>
   var y_range: ClosedRange<Int> {
     return 0...(self.y_max - 1)
   }
   
-  func inside(coordinater: any Coordinater) -> Bool {
+  // 枠内に収まっているかどうか
+  func inside(coordinater: Index) -> Bool {
     return self.x_range.contains(coordinater.x) && self.y_range.contains(coordinater.y)
   }
   
-  
   // 2点が垂直の直線上にあるか  
-  func arePointsVertical(_ point1: any Coordinater, _ point2: any Coordinater) -> Bool {
-    return point1.x == point2.x
+  func arePointsVertical(a: Index, b: Index) -> Bool {
+    return a.x == b.x
   }
-  
   
   // 2点が水平の直線上にあるか
-  func arePointsHorizontal(_ point1: any Coordinater, _ point2: any Coordinater) -> Bool {
-    return point1.y == point2.y
+  func arePointsHorizontal(a: Index, b: Index) -> Bool {
+    return a.y == b.y
   }
-  
   
   // 2点が直線上にあるかどうかを判定する
-  func arePointsAligned(_ point1: any Coordinater, _ point2: any Coordinater) -> Bool {
-    return point1.x == point2.x 
-      || point1.y == point2.y
-      || abs(point1.x - point2.x) == abs(point1.y - point2.y)
+  func arePointsAligned(a: Index, b: Index) -> Bool {
+    return a.x == b.x 
+      || a.y == b.y
+      || abs(a.x - b.x) == abs(a.y - b.y)
   }
+  
 }
 
 // MARK: Sequence

@@ -23,7 +23,7 @@ public struct Bitboard<Configuration: BitboardConfiguration>: Bitboardable {
 
 extension Bitboard {
   
-  public static func Inside(point: any Coordinater) -> Bool {
+  public static func Inside(point: Index) -> Bool {
     return Self.x_range.contains(point.x) && Self.y_range.contains(point.y)
   }
   

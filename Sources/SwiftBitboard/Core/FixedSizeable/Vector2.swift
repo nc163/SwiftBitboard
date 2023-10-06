@@ -2,7 +2,7 @@ import Foundation
 
 public protocol Vector2: Hashable {
   
-  var x: Int { get }
-  var y: Int { get }
+  var vec_x: Int { get }
+  var vec_y: Int { get }
   
 }
