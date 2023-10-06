@@ -67,4 +67,5 @@ extension FixedSizeable where Iterator == FixedSizeableIterator<Self> {
   public func makeIterator() -> Iterator {
     .init(self)
   }
+  
 }

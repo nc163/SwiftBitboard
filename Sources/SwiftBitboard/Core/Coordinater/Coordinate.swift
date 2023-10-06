@@ -2,6 +2,7 @@ import Foundation
 
 /// 座標
 public struct Coordinate: Coordinater {
+  
   public var x: Int 
   public var y: Int
   
@@ -13,6 +14,7 @@ public struct Coordinate: Coordinater {
   public static func ==(lhs: Coordinate, rhs: Coordinate) -> Bool {
     return lhs.x == rhs.x && lhs.y == rhs.y
   }
+  
 }
 
 extension Coordinate {

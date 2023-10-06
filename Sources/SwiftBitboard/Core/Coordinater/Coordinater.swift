@@ -7,6 +7,7 @@ public protocol Coordinater: Equatable, Comparable, Hashable {
   var y: Int { get }
   
   init(x: Int, y: Int)
+  
 }
 
 

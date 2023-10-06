@@ -26,4 +26,5 @@ public struct FixedSizeableIterator<T: FixedSizeable>: Sequence, IteratorProtoco
     
     return element
   }
+  
 }
