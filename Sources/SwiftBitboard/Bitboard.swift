@@ -15,6 +15,8 @@ public struct Bitboard<Configuration: BitboardConfiguration>: Bitboardable {
       self.bitset(for_x: i.x, for_y: i.y)
     }
   }
+  
+  public static var zero: Self { .init(rawValue: .zero) }
     
   public func clone(rawValue: RawValue? = nil) -> Self {
     .init(rawValue: rawValue ?? self.rawValue)
