@@ -29,6 +29,8 @@ public protocol Bitboardable: FixedSizeable, Comparable, Hashable, Equatable
 
 extension Bitboardable {
   
+  public static var zero: Self { .init(rawValue: .zero) }
+  
   ///
   public static var x_max: Int {
     return Configuration.xMax
