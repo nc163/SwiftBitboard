@@ -13,6 +13,29 @@ public protocol Coordinater: Strideable, Equatable, Comparable, Hashable
   
 }
 
+extension Coordinater {
+  
+  func moveToward(_ b: Self) -> Self {
+    var newX = self.x
+    var newY = self.y
+    
+    if newX < b.x {
+      newX += 1
+    } else if newX > b.x {
+      newX -= 1
+    }
+    
+    if newY < b.y {
+      newY += 1
+    } else if newY > b.y {
+      newY -= 1
+    }
+    
+    return .init(x: newX, y: newY)
+  }
+  
+}
+
 
 // MARK: Comparable
 extension Coordinater {
@@ -29,13 +52,11 @@ extension Coordinater {
 
 // MARK: Strideable
 extension Coordinater {
-  // `advanced(by:)` での進行は、xとyの両方で等しく進行させるものとします。
-  // もちろん、異なる方法で進行させることも可能です。
+
   public func advanced(by n: Stride) -> Self {
     return Self(x: x + n, y: y + n)
   }
   
-  // 2つの座標間の「距離」は、xとyの差の最大値として定義します。
   public func distance(to other: Self) -> Stride {
     let dx = other.x - x
     let dy = other.y - y

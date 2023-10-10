@@ -3,6 +3,7 @@ public struct Bitboard<Configuration: BitboardConfiguration>: Bitboardable {
   
   public typealias RawValue = Configuration.RawValue
   public typealias Index    = Coordinate
+  public typealias Line     = ClosedRange<Index>
   
   public var rawValue: RawValue
 
