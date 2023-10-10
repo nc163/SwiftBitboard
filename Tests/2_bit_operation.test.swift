@@ -11,7 +11,7 @@ extension BitboardTests {
     bitboard.bitunset(for_x: 5, for_y: 5)
     XCTAssertFalse( bitboard.bittest(for_x: 5, for_y: 5) )
     
-    let point: Bitboard9x9.Coordinate = .init(x: 1, y: 8)
+    let point: Coordinate = .init(x: 1, y: 8)
     bitboard.bitset(point)
     XCTAssertTrue( bitboard.bittest(point) )
     bitboard.bitunset(point)
@@ -20,7 +20,7 @@ extension BitboardTests {
   
   func test_bit_scaning() throws {
     var bitboard = Bitboard9x9.init()
-    var coordinates: [Bitboard9x9.Coordinate] = .init()
+    var coordinates: [Coordinate] = .init()
     coordinates.append(.init(x: 1, y:1))
     coordinates.append(.init(x: 2, y:8))
     coordinates.append(.init(x: 5, y:5))
@@ -38,7 +38,7 @@ extension BitboardTests {
   }
   
   func test_bit_or() throws {
-    var coordinates: [Bitboard9x9.Coordinate] = .init()
+    var coordinates: [Coordinate] = .init()
     coordinates.append(.init(x: 1, y:1))
     coordinates.append(.init(x: 8, y:8))
     
