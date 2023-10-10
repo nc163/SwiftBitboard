@@ -15,7 +15,7 @@ public protocol Coordinater: Strideable, Equatable, Comparable, Hashable
 
 extension Coordinater {
   
-  func moveToward(_ b: Self) -> Self {
+  public func moveToward(_ b: Self) -> Self {
     var newX = self.x
     var newY = self.y
     
