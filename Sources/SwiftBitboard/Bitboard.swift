@@ -19,6 +19,27 @@ public struct Bitboard<Configuration: BitboardConfiguration>: Bitboardable {
   public func clone(rawValue: RawValue? = nil) -> Self {
     .init(rawValue: rawValue ?? self.rawValue)
   }
+  
+  /// 座標
+  public struct Coordinate: Coordinater {  
+    
+    public var x: Int 
+    public var y: Int
+    
+    public init(x: Int, y: Int) {
+      self.x = x
+      self.y = y
+    }
+    
+    public static var zero: Self {
+      return .init(x: .zero, y: .zero)
+    }
+    
+    public static func ==(lhs: Coordinate, rhs: Coordinate) -> Bool {
+      return lhs.x == rhs.x && lhs.y == rhs.y
+    }
+    
+  }
 }
 
 extension Bitboard {
@@ -91,7 +112,7 @@ extension Bitboard: LosslessStringConvertible {
     
     for text in _description_ {
       if text == "*" {
-        let coordinate = Self.index_to_coordinate(index: index)
+        let coordinate: Index = Self.index_to_coordinate(index: index)
         coordinates.append(coordinate)
       }
       index += 1
