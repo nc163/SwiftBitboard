@@ -15,7 +15,7 @@ extension Bitboardable {
   }
   
   // 2つの位置の間のマスクを生成
-  func maskBetween<C: Coordinater>(_ a: C, _ b: C) -> RawValue {
+  static func maskBetween<C: Coordinater>(_ a: C, _ b: C) -> RawValue {
     guard a > b else { return maskBetween(b, a) }
     
     let startIndex = a

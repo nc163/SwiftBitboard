@@ -94,6 +94,22 @@ extension Bitboardable {
     }
     return result
   }
+  
+  public func bitscan(between a: Index, _ b: Index) -> [Index] {
+    var result: Array<Index> = []
+    let mask: RawValue = Self.maskBetween(a, b)
+    var word = self.rawValue & mask
+    
+    while (word != .zero) {
+      let index = word.trailingZeroBitCount
+      let coordinate: Index = Self.index_to_coordinate(index: index)
+      result.append(coordinate)
+      
+      word = word & (word - 1);
+    }
+    
+    return result
+  }
 
   /// - Parameters:
   ///   - file: <#file description#>
