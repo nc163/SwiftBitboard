@@ -3,6 +3,7 @@ public struct Bitboard<Configuration: BitboardConfiguration>: Bitboardable {
   
   public typealias RawValue = Configuration.RawValue
   public typealias Index    = Coordinate
+  public typealias Line     = ClosedRange<Index>
   
   public var rawValue: RawValue
 
@@ -91,7 +92,7 @@ extension Bitboard: LosslessStringConvertible {
     
     for text in _description_ {
       if text == "*" {
-        let coordinate = Self.index_to_coordinate(index: index)
+        let coordinate: Index = Self.index_to_coordinate(index: index)
         coordinates.append(coordinate)
       }
       index += 1

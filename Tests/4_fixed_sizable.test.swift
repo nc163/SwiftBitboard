@@ -46,7 +46,7 @@ extension BitboardTests {
     }
     
     bitboard.makeIterator().enumerated().filter { $0.element == true }.forEach { value in
-      let coordinate = Bitboard9x9.index_to_coordinate(index: value.offset)
+      let coordinate: Coordinate = Bitboard9x9.index_to_coordinate(index: value.offset)
       XCTAssertTrue(coordinates.contains(coordinate))
       XCTAssertTrue(value.element)
     }

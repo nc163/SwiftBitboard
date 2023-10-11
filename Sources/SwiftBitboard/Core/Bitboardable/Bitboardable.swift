@@ -1,7 +1,7 @@
 import Foundation
 
 public protocol Bitboardable: FixedSizeable, Comparable, Hashable, Equatable 
-  where Index   == Coordinate,
+where Index   : Coordinater,
         Element == Bool {
   
   associatedtype Configuration: BitboardConfiguration
@@ -83,15 +83,31 @@ extension Bitboardable {
   ///   - rank: <#rank description#>
   public func bitscan() -> [Index] {
     var word = self.rawValue
-    var result: Array<Coordinate> = []
+    var result: Array<Index> = []
     
     while (word != .zero) {
       let index = word.trailingZeroBitCount
-      let coordinate = Self.index_to_coordinate(index: index)
+      let coordinate: Index = Self.index_to_coordinate(index: index)
       result.append(coordinate)
       
       word = word & (word - 1);
     }
+    return result
+  }
+  
+  public func bitscan(between a: Index, _ b: Index) -> [Index] {
+    var result: Array<Index> = []
+    let mask: RawValue = Self.maskBetween(a, b)
+    var word = self.rawValue & mask
+    
+    while (word != .zero) {
+      let index = word.trailingZeroBitCount
+      let coordinate: Index = Self.index_to_coordinate(index: index)
+      result.append(coordinate)
+      
+      word = word & (word - 1);
+    }
+    
     return result
   }
 

@@ -1,7 +1,7 @@
 import Foundation
 
 /// 座標
-public struct Coordinate: Coordinater {
+public struct Coordinate: Coordinater {  
   
   public var x: Int 
   public var y: Int
