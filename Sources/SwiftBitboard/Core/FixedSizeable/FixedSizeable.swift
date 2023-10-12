@@ -38,12 +38,12 @@ public extension FixedSizeable {
     return self.x_range.contains(coordinater.x) && self.y_range.contains(coordinater.y)
   }
   
-  // 2点が垂直の直線上にあるか  
+  // 2点が水平の直線上にあるか  
   func arePointsVertical(a: Index, b: Index) -> Bool {
     return a.x == b.x
   }
   
-  // 2点が水平の直線上にあるか
+  // 2点が垂直の直線上にあるか
   func arePointsHorizontal(a: Index, b: Index) -> Bool {
     return a.y == b.y
   }
