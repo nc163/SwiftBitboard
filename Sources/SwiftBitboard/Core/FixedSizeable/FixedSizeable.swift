@@ -19,6 +19,7 @@ public extension FixedSizeable {
     self[Index.init(x: x, y: y)]
   }
   
+  /// 正方形かどうか
   var is_square: Bool {
     self.x_max == self.y_max
   }
