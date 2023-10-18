@@ -8,9 +8,6 @@ let package = Package(
   products: [
     .library(name: "SwiftBitboard", targets: ["SwiftBitboard"]),
   ],
-//  dependencies: [
-//    .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.3.0"),
-//  ],
   targets: [
     .target(name: "SwiftBitboard"),
     .testTarget(name: "SwiftBitboardUnitTests", dependencies: ["SwiftBitboard"], path: "Tests"),
