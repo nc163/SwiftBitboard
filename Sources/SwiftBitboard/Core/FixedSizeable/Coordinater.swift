@@ -4,8 +4,8 @@ import Foundation
 public protocol Coordinater: Strideable, Equatable, Comparable, Hashable 
   where Stride == Int {
   
-  var x: Int { get }
-  var y: Int { get }
+  var x: Int { get set }
+  var y: Int { get set }
   
   init(x: Int, y: Int)
   
