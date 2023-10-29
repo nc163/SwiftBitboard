@@ -1,0 +1,17 @@
+name: Swift Build
+
+on:
+  push:
+    paths:
+      - '**.swift' # Only run the workflow when Swift files are changed
+
+jobs:
+  build:
+    runs-on: macOS-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Build Swift code
+      run: swift build

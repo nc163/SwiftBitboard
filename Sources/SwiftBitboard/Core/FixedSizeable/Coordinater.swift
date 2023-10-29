@@ -15,23 +15,12 @@ public protocol Coordinater: Strideable, Equatable, Comparable, Hashable
 
 extension Coordinater {
   
-  public func moveToward(_ b: Self) -> Self {
-    var newX = self.x
-    var newY = self.y
-    
-    if newX < b.x {
-      newX += 1
-    } else if newX > b.x {
-      newX -= 1
-    }
-    
-    if newY < b.y {
-      newY += 1
-    } else if newY > b.y {
-      newY -= 1
-    }
-    
-    return .init(x: newX, y: newY)
+  /// <#Description#>
+  /// - Parameter b: <#b description#>
+  /// - Returns: <#description#>
+  public mutating func moveToward(_ b: Self) {
+    self.x = self.x + b.x
+    self.y = self.y + b.y
   }
   
 }
